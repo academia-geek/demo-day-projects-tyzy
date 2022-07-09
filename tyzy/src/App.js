@@ -8,6 +8,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <p>branch dv-marlon</p>
+        <p>branch dev-jenny</p>
         <a
           className="App-link"
           href="#"
