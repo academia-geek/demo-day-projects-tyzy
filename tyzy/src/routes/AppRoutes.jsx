@@ -7,7 +7,7 @@ import PublicRoutes from './PublicRoute'
 import Login from '../components/Login'
 
 export default function AppRoutes() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(true)
 
 return (
     <BrowserRouter>
@@ -18,8 +18,6 @@ return (
                 <Login/>
                 </PublicRoutes>
             }/>
-
-
 
              {/* Private Routes */}
             <Route path='*' element={
