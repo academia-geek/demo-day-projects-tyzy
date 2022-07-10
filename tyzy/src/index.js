@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { store } from './redux/store/store';
 import AppRoutes from './routes/AppRoutes';
-import './styles/styles'
+import { Provider } from 'react-redux';
+import './styles/styles.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+
+  <Provider store={store}>
     <AppRoutes />
-  </React.StrictMode>
+  </Provider>
 );

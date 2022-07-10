@@ -82,7 +82,7 @@ export const ActionFacebookRegister = () => {
         const auth = getAuth();
         signInWithPopup(auth, facebook)
             .then(({ user }) => {
-                console.log(user, user.displayName, user.email);
+                console.log('user logeed', user.displayName);
             })
             .catch(error => console.log(error));
     };
