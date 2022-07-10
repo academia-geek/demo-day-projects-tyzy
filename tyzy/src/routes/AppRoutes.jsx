@@ -1,31 +1,59 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { BrowserRouter, Routes ,Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import DashboardRoute from './DashboardRoute'
 import PrivateRouter from './PrivateRoute'
 import PublicRoutes from './PublicRoute'
 import Login from '../components/Login'
+import Register from '../components/Register'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 export default function AppRoutes() {
-    const [isLoggedIn, setIsLoggedIn] = useState(true)
 
-return (
-    <BrowserRouter>
-        <Routes>
-            {/* Public Routes */}
-            <Route path='/login' element={
-                <PublicRoutes isAutenticacition={isLoggedIn}>
-                <Login/>
-                </PublicRoutes>
-            }/>
+    const [verification, setVerification] = useState(true)
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-             {/* Private Routes */}
-            <Route path='*' element={
-            <PrivateRouter isAutenticacition={isLoggedIn}>
-                    <DashboardRoute/>
-            </PrivateRouter>}/>
 
-        </Routes>
-    </BrowserRouter>
-  )
+    useEffect(() => {
+        const auth = getAuth()
+        onAuthStateChanged(auth, (user) => {
+            if (user?.uid) {
+                setIsLoggedIn(true)
+            } else {
+                setIsLoggedIn(false)
+            }
+            setVerification(false)
+        })
+    }, [setVerification, setIsLoggedIn])
+
+    if (verification) {
+        console.log(verification);
+    }
+ 
+    return (
+        <BrowserRouter>
+            <Routes>
+                {/* Public Routes */}
+                <Route path='/login' element={
+                    <PublicRoutes isAutenticacition={isLoggedIn}>
+                        <Login />
+                    </PublicRoutes>
+                } />
+
+                {/* Public Routes */}
+                <Route path='/register' element={
+                    <PublicRoutes isAutenticacition={isLoggedIn}>
+                        <Register />
+                    </PublicRoutes>
+                } />
+
+                {/* Private Routes */}
+                <Route path='*' element={
+                    <PrivateRouter isAutenticacition={isLoggedIn}>
+                        <DashboardRoute />
+                    </PrivateRouter>} />
+
+            </Routes>
+        </BrowserRouter>
+    )
 }
