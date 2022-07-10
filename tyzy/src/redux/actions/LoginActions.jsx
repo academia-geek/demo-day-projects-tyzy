@@ -30,7 +30,7 @@ export const ActionLogoutAsync = () => {
         signOut(auth)
             .then(({ user }) => {
                 dispatch(ActionLogoutSync())
-                console.log('Chao')
+                console.log('Chao', user.displayName)
             })
             .catch(err => console.log(err));
     }
@@ -84,6 +84,6 @@ export const ActionFacebookRegister = () => {
             .then(({ user }) => {
                 console.log('user logeed', user.displayName);
             })
-            .catch(error => console.log(error));
+            .catch(error => console.table(error));
     };
 };

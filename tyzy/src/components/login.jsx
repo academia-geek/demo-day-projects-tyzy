@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ActionFacebookRegister, ActionGoogleRegister, ActionLoginAsync } from '../redux/actions/LoginActions';
 import { Button } from 'react-bootstrap';
+import { DIVLogin } from '../styles/StylesGlobals';
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string().email('It must be of type name@example.com').required("This email is required"),
@@ -53,16 +54,16 @@ export default function Login() {
                             <div className='d-flex flex-column IMGLogin w-50 mx-auto mt-auto mb-5'>
                                 <h3 className='text-center mt-2'>Sing In with</h3>
 
-                                <div className='DivButton d-flex  w-50 mx-auto'>
+                                <DIVLogin className='DivButton d-flex  w-50 mx-auto mt-5'>
                                     <button type='button' className='border-0 btnBG mx-auto'>
-                                        <img onClick={() => dispatch(ActionGoogleRegister())} className='mx-auto' src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/google_iamrtx.png" alt="" />
+                                        <img onClick={() => dispatch(ActionGoogleRegister())} className='mx-auto IMGLogin' src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/google_iamrtx.png" alt="" />
                                     </button>
 
 
                                     <button type='button' className='border-0 btnBG mx-auto'>
-                                        <img className='mx-auto' onClick={() => dispatch(ActionFacebookRegister())} src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/facebook_i9do6g.png" alt="" />
+                                        <img className='mx-auto IMGLogin' onClick={() => dispatch(ActionFacebookRegister())} src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/facebook_i9do6g.png" alt="" />
                                     </button>
-                                </div>
+                                </DIVLogin>
                             </div>
                         </Form>
                     )}

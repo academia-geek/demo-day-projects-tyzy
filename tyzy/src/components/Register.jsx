@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ActionFacebookRegister, ActionGoogleRegister, ActionRegisterAsync } from '../redux/actions/LoginActions';
 import { Button } from 'react-bootstrap';
+import { DIVLogin } from '../styles/StylesGlobals';
 
 const SignupSchema = Yup.object().shape({
     name: Yup.string().min(4, 'Very short name').max(30, 'Very long name').required("This name is required"),
@@ -68,15 +69,15 @@ const Register = () => {
                         <div className='d-flex flex-column w-50 mx-auto mt-auto mb-5'>
                             <h3 className='mx-auto mt-2'>OR Sing In with</h3>
 
-                            <div className='d-flex w-50 mx-auto'>
+                            <DIVLogin className='d-flex w-50 mx-auto'>
                                 <button type='button' className='border-0 btnBG mx-auto'>
-                                    <img className='mx-auto' onClick={() => dispatch(ActionGoogleRegister())} src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/google_iamrtx.png" alt="" />
+                                    <img className='mx-auto IMGLogin' onClick={() => dispatch(ActionGoogleRegister())} src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/google_iamrtx.png" alt="" />
                                 </button>
 
                                 <button type='button' className='border-0 btnBG mx-auto'>
-                                    <img className='mx-auto' onClick={() => dispatch(ActionFacebookRegister())} src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/facebook_i9do6g.png" alt="" />
+                                    <img className='mx-auto IMGLogin' onClick={() => dispatch(ActionFacebookRegister())} src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/facebook_i9do6g.png" alt="" />
                                 </button>
-                            </div>
+                            </DIVLogin>
                         </div>
 
                     </Form>
