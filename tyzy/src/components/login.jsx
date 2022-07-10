@@ -11,7 +11,7 @@ const SignupSchema = Yup.object().shape({
     pass: Yup.string().min(6, 'Very short password').max(20, 'Very lonng password').required("This field is required")
 })
 
-export default function Login() {
+export default function Login() { 
 
     const dispatch = useDispatch()
 
