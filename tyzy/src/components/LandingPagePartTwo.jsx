@@ -11,6 +11,7 @@ export default function LandingPagePartTwo() {
             <div className='flex flex-col justify-center'>
                 <h3 className='text-xl font-bold text-titleColor'>Lorem sit amet </h3>
                 <p className='text-sm text-titleOrange'>LOREM IPSUM</p>
+                
                 <p className='text-sm py-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div className='flex justify-center'>
