@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardTips, CardTxt, IconCard, InfoServices, ServiceImg, ServicesDiv, ServiceTitle, SpanTitle, TextCard, TitleCard } from '../styles/StylesGlobals'
+import { CardTips, CardTxt, IconCard, InfoServices, ServiceImg, ServicesDiv, ServiceTitle, SpanTitle, TitleCard } from '../styles/StylesGlobals'
 
 const LandingServices = () => {
   return (
