@@ -171,4 +171,32 @@ text-align: center;
     color:#275556;
     font-size: 14px;
 `
+/* SERVICES COMPONENT */
+
+export const ServicesDiv = styled.div`
+    display: flex;
+`
+export const ServiceImg = styled.img`
+    width:40%;   
+`
+export const InfoServices= styled.div`
+    background-color: aqua;
+`
+export const ServiceTitle = styled.div`
+    color:#F26052;
+    font-weight:700;
+    font-size:35px;
+`
+export const SpanTitle = styled.span`
+    color:#4BA695;
+    font-weight:700;
+`
+
+export const CardTips = styled.div`
+    box-shadow: 10px 10px 17px -7px rgba(39,85,86,0.36);
+    display: flex;
+`
+export const IconCard = styled.img`
+    width:20%;    
+`
 
