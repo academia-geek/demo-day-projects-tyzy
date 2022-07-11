@@ -95,7 +95,7 @@ const Register = () => {
                             </Form>
                         )}
                     </Formik>
-                </RegisterForm>
+                 </RegisterForm>
             </DivRegister>
         </>
     )
