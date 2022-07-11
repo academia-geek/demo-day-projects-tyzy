@@ -14,13 +14,13 @@ export default function LandingPagePartTwo() {
                 <p className='text-sm py-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div className='flex justify-center'>
-                <img className='rounded-lg'  src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657547828/Tyzy/perros-de-servicio_whmf37.jpg' alt='perr1'/>
+                <img className='rounded-lg'  src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657548600/Tyzy/Image_bbpf6j.png' alt='perr1'/>
             </div>
             <div className='flex justify-center'>
-                <img className='rounded-lg'  src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657547829/Tyzy/imagen_2_jgl1zj.png' alt='perr2'/>
+                <img className='rounded-lg'  src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657548600/Tyzy/Image-1_suibyx.png' alt='perr2'/>
             </div>
             <div className='flex justify-center'>
-                <img className='rounded-lg'  src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657547828/Tyzy/Perro_Gu%C3%ADa_ayudando_a_una_persona_ciega_z6qxt9.jpg' alt='perr3'/>
+                <img className='rounded-lg'  src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657548600/Tyzy/Image-2_svuu7t.png' alt='perr3'/>
             </div>
         </section>
         
