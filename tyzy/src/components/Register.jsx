@@ -1,11 +1,10 @@
 import React from 'react'
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ActionFacebookRegister, ActionGoogleRegister, ActionRegisterAsync } from '../redux/actions/LoginActions';
-import { Button } from 'react-bootstrap';
-import { DIVLogin } from '../styles/StylesGlobals';
+import { BtnRegister, DIVLogin, DivRegister, FieldInput, ImageRegister, IngresaCon, LabelRegistro, LoginRegister, LogoTyzy, RegisterForm, RegisterText, RegisterTitle, SpanInciar } from '../styles/StylesGlobals';
+import { Link } from 'react-router-dom';
 
 const SignupSchema = Yup.object().shape({
     name: Yup.string().min(4, 'Very short name').max(30, 'Very long name').required("This name is required"),
@@ -19,8 +18,16 @@ const Register = () => {
     const dispatch = useDispatch()
 
     return (
-        <div className='d-flex flex-column mt-5'>
-            <h2 className='text-center mt-5 mb-4'>Sing In</h2>
+        <>
+        <DivRegister>
+            <ImageRegister>
+                <LogoTyzy src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657500435/Tyzy/Logo_fvikwq.png' alt='applogo'/>
+            </ImageRegister>
+
+            <RegisterForm>
+            <RegisterTitle className='mb-4'>Registrate</RegisterTitle>
+            <RegisterText>Si ya tienes un usuario o email registrado</RegisterText>
+            <LoginRegister>Puedes<Link to="/login"><SpanInciar> Iniciar sesión aquí</SpanInciar></Link></LoginRegister>
             <Formik
                 initialValues={
                     {
@@ -37,37 +44,41 @@ const Register = () => {
             >
                 {({ errors, touched }) => (
 
-                    <Form className='d-flex flex-column h-50 w-75 mx-auto '>
-                        <div className='mb-2'>
-                            <Field className='rounded-pill border-0 p-2 w-100 mx-auto InputRegister' type="texto" placeholder="Full name" name="name" />
+                    <Form className='d-flex flex-column mt-2'>
+                        <div className='mb-2 d-flex flex-column'>
+                            <LabelRegistro>Email</LabelRegistro>
+                            <FieldInput className='InputRegister' type="texto" placeholder="Correo electronico" name="name" />
                             {errors.name && touched.name ?
                                 (<div className='ms-3 ERRinput fs-6 text-white'>{errors.name}</div>) : null}
                         </div>
 
-                        <div className='mb-2'>
-                            <Field className='rounded-pill border-0 p-2 w-100 mx-auto InputRegister' type="email" placeholder="Email" name="email" />
+                        <div className='mb-2 d-flex flex-column'>
+                            <LabelRegistro>Nombre de usuario</LabelRegistro>
+                            <FieldInput className='InputRegister' type="email" placeholder="Nombre de usuario" name="email" />
                             {errors.email && touched.email ?
                                 (<div className='ms-3 ERRinput fs-6 text-white'>{errors.email}</div>) : null}
                         </div>
 
-                        <div className='mb-2'>
-                            <Field className='rounded-pill border-0 p-2 w-100 mx-auto InputRegister' type="password" placeholder="Password" name="password1" />
+                        <div className='mb-2 d-flex flex-column'>
+                            <LabelRegistro>Contraseña</LabelRegistro>
+                            <FieldInput className='InputRegister' type="password" placeholder="Escribe tu contraseña" name="password1" />
                             {errors.password1 && touched.password1 ?
                                 (<div className='ms-3 ERRinput fs-6 text-white'>{errors.password1}</div>) : null}
                         </div>
 
-                        <div className=''>
-                            <Field className='rounded-pill border-0 p-2 w-100 mx-auto InputRegister' type="password" placeholder="Confirm Password" name="password2" />
+                        <div className='mb-2 d-flex flex-column'>
+                            <LabelRegistro>Repetir contraseña</LabelRegistro>
+                            <FieldInput className='InputRegister' type="password" placeholder="Repite tu contraseña" name="password2" />
                             {errors.password2 && touched.password2 ?
                                 (<div className='ms-3 ERRinput fs-6 text-white'>{errors.password2}</div>) : null}
                         </div>
 
-                        <Button className='BTNRegister mt-2 rounded-pill m-0 border-0 p-2 w-100 mx-auto' variant="contained" type="submit">
-                            Register
-                        </Button>
+                        <BtnRegister className='BTNRegister' variant="contained" type="submit">
+                            Registrarse
+                        </BtnRegister>
 
                         <div className='d-flex flex-column w-50 mx-auto mt-auto mb-5'>
-                            <h3 className='mx-auto mt-2'>OR Sing In with</h3>
+                            <IngresaCon>O ingresa con</IngresaCon>
 
                             <DIVLogin className='d-flex w-50 mx-auto'>
                                 <button type='button' className='border-0 btnBG mx-auto'>
@@ -83,13 +94,9 @@ const Register = () => {
                     </Form>
                 )}
             </Formik>
-            <div className='d-flex justify-content-center'>
-                <span className='my-auto'>Back to </span>
-                <span className='my-auto'>
-                    <Link to="/" className='nav-link my-auto'>login</Link>
-                </span>
-            </div>
-        </div>
+            </RegisterForm>
+        </DivRegister>
+        </>
     )
 }
 

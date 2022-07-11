@@ -7,7 +7,7 @@ import PublicRoutes from './PublicRoute'
 import Login from '../components/Login'
 import Register from '../components/Register'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import NavBarPublic from '../components/NavBarPublic'
+// import NavBarPublic from '../components/NavBarPublic'
 
 export default function AppRoutes() {
 
@@ -38,7 +38,6 @@ export default function AppRoutes() {
                 {/* Public Routes */}
                 <Route path='/login' element={
                     <PublicRoutes isAutenticacition={isLoggedIn}>
-                        <NavBarPublic />
                         <Login />
                     </PublicRoutes>
                 } />
@@ -46,8 +45,7 @@ export default function AppRoutes() {
                 {/* Public Routes */}
                 <Route path='/register' element={
                     <PublicRoutes isAutenticacition={isLoggedIn}>
-                        <NavBarPublic />
-                        <Register />
+                         <Register />
                     </PublicRoutes>
                 } />
 
