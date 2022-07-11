@@ -47,61 +47,54 @@ const Register = () => {
                         {({ errors, touched }) => (
 
                             <Form className='d-flex flex-column mt-2'>
-                                <div className='mb-2 d-flex flex-column'>
+                                <div className='d-flex flex-column'>
                                     <LabelRegistro>Email</LabelRegistro>
-                                    <FieldInput className='InputRegister' type="texto" placeholder="Correo electronico" name="name" />
+                                    <FieldInput className='' type="texto" placeholder="Correo electronico" name="name" />
                                     {errors.name && touched.name ?
-                                        (<div className='ms-3 ERRinput fs-6 text-white'>{errors.name}</div>) : null}
+                                        (<div className='ms-3 fs-6 text-white'>{errors.name}</div>) : null}
                                 </div>
 
-                                <div className='mb-2 d-flex flex-column'>
+                                <div className=' d-flex flex-column'>
                                     <LabelRegistro>Nombre de usuario</LabelRegistro>
-                                    <FieldInput className='InputRegister' type="email" placeholder="Nombre de usuario" name="email" />
+                                    <FieldInput className='' type="email" placeholder="Nombre de usuario" name="email" />
                                     {errors.email && touched.email ?
-                                        (<div className='ms-3 ERRinput fs-6 text-white'>{errors.email}</div>) : null}
+                                        (<div className='ms-3 fs-6 text-white'>{errors.email}</div>) : null}
                                 </div>
 
-                                <div className='mb-2 d-flex flex-column'>
+                                <div className='d-flex flex-column'>
                                     <LabelRegistro>Contraseña</LabelRegistro>
-                                    <FieldInput className='InputRegister' type="password" placeholder="Escribe tu contraseña" name="password1" />
+                                    <FieldInput className='' type="password" placeholder="Escribe tu contraseña" name="password1" />
                                     {errors.password1 && touched.password1 ?
-                                        (<div className='ms-3 ERRinput fs-6 text-white'>{errors.password1}</div>) : null}
+                                        (<div className='ms-3 fs-6 text-white'>{errors.password1}</div>) : null}
                                 </div>
 
-                                <div className='mb-2 d-flex flex-column'>
+                                <div className='d-flex flex-column'>
                                     <LabelRegistro>Repetir contraseña</LabelRegistro>
-                                    <FieldInput className='InputRegister' type="password" placeholder="Repite tu contraseña" name="password2" />
+                                    <FieldInput className='' type="password" placeholder="Repite tu contraseña" name="password2" />
                                     {errors.password2 && touched.password2 ?
-                                        (<div className='ms-3 ERRinput fs-6 text-white'>{errors.password2}</div>) : null}
+                                        (<div className='ms-3 fs-6 text-white'>{errors.password2}</div>) : null}
                                 </div>
 
                                 <BtnRegister className='BTNRegister' variant="contained" type="submit">
                                     Registrarse
                                 </BtnRegister>
 
-                                <div className='d-flex flex-column w-50 mx-auto mt-auto mb-5'>
+                                <div className='d-flex flex-column w-50 mx-auto mt-auto'>
                                     <IngresaCon>O ingresa con</IngresaCon>
 
                                     <DIVLogin className='d-flex w-50 mx-auto'>
-                                        <button type='button' className='border-0 btnBG mx-auto'>
+                                        <button type='button' className='border-0 mx-auto'>
                                             <img className='mx-auto IMGLogin' onClick={() => dispatch(ActionGoogleRegister())} src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/google_iamrtx.png" alt="" />
                                         </button>
 
-                                        <button type='button' className='border-0 btnBG mx-auto'>
+                                        <button type='button' className='border-0 mx-auto'>
                                             <img className='mx-auto IMGLogin' onClick={() => dispatch(ActionFacebookRegister())} src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/facebook_i9do6g.png" alt="" />
                                         </button>
                                     </DIVLogin>
                                 </div>
-
                             </Form>
                         )}
                     </Formik>
-                    <div className='d-flex justify-content-center'>
-                        <span className='my-auto'>Back to </span>
-                        <span className='my-auto'>
-                            <Link to="/login" className='nav-link my-auto'>login</Link>
-                        </span>
-                    </div>
                 </RegisterForm>
             </DivRegister>
         </>
