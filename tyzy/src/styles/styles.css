@@ -4,8 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -15,19 +15,19 @@ body {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .BTNREGISTER {
-    background-color:white;
-    color:  #4BA695;
-    border:1px solid  #4BA695;
+    background-color: white;
+    color: #4BA695;
+    border: 1px solid #4BA695;
     border-radius: 14px;
     height: 50px;
     width: 120px;
 }
 
-.BTNREGISTER:hover{
+.BTNREGISTER:hover {
     background-color: #4BA695;
     color: #FFFFFF;
 }
@@ -72,6 +72,7 @@ body {
 .LandingPageSup {
     background-color: #FFE7E4;
     height: 650px;
+    margin-top: 90px !important;
 }
 
 .BTNLandingPageSup {
@@ -118,30 +119,41 @@ body {
     font-size: 16px;
 }
 
-.LandingPageStadist{
+.LandingPageStadist {
     background-color: #F8C15C;
     height: 400px;
 }
 
-.TitleLandingPageStadist{
+.TitleLandingPageStadist {
     font-weight: 600;
     font-size: 40px;
     color: #F26052;
     font-family: 'Poppins', sans-serif;
 }
 
-.P1LandingPageStadist{
+.P1LandingPageStadist {
     color: #FFFFFF;
     font-size: 16px;
     width: 55%;
 }
 
-.P2LandingPageStadist{
+.P2LandingPageStadist {
     font-size: 14px;
     color: #FFFFFF;
 }
 
-.LandingPageFooter{
+.LandingPageFooter {
     background-color: #4BA695;
-    height: 100px;
+    height: 150px;
+}
+
+.IMGFooter {
+    width: 5%;
+    height: 18%;
+}
+
+.NavbarPublic {
+    position: fixed;
+    width: 100vw;
+    top: 0px;
 }
