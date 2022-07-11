@@ -2,6 +2,7 @@ import React from 'react'
 import LandingPagePartTwo from './LandingPagePartTwo';
 import LandingPageStadist from './LandingPageStadist';
 import LandingPageSup from './LandingPageSup';
+import LandingServices from './LandingServices';
 import LandingPageFooter from './LandinPageFooter';
 
 const LandingPage = () => {
@@ -9,6 +10,7 @@ const LandingPage = () => {
       <div>
         <LandingPageSup />
         <LandingPagePartTwo/>
+        <LandingServices/>
         <LandingPageStadist/>
         <LandingPageFooter />
       </div>
