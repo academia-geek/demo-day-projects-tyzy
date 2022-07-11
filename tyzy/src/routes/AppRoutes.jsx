@@ -47,7 +47,6 @@ export default function AppRoutes() {
                 {/* Public Routes */}
                 <Route path='/login' element={
                     <PublicRoutes isAutenticacition={isLoggedIn}>
-                        <NavBarPublic />
                         <Login />
                     </PublicRoutes>
                 } />
@@ -55,8 +54,7 @@ export default function AppRoutes() {
                 {/* Public Routes */}
                 <Route path='/register' element={
                     <PublicRoutes isAutenticacition={isLoggedIn}>
-                        <NavBarPublic />
-                        <Register />
+                         <Register />
                     </PublicRoutes>
                 } />
 
