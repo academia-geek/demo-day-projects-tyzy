@@ -1,7 +1,4 @@
 import React from 'react'
-import perr1 from '../img/imagen1.png'
-import perr2 from '../img/imagen2.png'
-import perr3 from '../img/imagen3.png'
 
 export default function LandingPagePartTwo() {
   return (
@@ -17,13 +14,13 @@ export default function LandingPagePartTwo() {
                 <p className='text-sm py-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div className='flex justify-center'>
-                <img className='rounded-lg'  src={perr1} alt='perr1'/>
+                <img className='rounded-lg'  src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657547828/Tyzy/perros-de-servicio_whmf37.jpg' alt='perr1'/>
             </div>
             <div className='flex justify-center'>
-                <img className='rounded-lg'  src={perr2} alt='perr2'/>
+                <img className='rounded-lg'  src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657547829/Tyzy/imagen_2_jgl1zj.png' alt='perr2'/>
             </div>
             <div className='flex justify-center'>
-                <img className='rounded-lg'  src={perr3} alt='perr3'/>
+                <img className='rounded-lg'  src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657547828/Tyzy/Perro_Gu%C3%ADa_ayudando_a_una_persona_ciega_z6qxt9.jpg' alt='perr3'/>
             </div>
         </section>
         
