@@ -96,13 +96,7 @@ const Register = () => {
                             </Form>
                         )}
                     </Formik>
-                    <div className='d-flex justify-content-center'>
-                        <span className='my-auto'>Back to </span>
-                        <span className='my-auto'>
-                            <Link to="/login" className='nav-link my-auto'>login</Link>
-                        </span>
-                    </div>
-                </RegisterForm>
+                 </RegisterForm>
             </DivRegister>
         </>
     )
