@@ -1,4 +1,5 @@
 import React from 'react'
+import LandingPagePartTwo from './LandingPagePartTwo';
 import LandingPageStadist from './LandingPageStadist';
 import LandingPageSup from './LandingPageSup';
 import LandingServices from './LandingServices';
@@ -8,6 +9,7 @@ const LandingPage = () => {
   return (
       <div>
         <LandingPageSup />
+        <LandingPagePartTwo/>
         <LandingServices/>
         <LandingPageStadist/>
         <LandingPageFooter />
