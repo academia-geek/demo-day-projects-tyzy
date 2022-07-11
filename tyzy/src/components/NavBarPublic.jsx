@@ -19,7 +19,7 @@ const NavBarPublic = () => {
 
             <section className='d-flex ms-auto me-3 my-auto'>
                 <NavLink to='/register' className='nav-link'>
-                    <button className='BTNLOGIN'>
+                    <button className='BTNREGISTER'>
                         Registrarse
                     </button>
                 </NavLink>

@@ -171,4 +171,50 @@ text-align: center;
     color:#275556;
     font-size: 14px;
 `
+/* SERVICES COMPONENT */
+
+export const ServicesDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    gap: 10%
+`
+export const ServiceImg = styled.img`
+    width:40%;   
+`
+export const InfoServices= styled.div`
+    width: 40%;
+`
+export const ServiceTitle = styled.p`
+    color:#F26052;
+    font-weight:700;
+    font-size:40px;
+    line-height: 50px;
+    width: 80%;
+`
+export const SpanTitle = styled.span`
+    color:#4BA695;
+    font-weight:700;
+`
+
+export const CardTips = styled.div`
+    box-shadow: 10px 10px 17px -7px rgba(39,85,86,0.36);
+    display: flex;
+    align-items: center;
+    gap:20px;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 20px;
+`
+
+export const IconCard = styled.img`
+    width:20%;    
+`
+export const TitleCard = styled.p`
+    font-weight:600;    
+`
+export const CardTxt = styled.p`
+    font-size: 12px;
+` 
 
