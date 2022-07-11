@@ -56,13 +56,13 @@ export const LabelRegistro = styled.label`
     font-weight: 500;
     color:#275556;
     font-size: 14px;
-    margin-top: 18px;
+    margin-top: 4%;
 `
 
 export const FieldInput = styled(Field)`
     background: none;
     border-bottom: 1.5px solid #275556;
-    margin-top: 10px;
+    margin-top: 1%;
     &:focus{
         outline: none;
     }
@@ -79,7 +79,7 @@ export const BtnRegister = styled.button`
 `
 export const IngresaCon = styled.h3`
 text-align: center;
-    margin-top: 40px;
+    margin-top: 12%;
     color:#275556;
     font-size: 14px;
 `
@@ -87,7 +87,7 @@ text-align: center;
 export const DIVLogin = styled.div`
 margin-top: 20px;
     .IMGLogin {
-    -webkit-box-reflect: below 2px
+    -webkit-box-reflect: below 5px
     linear-gradient(to left,
     rgba(0, 0, 0, 0.0),
     rgba(0, 0, 0, 0.2))
