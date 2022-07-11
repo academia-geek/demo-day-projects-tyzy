@@ -86,7 +86,7 @@ const Register = () => {
             <div className='d-flex justify-content-center'>
                 <span className='my-auto'>Back to </span>
                 <span className='my-auto'>
-                    <Link to="/" className='nav-link my-auto'>login</Link>
+                    <Link to="/login" className='nav-link my-auto'>login</Link>
                 </span>
             </div>
         </div>

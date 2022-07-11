@@ -4,10 +4,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import DashboardRoute from './DashboardRoute'
 import PrivateRouter from './PrivateRoute'
 import PublicRoutes from './PublicRoute'
-import Login from '../components/Login'
-import Register from '../components/Register'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import NavBarPublic from '../components/NavBarPublic'
+import LandingPage from '../components/LandingPage'
+import Login from '../components/Login'
+import Register from '../components/Register'
 
 export default function AppRoutes() {
 
@@ -36,6 +37,14 @@ export default function AppRoutes() {
 
             <Routes>
                 {/* Public Routes */}
+                <Route path='/landingPage' element={
+                    <PublicRoutes isAutenticacition={isLoggedIn}>
+                        <NavBarPublic />
+                        <LandingPage />
+                    </PublicRoutes>
+                } />
+
+                {/* Public Routes */}
                 <Route path='/login' element={
                     <PublicRoutes isAutenticacition={isLoggedIn}>
                         <NavBarPublic />
@@ -55,8 +64,8 @@ export default function AppRoutes() {
                 <Route path='*' element={
                     <PrivateRouter isAutenticacition={isLoggedIn}>
                         <DashboardRoute />
-                    </PrivateRouter>} />
-
+                    </PrivateRouter>
+                } />
             </Routes>
         </BrowserRouter>
     )

@@ -3,9 +3,9 @@ import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { ActionFacebookRegister, ActionGoogleRegister, ActionLoginAsync } from '../redux/actions/LoginActions';
 import { Button } from 'react-bootstrap';
-import { DIVLogin } from '../styles/StylesGlobals';
+import { ActionFacebookRegister, ActionGoogleRegister, ActionLoginAsync } from '../redux/actions/LoginActions';
+import { DIVLogin } from "../styles/StylesGlobals";
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string().email('It must be of type name@example.com').required("This email is required"),
