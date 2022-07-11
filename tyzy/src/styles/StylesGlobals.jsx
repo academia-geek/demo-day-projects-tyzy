@@ -22,7 +22,7 @@ export const ImageRegister = styled.div`
 export const LogoTyzy = styled.img`
     width:10%  ;
     margin-top:5%;
-    margin-left:5%
+    margin-left:5%;
 `
 
 export const RegisterForm = styled.div`
@@ -115,7 +115,7 @@ export const ImageLogin = styled.div`
 export const LogoTyzy2 = styled.img`
     width:10%  ;
     margin-top:5%;
-    margin-left:5%
+    margin-left:5%;
 `
 
 export const LoginForm = styled.div`
@@ -165,7 +165,7 @@ export const BtnLogin = styled.button`
     box-shadow: 10px 10px 17px -7px rgba(39,85,86,0.36);
     font-weight: 500;
 `
-export const IngresaCon2 = styled.h3`
+export const IngresaCon2 = styled.h3` 
 text-align: center;
     margin-top: 40px;
     color:#275556;

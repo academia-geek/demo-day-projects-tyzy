@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,17 +15,113 @@ body {
 }
 
 .BTNLOGIN {
-    border: 1px solid #4BA695;
-    box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
+    background-color: #4BA695;
+    color: #FFFFFF;
     border-radius: 14px;
     height: 50px;
     width: 120px;
 }
 
 .BTNLOGIN:hover {
+    background-color: #FFFFFF;
+    color: #4BA695;
     border: 1px solid #4BA695;
     box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
+}
+
+.BTNLOGIN:focus {
+    background-color: #FFFFFF;
+    color: #4BA695;
+    border: 1px solid #4BA695;
+    box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
+}
+
+.NavLinks {
+    font-size: 14px;
+    color: #656464;
+    font-weight: 500;
+}
+
+.NavLinks:hover {
+    color: #2B2B39;
+    font-weight: 600;
+}
+
+.NavLinks:focus {
+    color: #2B2B39;
+    font-weight: 600;
+}
+
+.LandingPageSup {
+    background-color: #FFE7E4;
+    height: 650px;
+}
+
+.BTNLandingPageSup {
+    font-size: 14px;
+    background-color: #F2BA52;
+    color: #FFFFFF;
     border-radius: 14px;
     height: 50px;
     width: 120px;
 }
+
+.BTNLandingPageSup:hover {
+    background-color: transparent;
+    color: #F26052;
+    border: 1px solid #F26052;
+    box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
+}
+
+.BTNLandingPageSup:focus {
+    background: transparent;
+    color: #F26052;
+    border: 1px solid #F26052;
+    box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
+}
+
+.IMGLandingPageSup {
+    border: 10px solid #F2A9A2;
+    border-radius: 50% !important;
+    width: 90% !important;
+}
+
+.H2LandingPageSup {
+    font-size: 48px;
+    color: #F26052;
+    line-height: 50px;
+}
+
+.SPLandingPageSup {
+    font-size: 48px;
+    color: #4BA695;
+}
+
+.SpanLandingPageSup {
+    font-size: 16px;
+}
+
+.LandingPageStadist{
+    background-color: #F8C15C;
+    height: 400px;
+}
+
+.TitleLandingPageStadist{
+    font-weight: 600;
+    font-size: 40px;
+    color: #F26052;
+    font-family: 'Poppins', sans-serif;
+}
+
+.P1LandingPageStadist{
+    color: #FFFFFF;
+    font-size: 16px;
+    width: 55%;
+}
+
+.P2LandingPageStadist{
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+
