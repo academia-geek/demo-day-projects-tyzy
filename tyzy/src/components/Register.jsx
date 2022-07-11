@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import { useDispatch } from 'react-redux';
 import { ActionFacebookRegister, ActionGoogleRegister, ActionRegisterAsync } from '../redux/actions/LoginActions';
 import { BtnRegister, DIVLogin, DivRegister, FieldInput, ImageRegister, IngresaCon, LabelRegistro, LoginRegister, LogoTyzy, RegisterForm, RegisterText, RegisterTitle, SpanInciar } from '../styles/StylesGlobals';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const SignupSchema = Yup.object().shape({
     name: Yup.string().min(4, 'Very short name').max(30, 'Very long name').required("This name is required"),
@@ -21,7 +21,9 @@ const Register = () => {
         <>
             <DivRegister>
                 <ImageRegister>
-                    <LogoTyzy src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657500435/Tyzy/Logo_fvikwq.png' alt='applogo' />
+                    <NavLink to='/landingPage'>
+                        <LogoTyzy src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657500435/Tyzy/Logo_fvikwq.png' alt='applogo' />
+                    </NavLink>
                 </ImageRegister>
 
                 <RegisterForm>
