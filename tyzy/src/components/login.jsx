@@ -26,7 +26,7 @@ export default function Login() {
 
                 <LoginForm>
                     <LoginTitle className='mb-4'>Inicia sesión</LoginTitle>
-                    <LoginText>¿No estás registrado aún?, puedes<Link to="/login"><SpanInciar2> registrate aquí</SpanInciar2></Link></LoginText>
+                    <LoginText>¿No estás registrado aún?, puedes<Link to="/register"><SpanInciar2> registrate aquí</SpanInciar2></Link></LoginText>
 
                     <Formik
                         initialValues={
