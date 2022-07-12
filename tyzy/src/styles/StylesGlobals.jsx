@@ -199,12 +199,8 @@ export const InfoServices = styled.div`
         gap:20px;
         padding: 20px;
         border-radius: 20px;
-        transform: translateX(100%);
-        transition:transform 0.8s ease;
-    }
-
-    .box:nth-of-type(even) {
         transform: translateX(-100%);
+        transition:transform 0.8s ease;
     }
 
     .box.show {

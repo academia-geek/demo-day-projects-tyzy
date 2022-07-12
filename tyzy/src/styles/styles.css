@@ -146,6 +146,7 @@ body {
 
 .NavbarPublic {
     position: fixed ;
+    position: relative ;
     background-color: #FFFFFF !important;
     width: 100vw !important;
     top: 0px !important;
