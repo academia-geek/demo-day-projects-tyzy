@@ -5,10 +5,10 @@ import DashboardRoute from './DashboardRoute'
 import PrivateRouter from './PrivateRoute'
 import PublicRoutes from './PublicRoute'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import NavBarPublic from '../components/NavBarPublic'
-import LandingPage from '../components/LandingPage'
 import Login from '../components/Login'
 import Register from '../components/Register'
+import NavBarPublic from '../components/LandingPage/NavBarPublic'
+import LandingPage from '../components/LandingPage/LandingPage'
 
 export default function AppRoutes() {
 
@@ -29,12 +29,11 @@ export default function AppRoutes() {
     }, [setVerification, setIsLoggedIn])
 
     if (verification) {
-        console.log(verification);
+        // console.log(verification);
     }
 
     return (
         <BrowserRouter>
-
             <Routes>
                 {/* Public Routes */}
                 <Route path='/landingPage' element={

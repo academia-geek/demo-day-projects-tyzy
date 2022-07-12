@@ -82,7 +82,7 @@ const Register = () => {
                                 <div className='d-flex flex-column w-50 mx-auto mt-auto'>
                                     <IngresaCon>O ingresa con</IngresaCon>
 
-                                    <DIVLogin className='d-flex w-50 mx-auto'>
+                                    <DIVLogin className='d-flex w-75 mx-auto'>
                                         <button type='button' className='border-0 mx-auto'>
                                             <img className='mx-auto IMGLogin' onClick={() => dispatch(ActionGoogleRegister())} src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/google_iamrtx.png" alt="" />
                                         </button>
