@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Main from '../components/Main'
+import Requisitos from '../components/Requisitos'
 
 
 export default function DashboardRoute() {
@@ -8,7 +9,7 @@ export default function DashboardRoute() {
     <>
         <Routes>
         <Route path='/' element={<Main />}/>
-        
+        <Route path='/requisitos' element={<Requisitos />}/>
         </Routes>
     </>
   )
