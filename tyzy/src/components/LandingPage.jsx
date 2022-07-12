@@ -7,7 +7,7 @@ import LandingPageFooter from './LandinPageFooter';
 
 const LandingPage = () => {
   return (
-      <div>
+      <div id='home'>
         <LandingPageSup />
         <LandingPagePartTwo/>
         <LandingServices/>

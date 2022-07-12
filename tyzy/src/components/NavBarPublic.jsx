@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { Nav } from "react-bootstrap";
+import { NavLink } from 'react-router-dom';
 
 const NavBarPublic = () => {
     return (
@@ -9,10 +10,10 @@ const NavBarPublic = () => {
             </NavLink>
             <section className='w-50 my-auto'>
                 <div className='d-flex justify-content-evenly w-75 mx-auto'>
-                    <NavLink to='/landingPage' className='nav-link NavLinks'>Home</NavLink>
-                    <NavLink to='#' className='nav-link NavLinks'>Comunidad</NavLink>
-                    <NavLink to='#' className='nav-link NavLinks'>Blog</NavLink>
-                    <NavLink to='#' className='nav-link NavLinks'>Contacto</NavLink>
+                    <Nav.Link href='#home' className='nav-link NavLinks'>Home</Nav.Link>
+                    <Nav.Link href='#comunidad' className='nav-link NavLinks'>Comunidad</Nav.Link>
+                    <Nav.Link href='#blog' className='nav-link NavLinks'>Blog</Nav.Link>
+                    <Nav.Link href='#footer' className='nav-link NavLinks'>Contacto</Nav.Link>
                 </div>
 
             </section>
