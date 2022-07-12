@@ -78,20 +78,25 @@ export const BtnRegister = styled.button`
     font-weight: 500;
 `
 export const IngresaCon = styled.h3`
-text-align: center;
+    text-align: center;
     margin-top: 12%;
     color:#275556;
     font-size: 14px;
 `
 
 export const DIVLogin = styled.div`
-margin-top: 20px;
+    margin-top: 20px;
+
+    button {
+        height: 40px;
+    }
+
     .IMGLogin {
-    -webkit-box-reflect: below 5px
-    linear-gradient(to left,
-    rgba(0, 0, 0, 0.0),
-    rgba(0, 0, 0, 0.2))
-}
+        -webkit-box-reflect: below 5px
+        linear-gradient(to left,
+        rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.2))
+    }
 `
 
 // LOGIN //
@@ -178,13 +183,33 @@ export const ServicesDiv = styled.div`
     justify-content: center;
     margin-top: 10%;
     margin-bottom: 10%;
-    gap: 10%
+    gap: 10%;
 `
 export const ServiceImg = styled.img`
     width:40%;   
 `
-export const InfoServices= styled.div`
+export const InfoServices = styled.div`
     width: 40%;
+    overflow-y: hidden;
+    
+    .box {
+        box-shadow: 0px 15px 17px -15px rgba(39,85,86,0.36);
+        display: flex;
+        align-items: center;
+        gap:20px;
+        padding: 20px;
+        border-radius: 20px;
+        transform: translateX(100%);
+        transition:transform 0.8s ease;
+    }
+
+    .box:nth-of-type(even) {
+        transform: translateX(-100%);
+    }
+
+    .box.show {
+        transform: translateX(0);
+    }
 `
 export const ServiceTitle = styled.p`
     color:#F26052;
@@ -198,16 +223,6 @@ export const SpanTitle = styled.span`
     font-weight:700;
 `
 
-export const CardTips = styled.div`
-    box-shadow: 10px 10px 17px -7px rgba(39,85,86,0.36);
-    display: flex;
-    align-items: center;
-    gap:20px;
-    padding: 20px;
-    margin-top: 40px;
-    border-radius: 20px;
-`
-
 export const IconCard = styled.img`
     width:20%;    
 `
@@ -216,5 +231,4 @@ export const TitleCard = styled.p`
 `
 export const CardTxt = styled.p`
     font-size: 12px;
-` 
-
+`

@@ -62,12 +62,12 @@ export default function Login() {
                                 <div className='d-flex flex-column w-50 mx-auto mt-auto mb-5'>
                                     <IngresaCon2>O ingresa con</IngresaCon2>
 
-                                    <DIVLogin className='DivButton d-flex  w-50 mx-auto'>
-                                        <button type='button' className='border-0 btnBG mx-auto'>
+                                    <DIVLogin className='DivButton d-flex  w-75 mx-auto'>
+                                        <button type='button' className='border-0 mx-auto'>
                                             <img onClick={() => dispatch(ActionGoogleRegister())} className='mx-auto IMGLogin' src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/google_iamrtx.png" alt="" />
                                         </button>
 
-                                        <button type='button' className='border-0 btnBG mx-auto'>
+                                        <button type='button' className='border-0 mx-auto'>
                                             <img className='mx-auto IMGLogin' onClick={() => dispatch(ActionFacebookRegister())} src="https://res.cloudinary.com/doaijv8m0/image/upload/v1655830218/proyectoSprint-3/facebook_i9do6g.png" alt="" />
                                         </button>
                                     </DIVLogin>

@@ -13,14 +13,13 @@
 body {
     font-family: 'Inter', sans-serif;
 }
-
 ::-webkit-scrollbar {
     display: none;
 }
 
 .BTNREGISTER {
-    background-color: white;
-    color: #4BA695;
+    background-color: #4BA695;
+    color: #FFFFFF;
     border: 1px solid #4BA695;
     border-radius: 14px;
     height: 50px;
@@ -28,8 +27,8 @@ body {
 }
 
 .BTNREGISTER:hover {
-    background-color: #4BA695;
-    color: #FFFFFF;
+    background-color: white;
+    color: #4BA695;
 }
 
 .BTNLOGIN {
@@ -43,13 +42,6 @@ body {
 .BTNLOGIN:hover {
     background-color: #F26052;
     color: white;
-    box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
-}
-
-.BTNLOGIN:focus {
-    background-color: #FFFFFF;
-    color: #4BA695;
-    border: 1px solid #4BA695;
     box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
 }
 
@@ -153,7 +145,8 @@ body {
 }
 
 .NavbarPublic {
-    position: fixed;
-    width: 100vw;
-    top: 0px;
+    position: fixed ;
+    background-color: #FFFFFF !important;
+    width: 100vw !important;
+    top: 0px !important;
 }
