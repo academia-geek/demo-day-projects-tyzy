@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Dropdown, Avatar} from 'flowbite-react';
-
+import {Link} from 'react-router-dom'
 export default function NavBarIn() {
   return (
     <div>
@@ -48,23 +48,23 @@ export default function NavBarIn() {
   </div>
   <Navbar.Collapse>
     <Navbar.Link
-      href="/navbars"
+      to="/navbars"
       active={true}
     >
       Home
     </Navbar.Link>
-    <Navbar.Link href="/requisitos">
+    <Link to="/requisitos">
       Requisitos
-    </Navbar.Link>
-    <Navbar.Link href="/navbars">
+    </Link>
+    <Link to="/navbars">
       Services
-    </Navbar.Link>
-    <Navbar.Link href="/navbars">
+    </Link>
+    <Link to="/navbars">
       Pricing
-    </Navbar.Link>
-    <Navbar.Link href="/navbars">
+    </Link>
+    <Link to="/navbars">
       Contact
-    </Navbar.Link>
+    </Link>
   </Navbar.Collapse>
 </Navbar>
     </div>

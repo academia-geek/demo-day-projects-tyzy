@@ -9,6 +9,7 @@ import Login from '../components/Login'
 import Register from '../components/Register'
 import NavBarPublic from '../components/LandingPage/NavBarPublic'
 import LandingPage from '../components/LandingPage/LandingPage'
+import Requisitos from '../components/Requisitos'
 
 export default function AppRoutes() {
 
@@ -63,7 +64,11 @@ export default function AppRoutes() {
                         <DashboardRoute />
                     </PrivateRouter>
                 } />
-              
+                 <Route path='/requisitos' element={
+                    <PrivateRouter isAutenticacition={isLoggedIn}>
+                        <Requisitos />
+                    </PrivateRouter>
+                } />
             </Routes>
         </BrowserRouter>
     )
