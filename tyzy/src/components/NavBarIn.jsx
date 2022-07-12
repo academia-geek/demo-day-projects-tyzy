@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar, Dropdown, Avatar} from 'flowbite-react';
+import { NavLink } from 'react-router-dom';
 
 export default function NavBarIn() {
   return (
@@ -53,9 +54,9 @@ export default function NavBarIn() {
     >
       Home
     </Navbar.Link>
-    <Navbar.Link href="/requisitos">
+    <NavLink to="/requisitos">
       Requisitos
-    </Navbar.Link>
+    </NavLink>
     <Navbar.Link href="/navbars">
       Services
     </Navbar.Link>
