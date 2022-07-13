@@ -6,7 +6,10 @@ module.exports = {
     extend: {
       colors: {
         'titleColor':'#4BA695',
-        'titleOrange':'#F26052'
+        'titleOrange':'#F26052',
+        'pGreen':'#426666',
+        'textGray':'#6C6C6C',
+        'bgBlanco':'#FDFDFD'
       }
     },
   },

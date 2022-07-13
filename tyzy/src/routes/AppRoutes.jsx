@@ -10,6 +10,7 @@ import Register from '../components/Register'
 import NavBarPublic from '../components/LandingPage/NavBarPublic'
 import LandingPage from '../components/LandingPage/LandingPage'
 import Requisitos from '../components/Requisitos'
+import Perfil from '../components/Perfil'
 
 export default function AppRoutes() {
 
@@ -32,7 +33,6 @@ export default function AppRoutes() {
     if (verification) {
         // console.log(verification);
     }
-    console.log(isLoggedIn);
     return (
         <BrowserRouter>
             <Routes>
@@ -67,6 +67,11 @@ export default function AppRoutes() {
                  <Route path='/requisitos' element={
                     <PrivateRouter isAutenticacition={isLoggedIn}>
                         <Requisitos />
+                    </PrivateRouter>
+                } />
+                  <Route path='/perfil' element={
+                    <PrivateRouter isAutenticacition={isLoggedIn}>
+                        <Perfil />
                     </PrivateRouter>
                 } />
             </Routes>
