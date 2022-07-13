@@ -16,8 +16,6 @@ export default function NavBarIn() {
       const xd = email.substring(0, email.indexOf('@'))
       const photoURL = user.photoURL;
 
-    
-  
   return (
     <div className='px-3'>
     <Navbar
@@ -34,7 +32,7 @@ export default function NavBarIn() {
   </Navbar.Brand>
   <div className="flex mt-4 items-center  md:order-2">
     <Dropdown
-      arrowIcon={false}
+      arrowIcon={true}
       inline={true}
       
       label={<Avatar alt="User settings"  img={photoURL} rounded={true}  >
