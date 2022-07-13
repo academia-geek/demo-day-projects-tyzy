@@ -32,7 +32,7 @@ export default function AppRoutes() {
     if (verification) {
         // console.log(verification);
     }
-    console.log(isLoggedIn);
+    
     return (
         <BrowserRouter>
             <Routes>
@@ -62,11 +62,6 @@ export default function AppRoutes() {
                 <Route path='*' element={
                     <PrivateRouter isAutenticacition={isLoggedIn}>
                         <DashboardRoute />
-                    </PrivateRouter>
-                } />
-                 <Route path='/requisitos' element={
-                    <PrivateRouter isAutenticacition={isLoggedIn}>
-                        <Requisitos />
                     </PrivateRouter>
                 } />
             </Routes>

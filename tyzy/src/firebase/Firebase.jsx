@@ -16,5 +16,4 @@ const app = initializeApp(firebaseConfig);
 export const google = new GoogleAuthProvider()
 export const facebook = new FacebookAuthProvider()
 
-
 export default app;

@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar, Dropdown, Avatar } from 'flowbite-react';
 import { Link } from 'react-router-dom';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 export default function NavBarIn() {
+
+  const [usuario, setUsuario] = useState(null)
+
+  const CargarPhoto = async (dataUser) => {
+    return await dataUser;
+  }
+
+  useEffect(() => {
+    const auth = getAuth();
+    const dUsuarios = auth.currentUser;
+    CargarPhoto(dUsuarios)
+      .then((user) => {
+        user ? setUsuario(dUsuarios) : console.log('no se pudo', user);
+      })
+      .catch(err => console.log('no se pudo cargar la imgen', err))
+      console.log(usuario);
+  }, [])
+
   return (
     <div>
       <Navbar
@@ -17,10 +36,11 @@ export default function NavBarIn() {
           />
         </Navbar.Brand>
         <div className="flex text-black md:order-2">
+          <Avatar className='fs-6' alt={usuario?.displayName} img={usuario?.photoURL} rounded={true} />
           <Dropdown
-            arrowIcon={false}
+            arrowIcon={true}
             inline={true}
-            label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true} />}
+            label={<h4>{usuario?.displayName}</h4>}
           >
             <Dropdown.Header>
               <span className="block text-sm">
@@ -56,13 +76,13 @@ export default function NavBarIn() {
           <Link to="/requisitos">
             Requisitos
           </Link>
-          <Link to="/navbars">
+          <Link to="#">
             Services
           </Link>
-          <Link to="/navbars">
+          <Link to="#">
             Pricing
           </Link>
-          <Link to="/navbars">
+          <Link to="#">
             Contact
           </Link>
         </Navbar.Collapse>

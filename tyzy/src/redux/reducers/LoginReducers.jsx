@@ -17,7 +17,9 @@ export const LoginReducers = (state = initialState, action) => {
 
         case TypesLogin.register:
             return {
-                userLogin: [...state.userLogin, action.payload]
+                nombre: action.payload.nombre,
+                correo: action.payload.correo,
+                clave: action.payload.clave
             }
 
         default:

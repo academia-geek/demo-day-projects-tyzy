@@ -1,16 +1,18 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Main from '../components/Main'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Requisitos from '../components/Requisitos'
+import Home from '../containers/Home'
 
 
 export default function DashboardRoute() {
   return (
     <>
-        <Routes>
-        <Route path='/' element={<Main />}/>
-        <Route path='/requisitos' element={<Requisitos />}/>
-        </Routes>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/requisitos' element={<Requisitos />} />
+
+        <Route path='*' element={<Navigate to='/'/>} />
+      </Routes>
     </>
   )
 }

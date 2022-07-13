@@ -7,10 +7,10 @@ import { BtnRegister, DIVLogin, DivRegister, FieldInput, ImageRegister, IngresaC
 import { Link, NavLink } from 'react-router-dom';
 
 const SignupSchema = Yup.object().shape({
-    name: Yup.string().min(4, 'Very short name').max(30, 'Very long name').required("This name is required"),
-    email: Yup.string().email('It must be of type name@example.com').required("This email is required"),
-    password1: Yup.string().min(6, 'Very short password').max(20, 'Very long password').required("This field is required").oneOf([Yup.ref('password2')], 'Passwords do not match'),
-    password2: Yup.string().min(6, 'Very short password').max(20, 'Very long password').required("This field is required").oneOf([Yup.ref('password1')], 'Passwords do not match'),
+    name: Yup.string().min(4, 'nombre muy corto').max(30, 'nombre muy largo').required("el nombre es requerido"),
+    email: Yup.string().email('el correo debe ser de tipo nombre@ejemplo.com').required("el correo es requerido"),
+    password1: Yup.string().min(6, 'contraseña muy corta').max(20, 'contraseña muy larga').required("contraseña requerida").oneOf([Yup.ref('password2')], 'las contraseñas no coinciden'),
+    password2: Yup.string().min(6, 'contraseña muy corta').max(20, 'contraseña muy larga').required("contreseña requerida").oneOf([Yup.ref('password1')], 'las contraseñas no coinciden'),
 })
 
 const Register = () => {
@@ -48,15 +48,15 @@ const Register = () => {
 
                             <Form className='d-flex flex-column mt-2'>
                                 <div className='d-flex flex-column'>
-                                    <LabelRegistro>Email</LabelRegistro>
-                                    <FieldInput className='' type="texto" placeholder="Correo electronico" name="name" />
+                                    <LabelRegistro>Nombre de usuario</LabelRegistro>
+                                    <FieldInput className='' type="texto" placeholder="Nombre de usuario" name="name" />
                                     {errors.name && touched.name ?
                                         (<div className='ms-3 fs-6 text-white'>{errors.name}</div>) : null}
                                 </div>
 
                                 <div className=' d-flex flex-column'>
-                                    <LabelRegistro>Nombre de usuario</LabelRegistro>
-                                    <FieldInput className='' type="email" placeholder="Nombre de usuario" name="email" />
+                                    <LabelRegistro>Email</LabelRegistro>
+                                    <FieldInput className='' type="email" placeholder="Correo electronico" name="email" />
                                     {errors.email && touched.email ?
                                         (<div className='ms-3 fs-6 text-white'>{errors.email}</div>) : null}
                                 </div>
