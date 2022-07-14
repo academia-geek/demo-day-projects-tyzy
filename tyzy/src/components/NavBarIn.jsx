@@ -10,11 +10,12 @@ export default function NavBarIn() {
   const auth = getAuth()
   const dispatch = useDispatch()
 
-      const user = auth.currentUser;
-      const displayName = user.displayName;
-      const email = user.email;
-      const xd = email.substring(0, email.indexOf('@'))
-      const photoURL = user.photoURL;
+  const user = auth.currentUser;
+  const displayName = user.displayName;
+  const email = user.email;
+  const xd = email.substring(0, email.indexOf('@'))
+  const photoURL = user.photoURL;
+
 
   return (
     <div className='px-3'>
@@ -30,17 +31,16 @@ export default function NavBarIn() {
     />
     
   </Navbar.Brand>
-  <div className="flex mt-4 items-center  md:order-2">
+  <div className="flex mt-4 items-center z-10  md:order-2">
     <Dropdown
       arrowIcon={true}
       inline={true}
-      
       label={<Avatar alt="User settings"  img={photoURL} rounded={true}  >
-           <p className='px-2 text-sm font-medium hidden md:block'>{displayName || xd}</p>
+           <p className='px-2 text-sm font-medium hidden  md:block'>{displayName || xd}</p>
       </Avatar>
       }>
     
-      <Dropdown.Header>
+      <Dropdown.Header className='bg-white'>
         <span className="block text-sm">
         {displayName || xd}
         </span>
@@ -70,21 +70,19 @@ export default function NavBarIn() {
 
   </div>
   <Navbar.Collapse >
-    <Link to="/navbars">
+    <Link to="/">
       Home
     </Link>
     <Link to="/requisitos">
       Requisitos
     </Link>
-    <Link to="/navbars">
-      Services
+    <Link to="/diagnostico">
+      Diagnóstico
     </Link>
-    <Link to="/navbars">
-      Pricing
+    <Link to="/OurAnimals">
+      Nuestros Animales
     </Link>
-    <Link to="/navbars">
-      Contact
-    </Link>
+   
   </Navbar.Collapse>
 </Navbar>
     </div>

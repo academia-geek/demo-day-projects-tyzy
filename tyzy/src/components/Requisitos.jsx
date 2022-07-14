@@ -6,6 +6,13 @@ export default function Requisitos() {
   return (
     <div>
         <NavBarIn/>
+        <section className='relative w-full'>
+        <div className="dogBanner bg-cover bg-bottom bg-no-repeat bg-gray-700 h-96">
+        </div>
+        <div className='flex justify-center'>
+        <h2 className='absolute top-1/3  textuwu flex w-auto font-bold text-white text-4xl text-center '>¿Que tipo de animal es el mejor para mi?</h2>
+        </div>
+        </section>
         <section className='grid grid-cols-2 gap-10 px-32 my-24 items-center'>
             <div>
             <h3 className='text-titleOrange py-4'>LOREM IPSUM</h3>
