@@ -19,6 +19,7 @@ export default function NavBarIn() {
   useEffect(() => {
     const auth = getAuth();
     const dUsuarios = auth.currentUser;
+   
     CargarPhoto(dUsuarios)
       .then((user) => {
         user ? setUsuario(dUsuarios) : console.log('no se pudo', user);
@@ -32,34 +33,36 @@ export default function NavBarIn() {
         fluid={true}
         rounded={true}
       >
-        <Navbar.Brand href="https://flowbite.com/">
+        <Navbar.Brand href="/">
           <img
             src="https://res.cloudinary.com/dg29vcpk7/image/upload/v1657500435/Tyzy/Logo_fvikwq.png"
             className="mr-3 h-6 sm:h-9"
             alt="Flowbite Logo"
           />
         </Navbar.Brand>
-        <div className="flex text-black md:order-2">
+        <div className="flex items-center z-10 gap-2 text-black md:order-2">
           <Avatar className='fs-6' alt={usuario?.displayName} img={usuario?.photoURL} rounded={true} />
           <Dropdown
             arrowIcon={true}
             inline={true}
-            label={<h4>{usuario?.displayName}</h4>}
+            label={<p className='text-sm'>{usuario?.displayName}</p>}
           >
             <Dropdown.Header>
               <span className="block text-sm">
-                Bonnie Green
+              {usuario?.displayName}
               </span>
               <span className="block truncate text-sm font-medium">
-                name@flowbite.com
+              {usuario?.email}
               </span>
             </Dropdown.Header>
             <Dropdown.Item>
               Dashboard
             </Dropdown.Item>
+            <Link to='/perfil'>
             <Dropdown.Item>
-              Settings
+              perfil
             </Dropdown.Item>
+            </Link>
             <Dropdown.Item>
               Earnings
             </Dropdown.Item>
