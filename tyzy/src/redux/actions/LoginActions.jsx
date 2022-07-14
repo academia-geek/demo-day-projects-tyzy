@@ -28,9 +28,8 @@ export const ActionLogoutAsync = () => {
     return (dispatch) => {
         const auth = getAuth();
         signOut(auth)
-            .then(({ user }) => {
+            .then((user) => {
                 dispatch(ActionLogoutSync())
-                console.log('Chao', user.displayName)
             })
             .catch(err => console.log(err));
     }
@@ -78,12 +77,12 @@ export const ActionGoogleRegister = () => {
 
 // ----------------------------------Login facebook
 export const ActionFacebookRegister = () => {
-    return dispatch => {
+    return (dispatch) => {
         const auth = getAuth();
         signInWithPopup(auth, facebook)
             .then(({ user }) => {
-                console.log('user logeed', user.displayName);
+                dispatch(ActionLoginSync(user.uid, user.displayName))
             })
-            .catch(error => console.table(error));
+            .catch(error => console.log(error));
     };
 };
