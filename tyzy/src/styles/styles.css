@@ -155,3 +155,8 @@ body {
 .no {
     display: none !important;
 }
+
+.fade {
+    background-color: rgba(35, 35, 35, 0.6) !important;
+    backdrop-filter: blur(4px) !important;
+}
