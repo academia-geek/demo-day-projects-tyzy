@@ -13,7 +13,7 @@ export default function NavBarIn() {
   const [usuario, setUsuario] = useState(null)
 
   const CargarPhoto = async (dataUser) => {
-    return await dataUser;
+    return dataUser
   };
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function NavBarIn() {
           />
         </Navbar.Brand>
         <div className="flex text-black md:order-2">
-          <Avatar className='fs-6' alt={usuario?.displayName} img={usuario?.photoURL} rounded={true} />
+          <Avatar className='fs-6' alt={usuario?.displayName.length-3} img={usuario?.photoURL} rounded={true} />
           <Dropdown
             arrowIcon={true}
             inline={true}
