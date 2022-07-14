@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Dropdown, Avatar } from 'flowbite-react';
 import { Link } from 'react-router-dom';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
+import { Button } from 'react-bootstrap'
+import { ActionLogoutAsync } from '../redux/actions/LoginActions';
+import { useDispatch } from 'react-redux';
 
 export default function NavBarIn() {
 
+  const dispatch = useDispatch()
+  // ----------------------------------------------------------
   const [usuario, setUsuario] = useState(null)
 
   const CargarPhoto = async (dataUser) => {
     return await dataUser;
-  }
+  };
 
   useEffect(() => {
     const auth = getAuth();
@@ -19,7 +24,6 @@ export default function NavBarIn() {
         user ? setUsuario(dUsuarios) : console.log('no se pudo', user);
       })
       .catch(err => console.log('no se pudo cargar la imgen', err))
-      console.log(usuario);
   }, [])
 
   return (
@@ -61,7 +65,9 @@ export default function NavBarIn() {
             </Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item>
-              Sign out
+              <Button variant="outline-primary" className='mx-auto mt-auto' onClick={() => dispatch(ActionLogoutAsync())}>
+                <h2 className='text-center'>Sign out</h2>
+              </Button>
             </Dropdown.Item>
           </Dropdown>
           <Navbar.Toggle />

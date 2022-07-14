@@ -77,11 +77,11 @@ export const ActionGoogleRegister = () => {
 
 // ----------------------------------Login facebook
 export const ActionFacebookRegister = () => {
-    return dispatch => {
+    return (dispatch) => {
         const auth = getAuth();
         signInWithPopup(auth, facebook)
             .then(({ user }) => {
-                console.log(user.displayName);
+                dispatch(ActionLoginSync(user.uid, user.displayName))
             })
             .catch(error => console.log(error));
     };

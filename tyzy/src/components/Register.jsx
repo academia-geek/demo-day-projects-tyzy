@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik, Form } from 'formik'
+import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import { useDispatch } from 'react-redux';
 import { ActionFacebookRegister, ActionGoogleRegister, ActionRegisterAsync } from '../redux/actions/LoginActions';
@@ -55,7 +55,7 @@ const Register = () => {
                                 </div>
 
                                 <div className=' d-flex flex-column'>
-                                    <LabelRegistro>Email</LabelRegistro>
+                                    <LabelRegistro>Correo electronico</LabelRegistro>
                                     <FieldInput className='' type="email" placeholder="Correo electronico" name="email" />
                                     {errors.email && touched.email ?
                                         (<div className='ms-3 fs-6 text-white'>{errors.email}</div>) : null}
