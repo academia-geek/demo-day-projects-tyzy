@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Field } from "formik";
+import { Modal } from "react-bootstrap";
 
 // REGISTRO //
 
@@ -61,7 +62,7 @@ export const LabelRegistro = styled.label`
 
 export const FieldInput = styled(Field)`
     background: none;
-    border-bottom: 1.5px solid #275556;
+    border-bottom: 1.5px solid #275556 ;
     margin-top: 1%;
     &:focus{
         outline: none;
@@ -158,7 +159,7 @@ export const FieldInput2 = styled(Field)`
     margin-top: 10px;
     &:focus{
         outline: none;
-    }
+    } 
 `
 
 export const BtnLogin = styled.button`
@@ -199,12 +200,8 @@ export const InfoServices = styled.div`
         gap:20px;
         padding: 20px;
         border-radius: 20px;
-        transform: translateX(100%);
-        transition:transform 0.8s ease;
-    }
-
-    .box:nth-of-type(even) {
         transform: translateX(-100%);
+        transition:transform 0.8s ease;
     }
 
     .box.show {
@@ -231,4 +228,76 @@ export const TitleCard = styled.p`
 `
 export const CardTxt = styled.p`
     font-size: 12px;
+`
+
+// ---------------Modal--Primera--vez---------------------------
+export const ModalPrimeraVez = styled(Modal)`
+    .modal-dialog {
+        margin: 8% 10% 0 !important;
+    }
+
+    .modal-content {
+        width: 80vw !important;
+        height: 70vh;
+        border-radius: 50px;
+
+        .Section {
+            background-color: #FFFFFF;
+            border-radius: 50px;
+        }
+    }
+
+    .ConteImgH2 {
+        height: 75%;
+
+        .ConteH2 {
+            height: 10vh;
+        }
+        h2 {
+            margin: auto 0;
+            text-align: center;
+            font-weight: 700;
+            color: #F26052;
+            font-size: 24px;
+            width: 70%;
+        }
+        .BGIMG1 {
+            background-color: #F9C86E;
+            height: 70%;
+            border-radius: 48px 48px 0 0;
+        }
+        .BGIMG2 {
+            background-color: #4DA796;
+            height: 70%;
+            border-radius: 48px 48px 0 0;
+        }
+        .BGIMG3 {
+            background-color: #F26052;
+            height: 70%;
+            border-radius: 48px 48px 0 0;
+        }
+    }
+
+    .css-26w9jf-MuiMobileStepper-dot {
+        background-color: #7A7A7A !important;
+    }
+
+    .BTNNext {
+        background-color: #4DA796;
+        color: #FFFFFF;
+        width: 20% !important;
+        margin: 0 auto;
+
+        &:hover {
+            background-color: #4DA796;
+        }
+    }
+    
+    .BTNOmitir {
+        color: #80808064;
+
+        &:hover {
+            color: grey;
+        }
+    }
 `

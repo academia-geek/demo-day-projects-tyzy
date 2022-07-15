@@ -1,20 +1,42 @@
-import { Button } from 'react-bootstrap'
-import React from 'react'
-import { ActionLogoutAsync } from '../redux/actions/LoginActions'
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import NavBarIn from '../components/NavBarIn';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import IntroHome from '../components/IntroHome';
+import { ModalPrimeraVez } from '../styles/StylesGlobals';
 
 const Home = () => {
+    // -----------------------------------------------------------
+    const [show, setShow] = useState(false);
 
-    const dispatch = useDispatch()
+    const handleClose = () => setShow(false);
+    // -----------------------------------------------------------
+    useEffect(() => {
+        const auth = getAuth()
+        onAuthStateChanged(auth, user => {
+            if (user.metadata.creationTime === user.metadata.lastSignInTime) {
+                setShow(true)
+            }
+        })
+    }, [])
 
     return (
-        <div>
-            <h2>Estoy en el desploy</h2>
-            <h3>probando desploy</h3>
-            <Button variant="outline-primary" className='mx-auto mt-auto' onClick={() => dispatch(ActionLogoutAsync())}>
-                <h2 className='text-center'>Logout</h2>
-            </Button>
+        <div className='text-4xl'>
+            <NavBarIn />
 
+            <div>
+                <ModalPrimeraVez className=''
+                    show={show}
+                    onHide={handleClose}
+                    backdrop="static"
+                >
+                    <section className='Section d-flex flex-column'>
+                        <IntroHome close={handleClose} />
+                        <button className='BTNOmitir mx-auto mb-2' onClick={handleClose}>
+                            Omitir
+                        </button>
+                    </section>
+                </ModalPrimeraVez>
+            </div>
         </div>
     )
 }
