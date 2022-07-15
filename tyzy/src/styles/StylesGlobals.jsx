@@ -464,7 +464,42 @@ export const BtnRequisitosUno = styled.button`
     color: #F26052;
     font-weight: 600;
     width: 80%;
-    padding: 10px;
+    padding: 15px;
+    margin-top: 2%;
+    border-radius: 10px;
+`
+
+export const Div2Requisitos = styled.div`
+    display: flex;
+    gap:10%;
+    width: 80%;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+`
+
+export const Article2Req = styled.article`
+    width: 45% ;
+    justify-self:center ;
+`
+
+export const ImgRequisitos2 = styled.div`
+    width: 45%;
+    height:50vh;
+    background: url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748695/Tyzy/Perros_gu%C3%ADa_1_uieh8h.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    box-shadow: 5px 5px 7px -3px rgba(131,131,131,0.77);
+`
+
+export const BtnRequisitosDos = styled.button`
+    border:1.6px solid #F26052;
+    color: #F26052;
+    font-weight: 600;
+    width: 90%;
+    padding: 15px;
     margin-top: 2%;
     border-radius: 10px;
 `
