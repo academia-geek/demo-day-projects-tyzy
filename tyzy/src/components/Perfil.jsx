@@ -4,19 +4,19 @@ import { BsFillCameraFill } from "react-icons/bs";
 import { getAuth } from 'firebase/auth';
 
 export default function Perfil() {
-  const [usuario, setUsuario] = useState(null)
-  useEffect(() => {
-    const auth = getAuth();
-    const dUsuarios = auth.currentUser;
-    const CargarPhoto = async (dataUser) => {
-      return await dataUser;
-    };
-    CargarPhoto(dUsuarios)
-      .then((user) => {
-        user ? setUsuario(dUsuarios) : console.log('no se pudo', user);
-      })
-      .catch(err => console.log('no se pudo cargar la imgen', err))
-  }, [])
+  // const [usuario, setUsuario] = useState(null)
+  // useEffect(() => {
+  //   const auth = getAuth();
+  //   const dUsuarios = auth.currentUser;
+  //   const CargarPhoto = async (dataUser) => {
+  //     return await dataUser;
+  //   };
+  //   CargarPhoto(dUsuarios)
+  //     .then((user) => {
+  //       user ? setUsuario(dUsuarios) : console.log('no se pudo', user);
+  //     })
+  //     .catch(err => console.log('no se pudo cargar la imgen', err))
+  // }, [])
 
   return (
     <div>
@@ -34,7 +34,7 @@ export default function Perfil() {
       <div >
       <form className='grid grid-cols-[1fr_300px] gap-x-10 gap-y-2 px-5 items-center'>
         <label className='inline' htmlFor='nombre'>Nombres:</label>
-        <input className=' appearance-none border-0 rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline'  type='text' name='nombre' placeholder={usuario.displayName} />
+        <input className=' appearance-none border-0 rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline'  type='text' name='nombre' placeholder='' />
 
         <label>Apellidos:</label>
         <input className=' appearance-none border-0 rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='email' name='email' placeholder='Bonilla' />
