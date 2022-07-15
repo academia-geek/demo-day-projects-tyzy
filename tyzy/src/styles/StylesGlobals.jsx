@@ -436,3 +436,119 @@ export const HomeStyle = styled.div`
         text-align: center;
     }
 `
+
+
+// REQUISITOS ******
+
+export const DivUnoRe = styled.div`
+    justify-content: center ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+
+export const DivServiceAnimal = styled.div`
+    width: 80%;
+    height:80vh;
+    background: url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748565/Tyzy/Perros_gu%C3%ADa_hzcn0s.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    box-shadow: 5px 5px 7px -3px rgba(131,131,131,0.77)
+`
+
+export const BtnRequisitosUno = styled.button`
+    border:1.6px solid #F26052;
+    color: #F26052;
+    font-weight: 600;
+    width: 80%;
+    padding: 15px;
+    margin-top: 2%;
+    border-radius: 10px;
+`
+
+export const Div2Requisitos = styled.div`
+    display: flex;
+    gap:10%;
+    width: 80%;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+`
+
+export const Article2Req = styled.article`
+    width: 45% ;
+    justify-self:center ;
+`
+
+export const ImgRequisitos2 = styled.div`
+    width: 45%;
+    height:50vh;
+    background: url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748695/Tyzy/Perros_gu%C3%ADa_1_uieh8h.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    box-shadow: 5px 5px 7px -3px rgba(131,131,131,0.77);
+`
+
+export const BtnRequisitosDos = styled.button`
+    border:1.6px solid #F26052;
+    color: #F26052;
+    font-weight: 600;
+    width: 90%;
+    padding: 15px;
+    margin-top: 2%;
+    border-radius: 10px;
+`
+
+export const NewsletterDiv = styled.div`
+    width:80%;
+    margin:0 auto;
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 15%;
+`
+
+export const NewsletterText = styled.p`
+    font-weight:700;
+    font-size:20px; 
+    color:  #275556;
+`
+
+export const NewsletterPrg = styled.p`
+    font-size:16px ;
+    color:#426666;
+    width:80%;
+    margin:0 auto;
+    margin-top: 8px;
+`
+
+export const FormNewsletter = styled.form`
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+`
+
+export const InputNewsletter = styled.input`
+    border:1.5px solid #275556;
+    width: 60%;
+    padding: 4px;
+    border-right: none;
+    &::placeholder{
+        font-size: 12px;
+    }
+    &:focus{
+        outline: none;
+    }
+`
+export const BtnNewsletter = styled.button`
+    background-color: #F26052;
+    color:white;
+    padding: 6px;
+    width: 15%;
+    font-weight: 500;
+    font-size: 16px;
+`
