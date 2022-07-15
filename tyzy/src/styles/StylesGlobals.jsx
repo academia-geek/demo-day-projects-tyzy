@@ -523,6 +523,7 @@ export const NewsletterPrg = styled.p`
     color:#426666;
     width:80%;
     margin:0 auto;
+    margin-top: 8px;
 `
 
 export const FormNewsletter = styled.form`

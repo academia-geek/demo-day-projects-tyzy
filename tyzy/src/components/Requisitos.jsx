@@ -31,8 +31,8 @@ export default function Requisitos() {
           </h2>
         </div>
       </section>
-      <section className="grid grid-cols-2 gap-10 px-32 my-24 items-center justify-center">
-        <div>
+      <section className="grid grid-cols-2 gap-10 px-40 my-24 items-center">
+        <div style={{'marginLeft':'12%'}}>
           <h3 className="text-titleOrange py-4">LOREM IPSUM</h3>
           <p className="text-pGreen">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -43,7 +43,7 @@ export default function Requisitos() {
             incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-        <div>
+        <div className="flex justify-center">
           <img
             src="https://res.cloudinary.com/dg29vcpk7/image/upload/v1657917075/Tyzy/girl-03_bclpzm.png"
             alt=""
