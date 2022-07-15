@@ -233,11 +233,11 @@ export const CardTxt = styled.p`
 // ---------------Modal--Primera--vez---------------------------
 export const ModalPrimeraVez = styled(Modal)`
     .modal-dialog {
-        margin: 8% 10% 0 !important;
+        margin: 4% 16% 0 !important;
     }
 
     .modal-content {
-        width: 80vw !important;
+        width: 70vw !important;
         height: 70vh;
         border-radius: 50px;
 
@@ -248,7 +248,7 @@ export const ModalPrimeraVez = styled(Modal)`
     }
 
     .ConteImgH2 {
-        height: 75%;
+        height: 85%;
 
         .ConteH2 {
             height: 10vh;
@@ -299,5 +299,137 @@ export const ModalPrimeraVez = styled(Modal)`
         &:hover {
             color: grey;
         }
+    }
+`
+
+// --------------------------------------Home -----------------------
+export const HomeStyle = styled.div`
+
+    color: #FFFFFF;
+    
+    //--------------------IMG principal
+    .IMGHome {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doaijv8m0/image/upload/v1657732952/Demoday/Image_kopayq.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .IMGHome section {
+        width: 50%;
+    }
+    .IMGHome h2 {
+        font-size: 50px;
+        font-weight: 700;
+    }
+    .IMGHome p {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 19px;
+    }
+    .IMGHome h3 {
+        font-size: 20px;
+    }
+    .IMGHome img {
+        width: 10px;
+        height: 15px;
+    }
+
+    //--------------------Consejos y Tips home
+    .TICShome {
+        margin-bottom: 3em !important;
+    }
+    .TICShome .h2 {
+        margin: 0 auto;
+        text-align: center;
+        color: #4DA796;
+        font-size: 36px;
+    }
+    .TICShome h4 {
+        margin: 0 auto;
+        width: 73%;
+        text-align: center;
+        color: #426666; 
+        font-size: 16px;
+    }
+    .TICShome h3 {
+        margin-top: 28px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #F26052;
+        text-align: center;
+    }
+    .TICShome section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        color: #000000;
+        width: 95%;
+    }
+    .Tips{
+        border-radius: 20px;
+        width: 100%;
+    }
+    .Tips div {
+        margin: 1em 0;
+    }
+    .Tips p {
+        margin: 10px 15px 0 0;
+    }
+    .BGTips1 {
+        background-color: #A4DBD1;
+    }
+    .BGTips2 {
+        background-color: #F39991;
+    }
+    .BGTips3 {
+        background-color: #F6DD61;
+    }
+    .TICShome img {
+        width: 80px;
+        height: 80px;
+    }
+    .TICShome .h2-2 {
+        font-size: 20px;
+    }
+    .TICShome p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+    }
+
+    //--------------------Equipo tecnico home
+    .EquipoTec h2 {
+        margin: 0 auto;
+        text-align: center;
+        color: #F26052;
+        font-size: 36px;
+    }
+    .EquipoTec h4 {
+        margin: 0 auto;
+        width: 75%;
+        text-align: center;
+        color: #426666; 
+        font-size: 16px;
+    }
+    .EquipoTec div {
+        width: 15rem;
+        height: 20rem;
+    }
+    .BORDERimg {
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 11px solid #FFFFFF;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    .EquipoTec img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+    }
+    .EquipoTec h3 {
+        margin-top: 8px;
+        font-size: 16px;
+        color: #275556;
+        text-align: center;
     }
 `

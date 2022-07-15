@@ -1,12 +1,13 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import IntroHome from '../components/IntroHome'
+import LandingPageFooter from '../components/LandingPage/LandinPageFooter'
 import Perfil from '../components/Perfil'
 import Requisitos from '../components/Requisitos'
 import Home from '../containers/Home'
 
 export default function DashboardRoute() {
-  
+
   return (
     <>
       <Routes>
@@ -17,6 +18,7 @@ export default function DashboardRoute() {
 
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
+      <LandingPageFooter />
     </>
   )
 }
