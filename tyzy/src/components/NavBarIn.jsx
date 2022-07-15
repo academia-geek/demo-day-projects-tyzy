@@ -29,7 +29,7 @@ export default function NavBarIn() {
 
   return (
     <div className='text-back'>
-      <Navbar
+      <Navbar  style={{'backgroundColor':'aqua'}}
         fluid={true}
         rounded={true}
       >
