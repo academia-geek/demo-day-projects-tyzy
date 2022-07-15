@@ -64,16 +64,6 @@ export default function AppRoutes() {
                         <DashboardRoute />
                     </PrivateRouter>
                 } />
-                 <Route path='/requisitos' element={
-                    <PrivateRouter isAutenticacition={isLoggedIn}>
-                        <Requisitos />
-                    </PrivateRouter>
-                } />
-                  <Route path='/perfil' element={
-                    <PrivateRouter isAutenticacition={isLoggedIn}>
-                        <Perfil />
-                    </PrivateRouter>
-                } />
             </Routes>
         </BrowserRouter>
     )
