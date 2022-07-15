@@ -305,7 +305,7 @@ export const ModalPrimeraVez = styled(Modal)`
 // --------------------------------------Home -----------------------
 export const HomeStyle = styled.div`
 
-    color: #FFFFFF;
+    
     
     //--------------------IMG principal
     .IMGHome {
@@ -318,15 +318,18 @@ export const HomeStyle = styled.div`
         width: 50%;
     }
     .IMGHome h2 {
+        color: #FFFFFF;
         font-size: 50px;
         font-weight: 700;
     }
     .IMGHome p {
+        color: #FFFFFF;
         font-size: 16px;
         font-weight: 300;
         line-height: 19px;
     }
     .IMGHome h3 {
+        color: #FFFFFF;
         font-size: 20px;
     }
     .IMGHome img {
