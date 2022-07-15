@@ -3,14 +3,21 @@ import NavBarIn from "./NavBarIn";
 import { MdOutlinePets } from "react-icons/md";
 import {
   Article2Req,
+  BtnNewsletter,
   BtnRequisitosDos,
   BtnRequisitosUno,
   Div2Requisitos,
   DivDosRe,
   DivServiceAnimal,
   DivUnoRe,
+  FormNewsletter,
   ImgRequisitos2,
+  InputNewsletter,
+  NewsletterDiv,
+  NewsletterPrg,
+  NewsletterText,
 } from "../styles/StylesGlobals";
+import LandingPageFooter from '../components/LandingPage/LandinPageFooter';
 
 export default function Requisitos() {
   return (
@@ -24,8 +31,8 @@ export default function Requisitos() {
           </h2>
         </div>
       </section>
-      <section className="grid grid-cols-2 gap-10 px-32 my-24 items-center justify-center">
-        <div>
+      <section className="grid grid-cols-2 gap-10 px-40 my-24 items-center">
+        <div style={{'marginLeft':'12%'}}>
           <h3 className="text-titleOrange py-4">LOREM IPSUM</h3>
           <p className="text-pGreen">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -36,7 +43,7 @@ export default function Requisitos() {
             incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-        <div>
+        <div className="flex justify-center">
           <img
             src="https://res.cloudinary.com/dg29vcpk7/image/upload/v1657917075/Tyzy/girl-03_bclpzm.png"
             alt=""
@@ -128,11 +135,20 @@ export default function Requisitos() {
           <BtnRequisitosDos>Conocer animales</BtnRequisitosDos>
         </Article2Req>
 
-            
         <ImgRequisitos2></ImgRequisitos2>
        
-        
       </Div2Requisitos>
+
+      <NewsletterDiv>
+            <NewsletterText>Suscribete a nuestro newsletter</NewsletterText>
+            <NewsletterPrg>Dejanos tu correo, y conoce todas las actualizaciónes respecto a esta y otra formación que puede ser de tu interés, haz clic en “suscribe” y espera un correo de confirmación!</NewsletterPrg>
+        <FormNewsletter>
+            <InputNewsletter placeholder="Correo electrónico"/>
+            <BtnNewsletter>Suscribirse</BtnNewsletter>
+        </FormNewsletter>
+      </NewsletterDiv>
+
+      <LandingPageFooter />
     </div>
   );
 }

@@ -503,3 +503,52 @@ export const BtnRequisitosDos = styled.button`
     margin-top: 2%;
     border-radius: 10px;
 `
+
+export const NewsletterDiv = styled.div`
+    width:80%;
+    margin:0 auto;
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 15%;
+`
+
+export const NewsletterText = styled.p`
+    font-weight:700;
+    font-size:20px; 
+    color:  #275556;
+`
+
+export const NewsletterPrg = styled.p`
+    font-size:16px ;
+    color:#426666;
+    width:80%;
+    margin:0 auto;
+    margin-top: 8px;
+`
+
+export const FormNewsletter = styled.form`
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+`
+
+export const InputNewsletter = styled.input`
+    border:1.5px solid #275556;
+    width: 60%;
+    padding: 4px;
+    border-right: none;
+    &::placeholder{
+        font-size: 12px;
+    }
+    &:focus{
+        outline: none;
+    }
+`
+export const BtnNewsletter = styled.button`
+    background-color: #F26052;
+    color:white;
+    padding: 6px;
+    width: 15%;
+    font-weight: 500;
+    font-size: 16px;
+`
