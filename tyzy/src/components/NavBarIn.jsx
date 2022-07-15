@@ -13,7 +13,7 @@ export default function NavBarIn() {
   const [usuario, setUsuario] = useState(null)
 
   const CargarPhoto = async (dataUser) => {
-    return dataUser
+    return await dataUser
   };
 
   useEffect(() => {
@@ -26,7 +26,6 @@ export default function NavBarIn() {
       })
       .catch(err => console.log('no se pudo cargar la imgen', err))
   }, [])
-
   return (
     <div className='text-back'>
       <Navbar
@@ -61,9 +60,7 @@ export default function NavBarIn() {
             </Dropdown.Item>
             <Link to='/perfil'>
               <Dropdown.Item>
-              
                 perfil
-               
               </Dropdown.Item>
               </Link>
             <Dropdown.Item>
