@@ -3,14 +3,21 @@ import NavBarIn from "./NavBarIn";
 import { MdOutlinePets } from "react-icons/md";
 import {
   Article2Req,
+  BtnNewsletter,
   BtnRequisitosDos,
   BtnRequisitosUno,
   Div2Requisitos,
   DivDosRe,
   DivServiceAnimal,
   DivUnoRe,
+  FormNewsletter,
   ImgRequisitos2,
+  InputNewsletter,
+  NewsletterDiv,
+  NewsletterPrg,
+  NewsletterText,
 } from "../styles/StylesGlobals";
+import LandingPageFooter from '../components/LandingPage/LandinPageFooter';
 
 export default function Requisitos() {
   return (
@@ -128,11 +135,20 @@ export default function Requisitos() {
           <BtnRequisitosDos>Conocer animales</BtnRequisitosDos>
         </Article2Req>
 
-            
         <ImgRequisitos2></ImgRequisitos2>
        
-        
       </Div2Requisitos>
+
+      <NewsletterDiv>
+            <NewsletterText>Suscribete a nuestro newsletter</NewsletterText>
+            <NewsletterPrg>Dejanos tu correo, y conoce todas las actualizaciónes respecto a esta y otra formación que puede ser de tu interés, haz clic en “suscribe” y espera un correo de confirmación!</NewsletterPrg>
+        <FormNewsletter>
+            <InputNewsletter placeholder="Correo electrónico"/>
+            <BtnNewsletter>Suscribirse</BtnNewsletter>
+        </FormNewsletter>
+      </NewsletterDiv>
+
+      <LandingPageFooter />
     </div>
   );
 }
