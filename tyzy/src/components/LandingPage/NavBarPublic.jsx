@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 const NavBarPublic = () => {
     return (
-        <div className='NavbarPublic d-flex bg-white'>
+        <div className='NavbarPublic d-flex bg-white position-fixed' style={{'zIndex':'1'}}>
+
             <NavLink to='/landingPage'>
                 <img className='mx-5 my-5' src="https://res.cloudinary.com/doaijv8m0/image/upload/v1657497238/Demoday/Logo_1_nuhlz7.png" alt="logo" />
             </NavLink>

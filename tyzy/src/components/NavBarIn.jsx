@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Dropdown, Avatar } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import { Button } from 'react-bootstrap'
 import { ActionLogoutAsync } from '../redux/actions/LoginActions';
@@ -13,13 +13,13 @@ export default function NavBarIn() {
   const [usuario, setUsuario] = useState(null)
 
   const CargarPhoto = async (dataUser) => {
-    return await dataUser;
+    return dataUser
   };
 
   useEffect(() => {
     const auth = getAuth();
     const dUsuarios = auth.currentUser;
-   
+
     CargarPhoto(dUsuarios)
       .then((user) => {
         user ? setUsuario(dUsuarios) : console.log('no se pudo', user);
@@ -33,12 +33,13 @@ export default function NavBarIn() {
         fluid={true}
         rounded={true}
       >
-        <Navbar.Brand href="/">
-          <img
-            src="https://res.cloudinary.com/dg29vcpk7/image/upload/v1657500435/Tyzy/Logo_fvikwq.png"
-            className="mr-3 h-6 sm:h-9"
-            alt="Flowbite Logo"
-          />
+        <Navbar.Brand>
+          <NavLink to='/'>
+            <img src="https://res.cloudinary.com/dg29vcpk7/image/upload/v1657500435/Tyzy/Logo_fvikwq.png"
+              className="mr-3 h-6 sm:h-9"
+              alt="Flowbite Logo" />
+          </NavLink>
+
         </Navbar.Brand>
         <div className="flex items-center z-10 gap-2 text-black md:order-2">
           <Avatar className='fs-6' alt={usuario?.displayName} img={usuario?.photoURL} rounded={true} />
@@ -49,19 +50,19 @@ export default function NavBarIn() {
           >
             <Dropdown.Header>
               <span className="block text-sm">
-              {usuario?.displayName}
+                {usuario?.displayName}
               </span>
               <span className="block truncate text-sm font-medium">
-              {usuario?.email}
+                {usuario?.email}
               </span>
             </Dropdown.Header>
             <Dropdown.Item>
               Dashboard
             </Dropdown.Item>
             <Link to='/perfil'>
-            <Dropdown.Item>
-              perfil
-            </Dropdown.Item>
+              <Dropdown.Item>
+                perfil
+              </Dropdown.Item>
             </Link>
             <Dropdown.Item>
               Earnings
