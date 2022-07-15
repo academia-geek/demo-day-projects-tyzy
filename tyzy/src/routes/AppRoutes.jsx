@@ -9,6 +9,8 @@ import Login from '../components/Login'
 import Register from '../components/Register'
 import NavBarPublic from '../components/LandingPage/NavBarPublic'
 import LandingPage from '../components/LandingPage/LandingPage'
+import Requisitos from '../components/Requisitos'
+import Perfil from '../components/Perfil'
 
 export default function AppRoutes() {
 
@@ -31,7 +33,6 @@ export default function AppRoutes() {
     if (verification) {
         // console.log(verification);
     }
-
     return (
         <BrowserRouter>
             <Routes>

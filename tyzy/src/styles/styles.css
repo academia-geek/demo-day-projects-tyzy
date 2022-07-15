@@ -146,7 +146,23 @@ body {
 
 .NavbarPublic {
     position: fixed ;
+    position: relative ;
     background-color: #FFFFFF !important;
     width: 100vw !important;
     top: 0px !important;
+}
+.dogBanner{
+    background-image: url('https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748553/Tyzy/pexels-lumn-406014_wzakym.jpg');
+
+}
+.textuwu{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.no {
+    display: none !important;
+}
+
+.fade {
+    background-color: rgba(35, 35, 35, 0.6) !important;
+    backdrop-filter: blur(4px) !important;
 }
