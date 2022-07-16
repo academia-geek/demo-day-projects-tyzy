@@ -432,4 +432,61 @@ export const HomeStyle = styled.div`
         color: #275556;
         text-align: center;
     }
+
+    //---------------------------------Carrusel Home
+    .UserAndPets {
+        margin: 0 2em;
+        height: 60vh;
+        img {
+            border-radius: 14px;
+        }
+        .div1 {
+            width: 70%;
+            height: 100%;
+            margin: 0 auto;
+            div {
+                width: 80%;
+                height: 80%;
+                margin: 0 auto;
+            }
+            section {
+                gap: 15px;
+            }
+            img {
+                width: 150px;
+            }
+        }
+        .div2 {
+            height: 80%;
+            div{
+                width: 100%;
+                height: 100%;
+            } 
+
+            img {
+                width: 60%;
+                height: 100%;
+
+            }
+        }
+    }
+    .UserAndPets h2{
+        font-size: 30px;
+        color: #4BA695;
+        width: 60%;
+        font-weight: 600;
+
+    }
+    .UserAndPets span{
+        color: #F26052;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .UserAndPets p{
+        color: #426666;
+        font-size: 16px;
+        line-height: 28px;
+        width: 80%;
+        margin-bottom: auto; 
+    }
 `
