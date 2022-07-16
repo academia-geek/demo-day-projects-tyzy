@@ -10,7 +10,6 @@ export const ActionGetUserAsync = ()=>{
     return (dispatch)=>{
         const auth = getAuth()
         onAuthStateChanged(auth, (user)=>{
-            
             dispatch(ActionGetUserSync(user))
 
         })
@@ -23,11 +22,17 @@ export const ActionGetUserSync = (user)=>{
     }
 }
 
-export const addCuenta = (cuenta)=>{
+
+export const addCuentaAsync = (data)=>{
     return async (dispatch)=>{
-        addDoc(collection(DB, 'userInfo'), cuenta)
-        .then(resp =>{
-        
-        })
+        const upinfo = await addDoc(collection(DB, "userInfo"), data)
+        dispatch(addCuentaSync(upinfo))
+
+    }
+}
+export const addCuentaSync = (cuenta)=>{
+    return{
+        type: TypeUser.userUpinfo,
+        payload: cuenta
     }
 }

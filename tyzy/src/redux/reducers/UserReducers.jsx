@@ -12,7 +12,7 @@ export const UserReducers = (state = initialState, action)=>{
             }
         case TypeUser.userUpinfo:
             return{
-
+                user: action.payload
             }
         case TypeUser.userUpImg:
             return{}
