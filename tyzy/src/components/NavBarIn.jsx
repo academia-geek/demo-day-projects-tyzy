@@ -13,7 +13,7 @@ export default function NavBarIn() {
   const [usuario, setUsuario] = useState(null)
 
   const CargarPhoto = async (dataUser) => {
-    return dataUser
+    return await dataUser
   };
 
   useEffect(() => {
@@ -26,21 +26,20 @@ export default function NavBarIn() {
       })
       .catch(err => console.log('no se pudo cargar la imgen', err))
   }, [])
-
   return (
-    <div>
+    <div className='text-back'>
       <Navbar
         fluid={true}
         rounded={true}
       >
-        <Navbar.Brand>
+        <>
           <NavLink to='/'>
             <img src="https://res.cloudinary.com/dg29vcpk7/image/upload/v1657500435/Tyzy/Logo_fvikwq.png"
-              className="mr-3 h-6 sm:h-9"
-              alt="Flowbite Logo" />
+              className="mr-3 h-6 text-black sm:h-9"
+              alt="logo" />
           </NavLink>
 
-        </Navbar.Brand>
+        </>
         <div className="flex items-center z-10 gap-2 text-black md:order-2">
           <Avatar className='fs-6' alt={usuario?.displayName} img={usuario?.photoURL} rounded={true} />
           <Dropdown
@@ -63,7 +62,7 @@ export default function NavBarIn() {
               <Dropdown.Item>
                 perfil
               </Dropdown.Item>
-            </Link>
+              </Link>
             <Dropdown.Item>
               Earnings
             </Dropdown.Item>
@@ -76,13 +75,10 @@ export default function NavBarIn() {
           </Dropdown>
           <Navbar.Toggle />
         </div>
-        <Navbar.Collapse>
-          <Navbar.Link
-            to="/navbars"
-            active={true}
-          >
+        <Navbar.Collapse className='text-black'>
+          <Link to="/navbars">
             Home
-          </Navbar.Link>
+          </Link>
           <Link to="/requisitos">
             Requisitos
           </Link>
