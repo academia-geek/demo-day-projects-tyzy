@@ -54,14 +54,9 @@ export default function Perfil() {
     e.preventDefault()
     console.log(valueForm)
   }
-  const cambiarxd = ()=>{
-    console.log(activo);
-    setActivo(false)
-  }
-  const limpiar = ()=>{
-    setValuesform(initialValue)
-    setActivo(true)
-  }
+
+
+
   return (
     <>
     <NavBarIn/>
@@ -98,7 +93,7 @@ export default function Perfil() {
         </div>
 
         <div className='flex justify-center p-10 gap-3'> 
-        <span onClick={cambiarxd} className={`
+        <span onClick={()=>{setActivo(false)}} className={`
         'cursor-pointer px-4 py-2 rounded-lg '
         ${activo ? 'text-white bg-titleOrange' : 'border-dashed border-2 text-titleOrange border-titleOrange' }`}>Editar Perfil</span>
 
@@ -106,7 +101,9 @@ export default function Perfil() {
         'cursor-pointer px-4 py-2 rounded-lg '
         ${activo ? 'border-dashed border-2 text-titleOrange border-titleOrange'  : 'text-white bg-titleOrange'  }`}>Guardar</button>
 
-        <span onClick={limpiar} className={`
+        <span onClick={()=>{
+          setValuesform(initialValue)
+          setActivo(true)}} className={`
         'cursor-pointer px-4 py-2 rounded-lg '
         ${activo ? 'border-dashed border-2 text-titleOrange border-titleOrange'  : 'text-white bg-titleOrange'  }`}>Cancelar</span>
         </div>
