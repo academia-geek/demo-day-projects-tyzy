@@ -1,21 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import NavBarIn from './NavBarIn'
 import { BsFillCameraFill } from "react-icons/bs";
-import { getAuth, updateProfile } from 'firebase/auth';
+import { getAuth, updatePassword, updateProfile } from 'firebase/auth';
 import { Avatar } from 'flowbite-react';
 import { FileUpload } from '../helpers/FileUpload';
 import { useDispatch, useSelector } from 'react-redux';
 import { ActionGetUserAsync } from '../redux/actions/UserActions';
+import { addDoc, collection, doc, getDoc, } from 'firebase/firestore';
+import { DB } from '../firebase/Firebase';
+
+
+
 export default function Perfil() {
 
   const [activo, setActivo] = useState(true)
 
   const dispatch = useDispatch()
+  
   const {user} = useSelector(store => store.user)
   const auth = getAuth();
 
   useEffect(() => {
     dispatch(ActionGetUserAsync())
+
   }, [dispatch])
 
   const initialValue = {
@@ -25,34 +32,44 @@ export default function Perfil() {
     direccion:'',
     password:''
   }
-
   const [valueForm, setValuesform] = useState(initialValue)
 
+  
+  //----------- UP img-------------- //
   const UpImg = async (foto) =>{
     await updateProfile(auth.currentUser,{
       photoURL: foto
     })
-    
     }
-  
+
   const handleFileChange = e =>{
   const file = e.target.files[0]
     FileUpload(file)
     .then((res)=>{
-      console.log(res);
       UpImg(res)
     })
     .catch((err) =>{
       console.warn(err);
     })
   }
+
+
   const handleinputChange = e =>{
     const {name, value} = e.target
     setValuesform({...valueForm, [name]:value})
   }
-  const handleSubmit = e =>{
+
+
+
+  const handleSubmit = async(e) =>{
     e.preventDefault()
     console.log(valueForm)
+    await addDoc(collection(DB, 'infoPerfil'), valueForm)
+    setValuesform({...initialValue})
+  }
+
+  const handlepassChange =  async(e) =>{
+
   }
 
 
@@ -84,16 +101,20 @@ export default function Perfil() {
 
           <label htmlFor='correo'>Correo:</label>
           <input  disabled={activo}   onChange={handleinputChange}   className={`'appearance-none  rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='correo' value={valueForm.correo}  type='email' name='correo' placeholder={user?.email}/>
+          
           <label htmlFor='telefono'>Telefono:</label>
           <input  disabled={activo}  onChange={handleinputChange}   value={valueForm.telefono} className={`'appearance-none  rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='telefono'  type='text' name='telefono' placeholder='3204356012'/>
+          
           <label htmlFor='direccion'>Dirección:</label>
           <input  disabled={activo}  onChange={handleinputChange}   value={valueForm.direccion} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='direccion' type='text' name='direccion' placeholder='Calle 20 #12 int 20 ' />
+          
           <label htmlFor='password'>Contraseña:</label>
-          <input  disabled={activo}   onChange={handleinputChange}  value={valueForm.password} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='password' type='password' name='password' placeholder='********'/>
+
+          <input  disabled={activo}   onChange={handlepassChange}  value={valueForm.password} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='password' type='password' name='password' placeholder='********'/>
         </div>
 
-        <div className='flex justify-center p-10 gap-3'> 
-        <span onClick={()=>{setActivo(false)}} className={`
+        <div className='flex justify-center p-10 gap-3'>
+        <span onClick={()=>{setActivo(false) }} className={`
         'cursor-pointer px-4 py-2 rounded-lg '
         ${activo ? 'text-white bg-titleOrange' : 'border-dashed border-2 text-titleOrange border-titleOrange' }`}>Editar Perfil</span>
 
