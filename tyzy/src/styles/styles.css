@@ -93,7 +93,8 @@ body {
 .IMGLandingPageSup {
     border: 10px solid #F2A9A2;
     border-radius: 50% !important;
-    width: 90% !important;
+    width: 70% !important;
+    margin-top: 5% !important;
 }
 
 .H2LandingPageSup {
