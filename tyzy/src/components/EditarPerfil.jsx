@@ -76,7 +76,7 @@ const EditarPerfil = ({ si, no, show }) => {
                 centered
             >
                 <form onSubmit={handleSubmit} >
-                    <div className='grid grid-cols-[1fr_300px] gap-x-10 gap-y-2 px-5 items-center'>
+                    <div className='grid grid-cols-[1fr_300px] gap-x-10 gap-y-2 px-5 items-center mt-5'>
                         <label htmlFor='nombre'>Nombres:</label>
                         <input disabled={activo} onChange={handleinputChange} className={` 'appearance-none  rounded-xl w-full   text-gray-700 leading-tight focus:outline-none focus:shadow-outline ' ${activo ? 'border-0' : 'border-2'} `} value={DatosUser.nombres} id='nombre' type='text' name='nombres' placeholder={user?.displayName} />
 
@@ -91,7 +91,7 @@ const EditarPerfil = ({ si, no, show }) => {
 
                         <label htmlFor='password'>Contraseña:</label>
 
-                        <input disabled={activo} onChange={handlepassChange} value={DatosUser.password} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='password' type='password' name='password' placeholder={`${activo ? 'border-0' : 'border-2 '}'********'`} />
+                        <input disabled={activo} onChange={handlepassChange} value={DatosUser.password} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='password' type='password' name='password' placeholder={`${activo ? '' : 'border-2 '}'********'`} />
                     </div>
 
                     <div className='flex justify-center p-10 gap-3'>
