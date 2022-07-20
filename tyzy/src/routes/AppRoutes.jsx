@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import DashboardRoute from './DashboardRoute'
-import PrivateRouter from './PrivateRoute'
-import PublicRoutes from './PublicRoute'
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import Login from '../components/Login'
-import Register from '../components/Register'
-import NavBarPublic from '../components/LandingPage/NavBarPublic'
-import LandingPage from '../components/LandingPage/LandingPage'
-import Requisitos from '../components/Requisitos'
-import Perfil from '../components/Perfil'
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import DashboardRoute from './DashboardRoute';
+import PrivateRouter from './PrivateRoute';
+import PublicRoutes from './PublicRoute';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import Login from '../components/Login';
+import Register from '../components/Register';
+import NavBarPublic from '../components/LandingPage/NavBarPublic';
+import LandingPage from '../components/LandingPage/LandingPage';
 
 export default function AppRoutes() {
 
@@ -62,16 +60,6 @@ export default function AppRoutes() {
                 <Route path='*' element={
                     <PrivateRouter isAutenticacition={isLoggedIn}>
                         <DashboardRoute />
-                    </PrivateRouter>
-                } />
-                <Route path='/perfil' element={
-                    <PrivateRouter isAutenticacition={isLoggedIn}>
-                        <Perfil />
-                    </PrivateRouter>
-                } />
-                <Route path='/requisitos' element={
-                    <PrivateRouter isAutenticacition={isLoggedIn}>
-                        <Requisitos />
                     </PrivateRouter>
                 } />
             </Routes>

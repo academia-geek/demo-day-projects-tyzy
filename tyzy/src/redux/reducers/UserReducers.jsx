@@ -4,19 +4,19 @@ const initialState = {
     user: {}
 }
 
-export const UserReducers = (state = initialState, action)=>{
+export const UserReducers = (state = initialState, action) => {
     switch (action.type) {
         case TypeUser.userlist:
-            return{
-                    user: action.payload
+            return {
+                user: action.payload
             }
         case TypeUser.userUpinfo:
-            return{
+            return {
                 user: action.payload
             }
         case TypeUser.userUpImg:
-            return{}
-    
+            return {}
+
         default:
             return state;
     }

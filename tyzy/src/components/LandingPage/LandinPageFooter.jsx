@@ -13,7 +13,7 @@ const LandingPageFooter = () => {
       <section className='d-flex my-auto me-5 gap-3'>
         <Link to='#'><CgFacebook color='white' size={20} /></Link>
         <Link to='#'><FiInstagram color='white' size={20} /></Link>
-        <Link to='#'><FaYoutube className='' color='white' size={20} /></Link>
+        <Link to='#'><FaYoutube color='white' size={20} /></Link>
       </section>
     </div>
   )

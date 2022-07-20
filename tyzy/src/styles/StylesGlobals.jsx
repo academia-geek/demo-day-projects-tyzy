@@ -371,6 +371,7 @@ export const HomeStyle = styled.div`
     .Tips{
         border-radius: 20px;
         width: 100%;
+        height: 13rem;
     }
     .Tips div {
         margin: 1em 0;
@@ -606,4 +607,8 @@ export const BtnNewsletter = styled.button`
     width: 15%;
     font-weight: 500;
     font-size: 16px;
+`
+
+export const NavDesplegable = styled.div`
+
 `
