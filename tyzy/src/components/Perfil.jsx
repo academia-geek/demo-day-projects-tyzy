@@ -125,7 +125,7 @@ export default function Perfil() {
                 <span onClick={() => {
                   setValuesform(valueForm)
                   setActivo(true)
-                }} className={`'cursor-pointer px-4 py-2 rounded-lg' ${activo ? 'border-dashed border-2 text-titleOrange border-titleOrange' : 'text-white bg-titleOrange'}`}>Cancelar</span>
+                }} className={`'cursor-pointer px-4 py-2 rounded-lg ' ${activo ? 'border-dashed border-2 text-titleOrange border-titleOrange' : 'text-white bg-titleOrange'}`}>Cancelar</span>
               </div>
             </form>
           </div>
