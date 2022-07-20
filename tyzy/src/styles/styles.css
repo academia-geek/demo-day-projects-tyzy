@@ -13,6 +13,7 @@
 body {
     font-family: 'Inter', sans-serif;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -57,6 +58,22 @@ body {
 }
 
 .NavLinks:focus {
+    color: #2B2B39;
+    font-weight: 600;
+}
+
+.NavLinks2 {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.NavLinks2:hover {
+    color: #2B2B39;
+    font-weight: 600;
+}
+
+.NavLinks2:focus {
     color: #2B2B39;
     font-weight: 600;
 }
@@ -145,22 +162,25 @@ body {
 }
 
 .NavbarPublic {
-    position: fixed ;
-    position: relative ;
+    position: fixed;
+    position: relative;
     background-color: #FFFFFF !important;
     width: 100vw !important;
     top: 0px !important;
 }
-.dogBanner{
+
+.dogBanner {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748553/Tyzy/pexels-lumn-406014_wzakym.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
 
 }
-.textuwu{
+
+.textuwu {
     text-shadow: 3px 3px 4px #171717;
 }
+
 .no {
     display: none !important;
 }
@@ -168,4 +188,23 @@ body {
 .fade {
     background-color: rgba(35, 35, 35, 0.6) !important;
     backdrop-filter: blur(4px) !important;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    display: none;
+}
+
+.NavD {
+    background-color: #4BA695 !important;
+    border-radius: 50px 0 0 50px;
+}
+.offcanvas-backdrop {
+    background-color: rgba(23, 23, 23, 0.62) !important;
+    backdrop-filter: blur(100px) !important;
+}
+
+.IMGBeneficios{
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
