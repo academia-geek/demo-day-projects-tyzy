@@ -8,7 +8,7 @@ import { FileUpload } from '../helpers/FileUpload';
 import { agregarInfoUserAsync, mostrarDatesUserAsync } from '../redux/actions/InfoUserActionCRUD';
 import { ActionGetUserAsync } from '../redux/actions/UserActions';
 
-const EditarPerfil = ({ show }) => {
+const EditarPerfil = ({ si, no, show }) => {
 
     const dispatch = useDispatch()
     const [modalShow, setModalShow] = useState(true);
@@ -69,10 +69,10 @@ const EditarPerfil = ({ show }) => {
     }
 
     return (
-        <div>
             <Modal
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
+                show={si}
                 centered
             >
                 <form onSubmit={handleSubmit} >
@@ -95,12 +95,9 @@ const EditarPerfil = ({ show }) => {
                     </div>
 
                     <div className='flex justify-center p-10 gap-3'>
-                        <span role='button' onClick={() => {
-                            setActivo(false)
-                        }} className={`'cursor-pointer px-4 py-2 rounded-lg ' ${activo ? 'text-white bg-titleOrange' : 'border-dashed border-2 text-titleOrange border-titleOrange'}`}>Editar Perfil</span>
-
                         <button type='submit' onClick={() => {
                             setActivo(true)
+                            no(false)
                         }} className={`'cursor-pointer px-4 py-2 rounded-lg ' ${activo ? 'border-dashed border-2 text-titleOrange border-titleOrange' : 'text-white bg-titleOrange'}`}>
                             Guardar
                         </button>
@@ -108,11 +105,11 @@ const EditarPerfil = ({ show }) => {
                         <span role='button' onClick={() => {
                             setValuesform(valueForm)
                             setActivo(true)
+                            no(false)
                         }} className={`'cursor-pointer px-4 py-2 rounded-lg ' ${activo ? 'border-dashed border-2 text-titleOrange border-titleOrange' : 'text-white bg-titleOrange'}`}>Cancelar</span>
                     </div>
                 </form>
             </Modal>
-        </div>
     )
 }
 
