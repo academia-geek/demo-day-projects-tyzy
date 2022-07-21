@@ -62,6 +62,7 @@ export const LabelRegistro = styled.label`
 
 export const FieldInput = styled(Field)`
     background: none;
+    border:none;
     border-bottom: 1.5px solid #275556 ;
     margin-top: 1%;
     &:focus{
@@ -155,6 +156,7 @@ export const LabelInicio = styled.label`
 
 export const FieldInput2 = styled(Field)`
     background: none;
+    border:none;
     border-bottom: 1.5px solid #275556;
     margin-top: 10px;
     &:focus{
