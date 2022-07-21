@@ -10,7 +10,6 @@ const EditarPerfil = ({ si, no, data }) => {
     const [activo, setActivo] = useState(false)
 
     useEffect(() => {
-        dispatch(mostrarDatesUserAsync())
         console.log(data[0]?.nombres);
         console.log(data[0]);
 
@@ -31,6 +30,7 @@ const EditarPerfil = ({ si, no, data }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(editarInfoUserAsync(valueFormEditar))
+        dispatch(mostrarDatesUserAsync())
         no(false)
     }
 
@@ -63,11 +63,12 @@ const EditarPerfil = ({ si, no, data }) => {
                     <span onClick={() => no(false)} className='BTNeditar py-2 px-4 rounded-lg'>
                         Cancelar
                     </span>
+                    <button type='submit' className='BTNeditar py-2 px-4 rounded-lg'>
+                        Guardar
+                    </button>
                 </div>
 
-                <button type='submit' className='BTNeditar py-2 px-4 rounded-lg'>
-                    Guardar
-                </button>
+
             </form>
         </Modal>
     )

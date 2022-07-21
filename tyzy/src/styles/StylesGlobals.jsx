@@ -790,7 +790,6 @@ export const DiagText2 = styled.p`
 `;
 
 export const DiagForm = styled.form`
-    background-color: #F26052;
     color:white;
     padding: 6px;
     width: 70%;
@@ -873,8 +872,3 @@ export const CancelButton = styled.button`
 `
 
 // SETTINGS.JSX // 
-
-
-export const NavDesplegable = styled.div`
-
-`

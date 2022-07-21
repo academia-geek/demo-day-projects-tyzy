@@ -51,9 +51,10 @@ const Perfil = memo(() => {
 
   useEffect(() => {
     dispatch(ActionGetUserAsync())
+    dispatch(mostrarDatesUserAsync())
     estado()
     console.log(DatosUser);
-  }, [dispatch, setActivo]);
+  }, [dispatch, setActivo, setDatos])
 
   return (
     <>

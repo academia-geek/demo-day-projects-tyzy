@@ -18,7 +18,7 @@ export const InfoUserReducerCRUD = (state = initialState, action) => {
 
         case TypeInfoUser.editar:
             return {
-                DatosUser: [...action.payload]
+                ...state
             }
 
         default:
