@@ -38,7 +38,7 @@ export default function NavBarIn() {
           <div className='d-flex justify-content-evenly w-75 mx-auto gap-4'>
             <NavLink to='/' className='NavLinks2'>Home</NavLink>
             <NavLink to='/requisitos' className='NavLinks2'>Requisitos</NavLink>
-            <NavLink to='#' className='NavLinks2'>Services</NavLink>
+            <NavLink to='/diagnostico' className='NavLinks2'>Diagnóstico</NavLink>
             <NavLink to='#' className='NavLinks2'>Pricing</NavLink>
             <NavLink to='#' className='NavLinks2'>Contact</NavLink>
           </div>
