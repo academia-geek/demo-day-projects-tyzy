@@ -778,7 +778,34 @@ export const DiagForm = styled.form`
     width: 15%;
     font-weight: 500;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
 `
+
+export const DiagLabel = styled.label`
+    font-size: 14px;
+`
+
+export const DiagInput = styled.input`
+    border: 1px solid hsla(0, 0%, 80%, 1);
+    padding: 5px;
+    &::placeholder{
+      color: #666666;
+      font-size: 12px;      
+    }
+`
+export const InputRadius = styled.input`
+    border: 1px solid hsla(0, 0%, 80%, 1);
+    accent-color: #F26052;
+`
+
+export const TextDiag = styled.textarea`
+    border: 1px solid hsla(0, 0%, 80%, 1);
+`
+
+
+// SETTINGS.JSX // 
+
 
 export const NavDesplegable = styled.div`
 
