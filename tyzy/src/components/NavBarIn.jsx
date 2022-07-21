@@ -23,7 +23,7 @@ export default function NavBarIn() {
       .catch(err => console.log('no se pudo cargar la imgen', err))
   }, [])
   return (
-    <div className='text-back'>
+    <div className='text-back pt-3 pb-4 px-4'>
       <Navbar
         fluid={true}
         rounded={true}
