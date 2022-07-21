@@ -53,7 +53,23 @@ export default function NavBarIn() {
             ))
           }
         </div>
-
+        <Navbar.Collapse className='text-black'>
+          <Link to="/navbars">
+            Home
+          </Link>
+          <Link to="/requisitos">
+            Requisitos
+          </Link>
+          <Link to="/diagnostico">
+            Diagnóstico
+          </Link>
+          <Link to="#">
+            Pricing
+          </Link>
+          <Link to="#">
+            Contact
+          </Link>
+        </Navbar.Collapse>
       </Navbar>
     </div>
   )

@@ -4,6 +4,7 @@ import IntroHome from '../components/IntroHome'
 import LandingPageFooter from '../components/LandingPage/LandinPageFooter'
 import Perfil from '../components/Perfil'
 import Requisitos from '../components/Requisitos'
+import Diagnostico from '../components/Diagnostico'
 import Home from '../containers/Home'
 
 export default function DashboardRoute() {
@@ -14,6 +15,7 @@ export default function DashboardRoute() {
         <Route path='/' element={<Home />} />
         <Route path='/intro' element={<IntroHome />} />
         <Route path='/requisitos' element={<Requisitos />} />
+        <Route path='/diagnostico' element={<Diagnostico />} />
         <Route path='/perfil' element={<Perfil />} />
 
         <Route path='*' element={<Navigate to='/' />} />
