@@ -82,8 +82,8 @@ export default function NavBarIn() {
           <Link to="/requisitos">
             Requisitos
           </Link>
-          <Link to="#">
-            Services
+          <Link to="/diagnostico">
+            Diagnóstico
           </Link>
           <Link to="#">
             Pricing

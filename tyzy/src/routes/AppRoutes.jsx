@@ -11,6 +11,8 @@ import NavBarPublic from '../components/LandingPage/NavBarPublic'
 import LandingPage from '../components/LandingPage/LandingPage'
 import Requisitos from '../components/Requisitos'
 import Perfil from '../components/Perfil'
+import Diagnóstico from '../components/Diagnostico'
+import Diagnostico from '../components/Diagnostico'
 
 export default function AppRoutes() {
 
@@ -72,6 +74,11 @@ export default function AppRoutes() {
                 <Route path='/requisitos' element={
                     <PrivateRouter isAutenticacition={isLoggedIn}>
                         <Requisitos />
+                    </PrivateRouter>
+                } />
+                <Route path='/diagnostico' element={
+                    <PrivateRouter isAutenticacition={isLoggedIn}>
+                        <Diagnostico />
                     </PrivateRouter>
                 } />
             </Routes>
