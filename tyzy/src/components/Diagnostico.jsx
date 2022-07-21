@@ -5,6 +5,7 @@ const Diagnostico = () => {
   return (
     <>
     <NavBarIn/>
+    <div>ho,aaaaaa</div>
     </>
   )
 }
