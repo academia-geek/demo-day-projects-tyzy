@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DashboardRoute from './DashboardRoute';
 import PrivateRouter from './PrivateRoute';
@@ -17,7 +16,6 @@ export default function AppRoutes() {
     const dispatch = useDispatch()
     const [verification, setVerification] = useState(true)
     const [isLoggedIn, setIsLoggedIn] = useState(false)
-
 
     useEffect(() => {
         dispatch(ActionGetUserAsync())
@@ -56,7 +54,7 @@ export default function AppRoutes() {
                 {/* Public Routes */}
                 <Route path='/register' element={
                     <PublicRoutes isAutenticacition={isLoggedIn}>
-                         <Register />
+                        <Register />
                     </PublicRoutes>
                 } />
 

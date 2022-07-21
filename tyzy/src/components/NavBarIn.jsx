@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Avatar } from 'flowbite-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import Setting from './Setting';
 
@@ -24,7 +24,7 @@ export default function NavBarIn() {
   }, [])
 
   return (
-    <div className='text-back'>
+    <div className='text-back pt-3 pb-4 px-4'>
       <Navbar
         fluid={true}
         rounded={true}
@@ -54,7 +54,6 @@ export default function NavBarIn() {
             ))
           }
         </div>
-
       </Navbar>
     </div>
   )
