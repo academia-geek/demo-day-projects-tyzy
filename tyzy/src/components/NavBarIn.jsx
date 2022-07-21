@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Avatar } from 'flowbite-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import Setting from './Setting';
 
@@ -53,7 +53,7 @@ export default function NavBarIn() {
             ))
           }
         </div>
-        <Navbar.Collapse className='text-black'>
+        {/* <Navbar.Collapse className='text-black'>
           <Link to="/navbars">
             Home
           </Link>
@@ -69,7 +69,7 @@ export default function NavBarIn() {
           <Link to="#">
             Contact
           </Link>
-        </Navbar.Collapse>
+        </Navbar.Collapse> */}
       </Navbar>
     </div>
   )
