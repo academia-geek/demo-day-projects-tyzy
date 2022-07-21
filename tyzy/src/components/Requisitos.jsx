@@ -147,8 +147,6 @@ export default function Requisitos() {
             <BtnNewsletter>Suscribirse</BtnNewsletter>
         </FormNewsletter>
       </NewsletterDiv>
-
-      <LandingPageFooter />
     </div>
   );
 }

@@ -11,7 +11,6 @@ import NavBarPublic from '../components/LandingPage/NavBarPublic'
 import LandingPage from '../components/LandingPage/LandingPage'
 import Requisitos from '../components/Requisitos'
 import Perfil from '../components/Perfil'
-import Diagnóstico from '../components/Diagnostico'
 import Diagnostico from '../components/Diagnostico'
 
 export default function AppRoutes() {
