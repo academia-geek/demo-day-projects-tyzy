@@ -1,115 +1,75 @@
-import { getAuth, updateProfile } from 'firebase/auth';
-import { addDoc, collection } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { useDispatch, useSelector } from 'react-redux';
-import { DB } from '../firebase/Firebase';
-import { FileUpload } from '../helpers/FileUpload';
-import { agregarInfoUserAsync, mostrarDatesUserAsync } from '../redux/actions/InfoUserActionCRUD';
+import { useDispatch } from 'react-redux';
+import { editarInfoUserAsync, mostrarDatesUserAsync } from '../redux/actions/InfoUserActionCRUD';
 import { ActionGetUserAsync } from '../redux/actions/UserActions';
 
-const EditarPerfil = ({ si, no, show }) => {
+const EditarPerfil = ({ si, no, data }) => {
 
     const dispatch = useDispatch()
-    const [modalShow, setModalShow] = useState(true);
-
-    const [activo, setActivo] = useState(true)
-
-    const { user } = useSelector(store => store.user)
-    const { DatosUser } = useSelector(store => store.datosUserStore)
-
-    const auth = getAuth();
+    const [activo, setActivo] = useState(false)
 
     useEffect(() => {
         dispatch(mostrarDatesUserAsync())
-        dispatch(ActionGetUserAsync())
+        console.log(data[0]?.nombres);
+        console.log(data[0]);
+
     }, [dispatch])
 
-    const [valueForm, setValuesform] = useState({
-        nombres: '',
-        correo: '',
-        telefono: '',
-        direccion: '',
-        password: ''
+    const [valueFormEditar, setValueFormEditar] = useState({
+        nombres: data[0]?.nombres,
+        correo: data[0]?.correo,
+        telefono: data[0]?.telefono,
+        direccion: data[0]?.direccion,
+        password: data[0]?.password
     })
-
-    //----------- UP img-------------- //
-    const UpImg = async (foto) => {
-        await updateProfile(auth.currentUser, {
-            photoURL: foto
-        })
-    }
-
-    const handleFileChange = e => {
-        const file = e.target.files[0]
-        FileUpload(file)
-            .then((res) => {
-                UpImg(res)
-            })
-            .catch((err) => {
-                console.warn(err);
-            })
-    }
-
+    //------------------------------------------------------------------------------- //
     const handleinputChange = ({ target }) => {
-        setValuesform({ ...valueForm, [target.name]: target.value })
+        setValueFormEditar({ ...valueFormEditar, [target.name]: target.value })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(DatosUser)
-        await addDoc(collection(DB, 'infoPerfil'), valueForm)
-        dispatch(agregarInfoUserAsync(valueForm))
-        setValuesform({ ...valueForm })
-        show(false)
-    }
-
-    const handlepassChange = async (e) => {
-
+        dispatch(editarInfoUserAsync(valueFormEditar))
+        no(false)
     }
 
     return (
-            <Modal
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                show={si}
-                centered
-            >
-                <form onSubmit={handleSubmit} >
-                    <div className='grid grid-cols-[1fr_300px] gap-x-10 gap-y-2 px-5 items-center mt-5'>
-                        <label htmlFor='nombre'>Nombres:</label>
-                        <input disabled={activo} onChange={handleinputChange} className={` 'appearance-none  rounded-xl w-full   text-gray-700 leading-tight focus:outline-none focus:shadow-outline ' ${activo ? 'border-0' : 'border-2'} `} value={DatosUser.nombres} id='nombre' type='text' name='nombres' placeholder={user?.displayName} />
+        <Modal
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            show={si}
+            centered
+        >
+            <form onSubmit={handleSubmit} className='px-5'>
+                <div className='grid grid-cols-[1fr_300px] gap-x-10 gap-y-2 px-5 items-center mt-5 mx-5'>
+                    <label htmlFor='nombre'>Nombres:</label>
+                    <input disabled={activo} onChange={handleinputChange} className={` 'appearance-none  rounded-xl w-full   text-gray-700 leading-tight focus:outline-none focus:shadow-outline ' ${activo ? 'border-0' : 'border-2'} `} value={valueFormEditar.nombres} id='nombre' type='text' name='nombres' placeholder={data[0]?.nombres} />
 
-                        <label htmlFor='correo'>Correo:</label>
-                        <input disabled={activo} onChange={handleinputChange} className={`'appearance-none  rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='correo' value={DatosUser.correo} type='email' name='correo' placeholder={user?.email} />
+                    <label htmlFor='correo'>Correo:</label>
+                    <input disabled={activo} onChange={handleinputChange} className={`'appearance-none  rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='correo' value={valueFormEditar.correo} type='email' name='correo' placeholder={data[0]?.correo} />
 
-                        <label htmlFor='telefono'>Telefono:</label>
-                        <input disabled={activo} onChange={handleinputChange} value={DatosUser.telefono} className={`'appearance-none  rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='telefono' type='text' name='telefono' placeholder='1234567890' />
+                    <label htmlFor='telefono'>Telefono:</label>
+                    <input disabled={activo} onChange={handleinputChange} value={valueFormEditar.telefono} className={`'appearance-none  rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='telefono' type='text' name='telefono' placeholder='1234567890' />
 
-                        <label htmlFor='direccion'>Dirección:</label>
-                        <input disabled={activo} onChange={handleinputChange} value={DatosUser.direccion} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='direccion' type='text' name='direccion' placeholder='Direccion de ejemplo' />
+                    <label htmlFor='direccion'>Dirección:</label>
+                    <input disabled={activo} onChange={handleinputChange} value={valueFormEditar.direccion} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='direccion' type='text' name='direccion' placeholder='Direccion de ejemplo' />
 
-                        <label htmlFor='password'>Contraseña:</label>
+                    <label htmlFor='password'>Contraseña:</label>
+                    <input disabled={activo} onChange={handleinputChange} value={valueFormEditar.password} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='password' type='password' name='password' placeholder={`${activo ? '' : ''}********`} />
+                </div>
 
-                        <input disabled={activo} onChange={handlepassChange} value={DatosUser.password} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='password' type='password' name='password' placeholder={`${activo ? '' : 'border-2 '}'********'`} />
-                    </div>
+                <div className='flex justify-center p-10 gap-3'>
+                    <span onClick={() => no(false)} className='BTNeditar py-2 px-4 rounded-lg'>
+                        Cancelar
+                    </span>
+                </div>
 
-                    <div className='flex justify-center p-10 gap-3'>
-                        <button type='submit' onClick={() => {
-                            setActivo(true)
-                            no(false)
-                        }} className={`'cursor-pointer px-4 py-2 rounded-lg ' ${activo ? 'border-dashed border-2 text-titleOrange border-titleOrange' : 'text-white bg-titleOrange'}`}>
-                            Guardar
-                        </button>
-
-                        <span role='button' onClick={() => {
-                            setValuesform(valueForm)
-                            setActivo(true)
-                            no(false)
-                        }} className={`'cursor-pointer px-4 py-2 rounded-lg ' ${activo ? 'border-dashed border-2 text-titleOrange border-titleOrange' : 'text-white bg-titleOrange'}`}>Cancelar</span>
-                    </div>
-                </form>
-            </Modal>
+                <button type='submit' className='BTNeditar py-2 px-4 rounded-lg'>
+                    Guardar
+                </button>
+            </form>
+        </Modal>
     )
 }
 

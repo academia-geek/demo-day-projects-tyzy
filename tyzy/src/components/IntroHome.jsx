@@ -4,19 +4,46 @@ import Button from '@mui/material/Button';
 import Box from '@mui/joy/Box';
 import { Peticiones } from '../helpers/Peticiones';
 import { HomeURL } from '../helpers/UrlsAPI';
+import { useDispatch, useSelector } from 'react-redux';
+import { agregarInfoUserAsync } from "../redux/actions/InfoUserActionCRUD";
 
 const IntroHome = ({ close }) => {
+
+    const dispatch = useDispatch()
+
+    const { user } = useSelector(store => store.user)
+    const { DatosUser } = useSelector(store => store.datosUserStore)
+
+    const [valueFormAgregar, setValueFormAgregar] = useState({ telefono: '', direccion: '', password: '' })
+
+    const handleUsuario = () => {
+        setValueFormAgregar({
+            ...valueFormAgregar,
+            nombres: user?.displayName,
+            correo: user?.email
+        })
+    }
+
+    const handleCargarUser = () => {
+        const filtro = DatosUser.find(usr => usr.correo == user?.email)
+        if (filtro) {
+        } else {
+            dispatch(agregarInfoUserAsync(valueFormAgregar))
+        }
+        close()
+    }
+
+    useEffect(() => {
+        handleUsuario()
+        DataApi()
+    }, [setValueFormAgregar])
 
     const [datos, setDatos] = useState([])
     const DataApi = async () => {
         const data = await Peticiones(HomeURL)
         setDatos(data[0].introHome)
     }
-    useEffect(() => {
-        DataApi()
-    }, [])
     // -------------------------------------------------------------------------------
-
     const [activeStep, setActiveStep] = useState(0);
     const [intro, setIntro] = useState({
         btnSi: '',
@@ -61,9 +88,12 @@ const IntroHome = ({ close }) => {
                     </Button>
                 }
             />
-            <Button className={`BTNNext rounded-pill w-75 ${intro.btnNo}`} size="small" onClick={close} style={{ marginTop: '3px' }}>
+            <Button className={`BTNNext rounded-pill w-75 ${intro.btnNo}`} size="small" onClick={handleCargarUser} style={{ marginTop: '3px' }}>
                 Siguiente
             </Button>
+            <button className='BTNOmitir mx-auto mb-2 mt-3' onClick={handleCargarUser}>
+                Omitir
+            </button>
         </div>
     )
 }

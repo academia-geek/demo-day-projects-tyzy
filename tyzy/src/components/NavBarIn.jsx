@@ -22,6 +22,7 @@ export default function NavBarIn() {
       })
       .catch(err => console.log('no se pudo cargar la imgen', err))
   }, [])
+
   return (
     <div className='text-back'>
       <Navbar

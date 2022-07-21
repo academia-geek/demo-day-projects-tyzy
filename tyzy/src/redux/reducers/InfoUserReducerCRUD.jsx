@@ -21,13 +21,8 @@ export const InfoUserReducerCRUD = (state = initialState, action) => {
                 DatosUser: [...action.payload]
             }
 
-        case TypeInfoUser.eliminar:
-            return {
-                DatosUser: state.DatosUser.filter(c => c.email !== action.payload)
-            }
-
         default:
-            return state
+            return state;
     }
 
 }

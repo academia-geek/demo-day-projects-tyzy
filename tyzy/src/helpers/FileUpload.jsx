@@ -12,6 +12,5 @@ export const FileUpload = async (file)=>{
         body: formData
     })
     const data = await resp.json()
-    console.log(data)
     return data.secure_url
 }

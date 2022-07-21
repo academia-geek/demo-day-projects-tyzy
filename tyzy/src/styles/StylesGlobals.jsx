@@ -305,8 +305,6 @@ export const ModalPrimeraVez = styled(Modal)`
 // --------------------------------------Home -----------------------
 export const HomeStyle = styled.div`
 
-    
-    
     //--------------------IMG principal
     .IMGHome {
         height: 100vh;

@@ -9,14 +9,18 @@ import Login from '../components/Login';
 import Register from '../components/Register';
 import NavBarPublic from '../components/LandingPage/NavBarPublic';
 import LandingPage from '../components/LandingPage/LandingPage';
+import { useDispatch } from 'react-redux';
+import { ActionGetUserAsync } from '../redux/actions/UserActions';
 
 export default function AppRoutes() {
 
+    const dispatch = useDispatch()
     const [verification, setVerification] = useState(true)
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 
     useEffect(() => {
+        dispatch(ActionGetUserAsync())
         const auth = getAuth()
         onAuthStateChanged(auth, (user) => {
             if (user?.uid) {
