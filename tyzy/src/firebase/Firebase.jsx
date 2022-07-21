@@ -16,6 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const google = new GoogleAuthProvider()
 export const facebook = new FacebookAuthProvider(app)
-
 export const DB = getFirestore()
+
 export default app;
