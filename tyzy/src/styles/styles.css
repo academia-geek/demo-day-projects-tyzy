@@ -200,12 +200,27 @@ body {
     background-color: #4BA695 !important;
     border-radius: 50px 0 0 50px;
 }
+
 .offcanvas-backdrop {
     background-color: rgba(23, 23, 23, 0.62) !important;
     backdrop-filter: blur(100px) !important;
 }
 
-.IMGBeneficios{
+.IMGBeneficios {
     border-radius: 20px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.BTNeditar {
+    border: 2px solid #F26052;
+    background-color: #F26052;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.BTNeditar:hover {
+    background-color: #FFFFFF;
+    border: 2px dashed #F26052;
+    color: #F26052;
+    cursor: pointer;
 }

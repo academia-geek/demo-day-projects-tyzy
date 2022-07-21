@@ -828,7 +828,7 @@ export const RadiusFlex = styled.div`
   align-items: center;
   gap:10px;
   font-size: 14px;
-  color:#666666
+  color:#666666;
 `
 
 export const InputRadius = styled.input`
@@ -872,8 +872,3 @@ export const CancelButton = styled.button`
 `
 
 // SETTINGS.JSX // 
-
-
-export const NavDesplegable = styled.div`
-
-`

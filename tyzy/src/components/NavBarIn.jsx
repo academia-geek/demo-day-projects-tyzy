@@ -22,6 +22,7 @@ export default function NavBarIn() {
       })
       .catch(err => console.log('no se pudo cargar la imgen', err))
   }, [])
+
   return (
     <div className='text-back pt-3 pb-4 px-4'>
       <Navbar
@@ -53,23 +54,6 @@ export default function NavBarIn() {
             ))
           }
         </div>
-        {/* <Navbar.Collapse className='text-black'>
-          <Link to="/navbars">
-            Home
-          </Link>
-          <Link to="/requisitos">
-            Requisitos
-          </Link>
-          <Link to="/diagnostico">
-            Diagnóstico
-          </Link>
-          <Link to="#">
-            Pricing
-          </Link>
-          <Link to="#">
-            Contact
-          </Link>
-        </Navbar.Collapse> */}
       </Navbar>
     </div>
   )
