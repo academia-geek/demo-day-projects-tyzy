@@ -31,7 +31,7 @@ const Setting = ({ name, ...props }) => {
 
     return (
         <NavDesplegable>
-            <div className='my-auto d-flex'><h2 className='fs-3'>{usuario?.displayName}</h2><img onClick={handleShow} className='my-auto ms-2' role='button' src="https://res.cloudinary.com/doaijv8m0/image/upload/v1658024388/Demoday/Vector_5_plaaek.png" alt="" /></div>
+            <div className='my-auto d-flex '><h2 className='fs-6 '>{usuario?.displayName}</h2><img onClick={handleShow} className='my-auto ms-2' role='button' src="https://res.cloudinary.com/doaijv8m0/image/upload/v1658024388/Demoday/Vector_5_plaaek.png" alt="" /></div>
 
             <Offcanvas className='NavD' show={show} onHide={handleClose} {...props}>
                 <Offcanvas.Header >
