@@ -745,41 +745,130 @@ export const BtnNewsletter = styled.button`
 export const ParallaxDiag = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1658180946/Tyzy/pexels-alex-green-5699482_1_ve5zrg.jpg");
-  background-repeat: no-repeat;
+   height: 80vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
 `;
 
+export const DiagDiv = styled.div`
+  margin-left: 5%;
+`
+
 export const DiagText1 = styled.p`
-  font-size: 35px;
-  font-weight: 600;
+  font-size: 45px;
+  font-weight: 700;
   color: white;
+  width: 70%;
+  line-height: 50px;
 `;
 
 export const DiagSubText1 = styled.p`
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color:white;
+  margin-top: 20px;
 `;
 
 export const DiagIconArrow = styled(BsArrowDown)`
   color: white;
+  margin-top: 20px;
 `;
 
 export const DiagText2 = styled.p`
   color: #426666;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 25px;
+  margin:0 auto;
+  width: 60%;
+  text-align: center;
+  margin-top: 10%;
 `;
 
 export const DiagForm = styled.form`
-        background-color: #F26052;
     color:white;
     padding: 6px;
-    width: 15%;
+    width: 70%;
     font-weight: 500;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+    margin-top:5%;
+    margin-bottom: 10%;
 `
 
-export const NavDesplegable = styled.div`
-
+export const DiagLabel = styled.label`
+    font-size: 14px;
+    color:#666666;
 `
+
+export const DiagInput = styled.input`
+    border: 1px solid hsla(0, 0%, 80%, 1);
+    padding: 8px;
+    border-radius: 20px;
+    margin-top: 10px;
+    &::placeholder{
+      color: #666666;
+      font-size: 12px; 
+    }
+`
+export const DiagDivRadius = styled.div`
+    display:grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 10px;
+`
+
+export const RadiusFlex = styled.div`
+  display: flex;
+  align-items: center;
+  gap:10px;
+  font-size: 14px;
+  color:#666666;
+`
+
+export const InputRadius = styled.input`
+    border: 1px solid hsla(0, 0%, 80%, 1);
+    accent-color: #F26052;
+`
+
+export const TextDiag = styled.textarea`
+    border: 1px solid hsla(0, 0%, 80%, 1);
+    border-radius: 10px;
+    margin-top: 10px;
+`
+
+export const ButtonsDiv = styled.div`
+    display: flex;
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 5%;
+    justify-content: space-between;
+`
+
+export const SaveButton = styled.button`
+  background-color:#F26052;
+  color: white;
+  border:none;
+  border-radius: 8px;
+  padding: 10px;
+`
+export const EditButton = styled.button`
+  border: dashed 1.8px #F26052;
+  color: #F26052;
+  padding:10px;
+  border-radius:8px;
+  margin-right: 20px;
+`
+export const CancelButton = styled.button` 
+  border: dashed 1.8px #F26052;
+  color: #F26052;
+  padding:10px;
+  border-radius:8px;
+`
+
+// SETTINGS.JSX // 

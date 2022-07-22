@@ -6,9 +6,12 @@ import { HomeStyle, ModalPrimeraVez } from '../styles/StylesGlobals';
 import Carousel from 'react-bootstrap/Carousel';
 import { Peticiones } from '../helpers/Peticiones';
 import { HomeURL } from '../helpers/UrlsAPI';
+import { useDispatch } from 'react-redux';
+import { mostrarDatesUserAsync } from '../redux/actions/InfoUserActionCRUD';
 
 const Home = () => {
 
+    const dispatch = useDispatch();
     const [datos, setDatos] = useState([])
 
     const DataApi = async () => {
@@ -19,6 +22,7 @@ const Home = () => {
     }
 
     useEffect(() => {
+        dispatch(mostrarDatesUserAsync())
         DataApi()
     }, [])
 
@@ -103,7 +107,7 @@ const Home = () => {
             <NavBarIn />
 
             <section className='IMGHome d-flex'>
-                <section className='d-flex flex-column ms-auto mt-64 me-2'>
+                <section className='d-flex flex-column ms-auto mt-64 me-5'>
                     <h2 className=''>Somos un equipo que puede ayudarte</h2>
                     <p className='mt-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
@@ -186,9 +190,6 @@ const Home = () => {
                 >
                     <section className='Section d-flex flex-column'>
                         <IntroHome close={handleClose} />
-                        <button className='BTNOmitir mx-auto mb-2' onClick={handleClose}>
-                            Omitir
-                        </button>
                     </section>
                 </ModalPrimeraVez>
             </div>

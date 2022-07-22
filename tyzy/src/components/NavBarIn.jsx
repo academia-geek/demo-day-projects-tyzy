@@ -22,6 +22,7 @@ export default function NavBarIn() {
       })
       .catch(err => console.log('no se pudo cargar la imgen', err))
   }, [])
+
   return (
     <div className='text-back pt-3 pb-4 px-4 sticky'>
       <Navbar
@@ -38,9 +39,9 @@ export default function NavBarIn() {
           <div className='d-flex justify-content-evenly w-75 mx-auto gap-4'>
             <NavLink to='/' className='NavLinks2'>Home</NavLink>
             <NavLink to='/requisitos' className='NavLinks2'>Requisitos</NavLink>
-            <NavLink to='#' className='NavLinks2'>Services</NavLink>
+            <NavLink to='/diagnostico' className='NavLinks2'>Diagnóstico</NavLink>
             <NavLink to='#' className='NavLinks2'>Pricing</NavLink>
-            <NavLink to='/NuestrosAnimales' className='NavLinks2'>Contact</NavLink>
+            <NavLink to='/NuestrosAnimales' className='NavLinks2 '>Mascotas</NavLink>
           </div>
 
         </section>
@@ -53,23 +54,6 @@ export default function NavBarIn() {
             ))
           }
         </div>
-        {/* <Navbar.Collapse className='text-black'>
-          <Link to="/navbars">
-            Home
-          </Link>
-          <Link to="/requisitos">
-            Requisitos
-          </Link>
-          <Link to="/diagnostico">
-            Diagnóstico
-          </Link>
-          <Link to="#">
-            Pricing
-          </Link>
-          <Link to="#">
-            Contact
-          </Link>
-        </Navbar.Collapse> */}
       </Navbar>
     </div>
   )

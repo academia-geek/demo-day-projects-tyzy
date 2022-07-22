@@ -15,9 +15,3 @@ export const TypeInfoUser = {
     editar: 'datos de usuario',
     eliminar: 'datos de usuario registrado'
 }
-
-export const TypeData = {
-    cargar: 'datos',
-    listar: 'data de landingPage',
-    eliminarlista: 'hyjukiloñ'
-}

@@ -1,26 +1,24 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import DashboardRoute from './DashboardRoute'
-import PrivateRouter from './PrivateRoute'
-import PublicRoutes from './PublicRoute'
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import Login from '../components/Login'
-import Register from '../components/Register'
-import NavBarPublic from '../components/LandingPage/NavBarPublic'
-import LandingPage from '../components/LandingPage/LandingPage'
-import Requisitos from '../components/Requisitos'
-import Perfil from '../components/Perfil'
-import Diagnostico from '../components/Diagnostico'
-import OutMasc from '../components/OutMasc'
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import DashboardRoute from './DashboardRoute';
+import PrivateRouter from './PrivateRoute';
+import PublicRoutes from './PublicRoute';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import Login from '../components/Login';
+import Register from '../components/Register';
+import NavBarPublic from '../components/LandingPage/NavBarPublic';
+import LandingPage from '../components/LandingPage/LandingPage';
+import { useDispatch } from 'react-redux';
+import { ActionGetUserAsync } from '../redux/actions/UserActions';
 
 export default function AppRoutes() {
 
+    const dispatch = useDispatch()
     const [verification, setVerification] = useState(true)
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-
     useEffect(() => {
+        dispatch(ActionGetUserAsync())
         const auth = getAuth()
         onAuthStateChanged(auth, (user) => {
             if (user?.uid) {
@@ -56,7 +54,7 @@ export default function AppRoutes() {
                 {/* Public Routes */}
                 <Route path='/register' element={
                     <PublicRoutes isAutenticacition={isLoggedIn}>
-                         <Register />
+                        <Register />
                     </PublicRoutes>
                 } />
 
@@ -64,26 +62,6 @@ export default function AppRoutes() {
                 <Route path='*' element={
                     <PrivateRouter isAutenticacition={isLoggedIn}>
                         <DashboardRoute />
-                    </PrivateRouter>
-                } />
-                <Route path='/perfil' element={
-                    <PrivateRouter isAutenticacition={isLoggedIn}>
-                        <Perfil />
-                    </PrivateRouter>
-                } />
-                <Route path='/requisitos' element={
-                    <PrivateRouter isAutenticacition={isLoggedIn}>
-                        <Requisitos />
-                    </PrivateRouter>
-                } />
-                <Route path='/diagnostico' element={
-                    <PrivateRouter isAutenticacition={isLoggedIn}>
-                        <Diagnostico />
-                    </PrivateRouter>
-                } />
-                <Route path='/NuestrosAnimales' element={
-                    <PrivateRouter isAutenticacition={isLoggedIn}>
-                        <OutMasc />
                     </PrivateRouter>
                 } />
             </Routes>

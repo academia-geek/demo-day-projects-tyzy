@@ -1,9 +1,9 @@
 import React from 'react'
 import NavBarIn from './NavBarIn'
 import { AiOutlineArrowDown } from "react-icons/ai";
-import LandinPageFooter from '../components/LandingPage/LandinPageFooter'
 
-export default function OutMasc() {
+
+export default function OurMasc() {
   return (
     <div>
     <NavBarIn/>
@@ -75,7 +75,6 @@ export default function OutMasc() {
 
     </section>
     </div>
-    <LandinPageFooter/>
     </div>
   )
 }
