@@ -24,7 +24,7 @@ export default function NavBarIn() {
   }, [])
 
   return (
-    <div className='text-back pt-3 pb-4 px-4'>
+    <div className='text-back pt-3 pb-4 px-4 sticky'>
       <Navbar
         fluid={true}
         rounded={true}
@@ -41,7 +41,7 @@ export default function NavBarIn() {
             <NavLink to='/requisitos' className='NavLinks2'>Requisitos</NavLink>
             <NavLink to='/diagnostico' className='NavLinks2'>Diagnóstico</NavLink>
             <NavLink to='#' className='NavLinks2'>Pricing</NavLink>
-            <NavLink to='#' className='NavLinks2'>Contact</NavLink>
+            <NavLink to='/NuestrosAnimales' className='NavLinks2 '>Mascotas</NavLink>
           </div>
 
         </section>
