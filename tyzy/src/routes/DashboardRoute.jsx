@@ -6,6 +6,7 @@ import Perfil from '../components/Perfil'
 import Requisitos from '../components/Requisitos'
 import Diagnostico from '../components/Diagnostico'
 import Home from '../containers/Home'
+import OurMasc from '../components/OurMasc'
 
 export default function DashboardRoute() {
 
@@ -17,6 +18,7 @@ export default function DashboardRoute() {
         <Route path='/requisitos' element={<Requisitos />} />
         <Route path='/diagnostico' element={<Diagnostico />} />
         <Route path='/perfil' element={<Perfil />} />
+        <Route path='/NuestrosAnimales' element={<OurMasc />} />
 
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>

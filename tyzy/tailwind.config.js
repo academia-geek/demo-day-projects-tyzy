@@ -9,7 +9,9 @@ module.exports = {
         'titleOrange':'#F26052',
         'pGreen':'#426666',
         'textGray':'#6C6C6C',
-        'bgBlanco':'#FDFDFD'
+        'bgBlanco':'#FDFDFD',
+        'verdeOsc':'#426666',
+        'verdeMasClaro':'#A9D3CB'
       }
     },
   },
