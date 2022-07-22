@@ -18,7 +18,7 @@ const LandingServices = () => {
     const checkBoxes = () => {
         const triggerBottom = (window.innerHeight / 5) * 4;
         boxes.forEach((box) => {
-            const boxTop = box.getBoundingClientRect().top;
+            const boxTop = box.getBoundingClientRect().top
             if (boxTop < triggerBottom) {
                 box.classList.add("show")
             } else {
@@ -31,7 +31,6 @@ const LandingServices = () => {
     checkBoxes()
 
     return (
-        <>
             <ServicesDiv>
                 <ServiceImg src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657512206/Tyzy/Tips_ltmwa1.png' alt='vector' />
                 <InfoServices className='mb-3'>
@@ -49,8 +48,7 @@ const LandingServices = () => {
                     }
                 </InfoServices>
             </ServicesDiv>
-        </>
     )
 }
 
-export default LandingServices
+export default LandingServices;
