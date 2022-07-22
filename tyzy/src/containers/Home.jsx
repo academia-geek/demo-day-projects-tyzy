@@ -121,15 +121,17 @@ const Home = () => {
             <section className='TICShome d-flex flex-column my-5 mx-4'>
                 <h2 className='h2'>Haciendo parte de nuestra comunidad</h2>
                 <h4 className='mt-2'>Podrás conocer más acerca de la posibilidad de acompañarte con uno de nuestros peludos, que te ayudarán a mejorar tu estilo de vida además de sacarte una sonrisa y ser complice de tu día a día.</h4>
-                <h3 className='mb-5'>AQUÍ PODRÁS...</h3>
+                <h3 className='mb-5'>AQUÍ PODRÁS ENCONTRAR...</h3>
 
                 <section className='mx-auto'>
                     {
                         datos.targetas?.map((dt) => (
                             <div key={dt?.id} className={`d-flex Tips BGTips${dt?.clase}`} >
                                 <img className='p-3 my-auto' src={dt?.imagen} alt={dt?.id} />
-                                <div className='my-auto'>
-                                    <h2 className='h2-2 mb-4'>{dt?.titulo}</h2>
+                                <div className=''>
+                                    <div className='h2-2 my-auto d-flex'>
+                                      <h2 className='my-auto'>{dt?.titulo}</h2>  
+                                    </div>
                                     <p>{dt?.parrafo}</p>
                                 </div>
                             </div>
@@ -158,9 +160,9 @@ const Home = () => {
             <section className='UserAndPets d-flex'>
                 <div className='div1 d-flex flex-column'>
                     <div className='d-flex flex-column'>
-                        <h2>Algunos usuarios con sus animalitos</h2>
+                        <h2>Algunos usuarios con sus mascotas</h2>
                         <span>TYZY</span>
-                        <p>Aprendemos que entendernos con nuestros animalitos es algo muy importante en el proceso, y eso hace felices a tenedores como a las mascotas. Es todo un proceso que saca sonrisas y hace la vida más llevadera.</p>
+                        <p>Aprendemos que entendernos con nuestros mascotas es algo muy importante en el proceso, y eso hace felices tanto a dueño como a la mascotas. Es todo un proceso que saca sonrisas y hace la vida más llevadera.</p>
                         <section className='d-flex'>
                             <img src={datos.length == 0 ? '' : datos?.usuariosBeneficiados[activeStepSecond1]?.imagen} alt="1" />
                             <img src={datos.length == 0 ? '' : datos?.usuariosBeneficiados[activeStepSecond2]?.imagen} alt="2" />
