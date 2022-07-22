@@ -23,7 +23,7 @@ export default function NavBarIn() {
       .catch(err => console.log('no se pudo cargar la imgen', err))
   }, [])
   return (
-    <div className='text-back pt-3 pb-4 px-4'>
+    <div className='text-back pt-3 pb-4 px-4 sticky'>
       <Navbar
         fluid={true}
         rounded={true}
@@ -40,7 +40,7 @@ export default function NavBarIn() {
             <NavLink to='/requisitos' className='NavLinks2'>Requisitos</NavLink>
             <NavLink to='#' className='NavLinks2'>Services</NavLink>
             <NavLink to='#' className='NavLinks2'>Pricing</NavLink>
-            <NavLink to='#' className='NavLinks2'>Contact</NavLink>
+            <NavLink to='/NuestrosAnimales' className='NavLinks2'>Contact</NavLink>
           </div>
 
         </section>

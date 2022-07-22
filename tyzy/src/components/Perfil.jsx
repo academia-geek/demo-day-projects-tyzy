@@ -107,7 +107,7 @@ export default function Perfil() {
 
                 <label htmlFor='password'>Contraseña:</label>
 
-                <input disabled={activo} onChange={handlepassChange} value={DatosUser.password} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='password' type='password' name='password' placeholder={`${activo ? 'border-0' : 'border-2 '}'********'`} />
+                <input disabled={activo} onChange={handlepassChange} value={DatosUser.password} className={`' appearance-none rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline' ${activo ? 'border-0' : 'border-2 '}`} id='password' type='password' name='password' placeholder={'********'} />
               </div>
 
               <div className='flex justify-center p-10 gap-3'>
@@ -130,7 +130,7 @@ export default function Perfil() {
             </form>
           </div>
           {
-            modalShow == true
+            modalShow === true
               ? < EditarPerfil si={modalShow} no={setModalShow}/>
               : ''
           }

@@ -12,6 +12,7 @@ import LandingPage from '../components/LandingPage/LandingPage'
 import Requisitos from '../components/Requisitos'
 import Perfil from '../components/Perfil'
 import Diagnostico from '../components/Diagnostico'
+import OutMasc from '../components/OutMasc'
 
 export default function AppRoutes() {
 
@@ -78,6 +79,11 @@ export default function AppRoutes() {
                 <Route path='/diagnostico' element={
                     <PrivateRouter isAutenticacition={isLoggedIn}>
                         <Diagnostico />
+                    </PrivateRouter>
+                } />
+                <Route path='/NuestrosAnimales' element={
+                    <PrivateRouter isAutenticacition={isLoggedIn}>
+                        <OutMasc />
                     </PrivateRouter>
                 } />
             </Routes>
