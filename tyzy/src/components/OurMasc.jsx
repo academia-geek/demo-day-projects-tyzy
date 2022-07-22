@@ -3,15 +3,24 @@ import NavBarIn from './NavBarIn'
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { MascotasURL } from '../helpers/UrlsAPI';
 import { Peticiones } from '../helpers/Peticiones';
+import DetalleMascotas from './DetalleMascotas';
 
 export default function OurMasc() {
 
   const [datos, setDatos] = useState([])
+  const [modalShow, setModalShow] = useState(false);
+  const [dataDetail, setDataDetail] = useState([])
 
   const DataApi = async () => {
     const data = await Peticiones(MascotasURL)
     setDatos(data[0]?.listaMascotas)
   }
+
+  const handleModal = (info) => {
+    setDataDetail(info)
+    setModalShow(true)
+  }
+
   useEffect(() => {
     DataApi()
   }, [])
@@ -44,7 +53,7 @@ export default function OurMasc() {
                 <div className='py-3 px-4 '>
                   <div className='flex justify-between '>
                     <p className='font-bold text-titleOrange'>{dt?.nombre}</p>
-                    <p className='font-semibold tracking-widest text-verdeMasClaro'>VER MÁS</p>
+                    <p className='font-semibold tracking-widest cursor-pointer text-verdeMasClaro' onClick={() => { handleModal(dt) }}>VER MÁS</p>
                   </div>
                   <div className='pt-2 text-verdeOsc'>
                     <p>Edad: <span className='pl-2'>{dt?.edad}</span> </p>
@@ -54,41 +63,11 @@ export default function OurMasc() {
               </div>
             ))
           }
-
-
-          <div className='drop-shadow-lg  bg-white rounded-2xl'>
-            <img className='rounded-t-2xl' src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748565/Tyzy/Perros_gu%C3%ADa_hzcn0s.jpg' alt='perritos lindos' />
-
-            <div className='py-3 px-4 '>
-              <div className='flex justify-between '>
-                <p className='font-bold text-titleOrange'>MAX</p>
-                <p className='font-semibold tracking-widest text-verdeMasClaro'>VER MÁS</p>
-              </div>
-              <div className='pt-2 text-verdeOsc'>
-                <p>Edad: <span className='pl-2'>2 años</span> </p>
-                <p>Raza:  <span className='pl-2'>Golden Retriver</span> </p>
-              </div>
-            </div>
-          </div>
-
-          <div className='drop-shadow-lg  bg-white rounded-2xl'>
-            <img className='rounded-t-2xl' src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748565/Tyzy/Perros_gu%C3%ADa_hzcn0s.jpg' alt='perritos lindos' />
-
-            <div className='py-3 px-4 '>
-              <div className='flex justify-between '>
-                <p className='font-bold text-titleOrange'>MAX</p>
-                <p className='font-semibold tracking-widest text-verdeMasClaro'>VER MÁS</p>
-              </div>
-              <div className='pt-2 text-verdeOsc'>
-                <p>Edad: <span className='pl-2'>2 años</span> </p>
-                <p>Raza:  <span className='pl-2'>Golden Retriver</span> </p>
-              </div>
-            </div>
-          </div>
-
-
-
-
+          {
+            modalShow == true
+              ? <DetalleMascotas si={modalShow} no={setModalShow} data={dataDetail} />
+              : ''
+          }
         </section>
       </div>
     </div>
