@@ -505,10 +505,11 @@ export const HomeStyle = styled.div`
         height: 13rem;
     }
     .Tips div {
-        margin: 1em 0;
+        margin: .8em 0;
     }
     .Tips p {
-        margin: 10px 15px 0 0;
+        margin: 4px 20px 0 0;
+        line-height: 20px !important;
     }
     .BGTips1 {
         background-color: #A4DBD1;
@@ -523,8 +524,15 @@ export const HomeStyle = styled.div`
         width: 80px;
         height: 80px;
     }
-    .TICShome .h2-2 {
+    .TICShome {
         font-size: 20px;
+    }
+    .h2-2 {
+      width: 90%;
+      height: 30%;
+    }
+    .h2-2 h2 {
+      font-size: 18px;
     }
     .TICShome p {
         font-size: 14px;
