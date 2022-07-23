@@ -40,7 +40,7 @@ export default function NavBarIn() {
             <NavLink to='/' className='NavLinks2'>Home</NavLink>
             <NavLink to='/requisitos' className='NavLinks2'>Requisitos</NavLink>
             <NavLink to='/diagnostico' className='NavLinks2'>Diagnóstico</NavLink>
-            <NavLink to='#' className='NavLinks2'>Pricing</NavLink>
+            <NavLink to='/comunidad' className='NavLinks2'>Comunidad</NavLink>
             <NavLink to='/NuestrosAnimales' className='NavLinks2 '>Mascotas</NavLink>
           </div>
 

@@ -7,6 +7,7 @@ import Requisitos from '../components/Requisitos'
 import Diagnostico from '../components/Diagnostico'
 import Home from '../containers/Home'
 import OurMasc from '../components/OurMasc'
+import Comunidad from '../components/Comunidad/Comunidad'
 
 export default function DashboardRoute() {
 
@@ -19,6 +20,7 @@ export default function DashboardRoute() {
         <Route path='/diagnostico' element={<Diagnostico />} />
         <Route path='/perfil' element={<Perfil />} />
         <Route path='/NuestrosAnimales' element={<OurMasc />} />
+        <Route path='/comunidad' element={<Comunidad />} />
 
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
