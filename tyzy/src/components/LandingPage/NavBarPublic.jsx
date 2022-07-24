@@ -15,7 +15,6 @@ const NavBarPublic = () => {
                     <a href='#blog' className='NavLinks'>Blog</a>
                     <a href='#footer' className='NavLinks'>Contacto</a>
                 </div>
-
             </section>
 
             <section className='d-flex ms-auto me-3 my-auto'>
