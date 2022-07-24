@@ -15,3 +15,10 @@ export const TypeInfoUser = {
     editar: 'datos de usuario',
     eliminar: 'datos de usuario registrado'
 }
+export const typesComunidad ={
+    add: 'agregar Plantas',
+    list: 'lista de Plantas',
+    search: 'Buscar por nombre'
+   
+    
+}

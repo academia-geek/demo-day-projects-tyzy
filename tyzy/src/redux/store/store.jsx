@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
+import { plantasReducers } from "../reducers/AddComuniReducer";
 import { InfoUserReducerCRUD } from "../reducers/InfoUserReducerCRUD";
 import { LoginReducers } from "../reducers/LoginReducers";
 import { UserReducers } from "../reducers/UserReducers";
@@ -9,7 +10,8 @@ const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOO
 const reducers = combineReducers({
     userLoginStore: LoginReducers,
     user: UserReducers,
-    datosUserStore: InfoUserReducerCRUD
+    datosUserStore: InfoUserReducerCRUD,
+    comunidades:plantasReducers
 })
 
 export const store = createStore(
