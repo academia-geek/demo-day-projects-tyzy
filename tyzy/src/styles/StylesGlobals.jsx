@@ -880,3 +880,20 @@ export const CancelButton = styled.button`
 `
 
 // SETTINGS.JSX // 
+
+// modal detalle mascotas
+export const DetalleMascota = styled(Modal)`
+  .modal-content {
+    border-radius: 50px !important;
+    border: transparent;
+    img {
+      border-radius: 50px 50px 0px 0px;
+      width: 100%;
+    }
+
+    .BORDERMODAL {
+      border-radius: 50px;
+      border: none;
+    }
+  }
+`

@@ -50,15 +50,21 @@ export default function OurMasc() {
               <div key={dt?.id} className='drop-shadow-lg  bg-white rounded-2xl'>
                 <img className='rounded-t-2xl w-100 h-50' src={dt?.foto} alt={dt?.id} />
 
-                <div className='py-3 px-4 '>
-                  <div className='flex justify-between '>
-                    <p className='font-bold text-titleOrange'>{dt?.nombre}</p>
-                    <p className='font-semibold tracking-widest cursor-pointer text-verdeMasClaro' onClick={() => { handleModal(dt) }}>VER MÁS</p>
+                <div className='py-3 px-4 d-flex'>
+                  <div className='w-75'>
+                    <div className='flex justify-between '>
+                      <p className='font-bold text-titleOrange'>{dt?.nombre}</p>
+                    </div>
+                    <div className='pt-2 text-verdeOsc'>
+                      <p>Edad: <span className='pl-2'>{dt?.edad}</span> </p>
+                      <div className='d-flex w-75'>
+                        <p>Raza:</p>
+                        <span className='pl-2'>{dt?.raza}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className='pt-2 text-verdeOsc'>
-                    <p>Edad: <span className='pl-2'>{dt?.edad}</span> </p>
-                    <p>Raza:  <span className='pl-2'>{dt?.raza}</span> </p>
-                  </div>
+
+                  <p className='font-semibold my-auto tracking-widest cursor-pointer text-verdeMasClaro' onClick={() => { handleModal(dt) }}>VER MÁS</p>
                 </div>
               </div>
             ))
