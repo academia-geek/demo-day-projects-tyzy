@@ -19,8 +19,10 @@ export default function ComunidadList() {
             </div>
         ))}
     <div>
-       
+    
+
     </div>
+    
     </div>
   )
 }
