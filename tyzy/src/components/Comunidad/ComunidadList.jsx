@@ -15,14 +15,15 @@ export default function ComunidadList() {
   return (
     <div className='py-10'>ComunidadList
       {
-      comunidad?.map((p, idx) => (
-        <div key={idx}>
-          <img src={p.imagen} alt={idx} />
-          <p>{p.descripcion}</p>
-          <p>{p.direccion}</p>
-        </div>
-      ))
+        comunidad?.map((p, idx) => (
+          <div key={idx}>
+            <img src={p.imagen} alt={idx} />
+            <p>{p.descripcion}</p>
+            <p>{p.direccion}</p>
+          </div>
+        ))
       }
+
     </div>
   )
 }
