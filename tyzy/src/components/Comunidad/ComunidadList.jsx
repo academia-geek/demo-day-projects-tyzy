@@ -6,24 +6,22 @@ export default function ComunidadList() {
 
   const dispatch = useDispatch()
   const { comunidad } = useSelector(store => store.comunidades)
-  console.log(comunidad);
 
   useEffect(() => {
     dispatch(listaComuniAsync())
   }, [dispatch])
 
   return (
-    <div className='py-10'>ComunidadList
+    <div className='py-10 flex'>
       {
         comunidad?.map((p, idx) => (
-          <div key={idx}>
-            <img src={p.imagen} alt={idx} />
-            <p>{p.descripcion}</p>
-            <p>{p.direccion}</p>
+          <div key={idx} className='w-50 mx-auto h-56 flex flex-column'>
+            <img className='h-40 w-75 mx-auto' src={p.imagen} alt={idx} />
+            <p className='mx-auto'>{p.descripcion}</p>
+            <p className='mx-auto'>{p.direccion}</p>
           </div>
         ))
       }
-
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Field } from "formik";
+import { Field, Form } from "formik";
 import { Modal } from "react-bootstrap";
 import { BsArrowDown } from "react-icons/bs";
 
@@ -86,7 +86,7 @@ export const IngresaCon = styled.h3`
   margin-top: 12%;
   color: #275556;
   font-size: 14px;
-`;
+`
 
 export const DIVLogin = styled.div`
   margin-top: 20px;
@@ -797,8 +797,8 @@ export const DiagText2 = styled.p`
   margin-top: 10%;
 `;
 
-export const DiagForm = styled.form`
-    color:white;
+export const DiagForm = styled(Form)`
+    color:black;
     padding: 6px;
     width: 70%;
     font-weight: 500;
@@ -808,6 +808,7 @@ export const DiagForm = styled.form`
     margin:0 auto;
     margin-top:5%;
     margin-bottom: 10%;
+    
 `
 
 export const DiagLabel = styled.label`
@@ -815,7 +816,7 @@ export const DiagLabel = styled.label`
     color:#666666;
 `
 
-export const DiagInput = styled.input`
+export const DiagInput = styled(Field)`
     border: 1px solid hsla(0, 0%, 80%, 1);
     padding: 8px;
     border-radius: 20px;
@@ -839,9 +840,10 @@ export const RadiusFlex = styled.div`
   color:#666666;
 `
 
-export const InputRadius = styled.input`
+export const InputRadius = styled(Field)`
     border: 1px solid hsla(0, 0%, 80%, 1);
     accent-color: #F26052;
+    border-radius: 50%;
 `
 
 export const TextDiag = styled.textarea`
@@ -897,3 +899,4 @@ export const DetalleMascota = styled(Modal)`
     }
   }
 `
+

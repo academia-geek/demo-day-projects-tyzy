@@ -1,6 +1,7 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { plantasReducers } from "../reducers/AddComuniReducer";
+import { DiagnosticoReducers } from "../reducers/DiagnosticoReducers";
 import { InfoUserReducerCRUD } from "../reducers/InfoUserReducerCRUD";
 import { LoginReducers } from "../reducers/LoginReducers";
 import { UserReducers } from "../reducers/UserReducers";
@@ -11,7 +12,8 @@ const reducers = combineReducers({
     userLoginStore: LoginReducers,
     user: UserReducers,
     datosUserStore: InfoUserReducerCRUD,
-    comunidades:plantasReducers
+    comunidades:plantasReducers,
+    citaDiagnosticoStore: DiagnosticoReducers
 })
 
 export const store = createStore(
