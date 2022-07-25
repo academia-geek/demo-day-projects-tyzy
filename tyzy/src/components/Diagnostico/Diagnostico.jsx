@@ -1,9 +1,11 @@
+import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup'
-import React from 'react';
-import { ButtonsDiv, CancelButton, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, EditButton, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../styles/StylesGlobals'
-import NavBarIn from './NavBarIn';
-import { ActionLoginSync } from '../redux/actions/LoginActions';
+import { ButtonsDiv, CancelButton, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, EditButton, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
+import NavBarIn from '../NavBarIn';
+import { useDispatch } from 'react-redux';
+import { actionAggDiagAsync, actionListCitaAsync } from '../../redux/actions/DiagnosticoActions';
+import CitaDiagnostico from './CitaDiagnostico';
 
 const SignupSchema = Yup.object().shape({
   nombreComp: Yup.string().required("Nombre requerido"),
@@ -14,20 +16,17 @@ const SignupSchema = Yup.object().shape({
 
 const Diagnostico = () => {
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(formValue);
-  //   reset();
-  // }
+  const dispatch = useDispatch()
+  const [userAgendado, setUserAgendado] = useState({})
 
   const handleEditar = () => {
+    dispatch(actionListCitaAsync())
     console.log('modal abierto');
   }
 
   const handleCerrar = () => {
     console.log('modal cerrado');
   }
-
 
   return (
     <>
@@ -61,7 +60,8 @@ const Diagnostico = () => {
         }
         validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
-          console.log(values);
+          setUserAgendado({ ...userAgendado, nombre: values.nombreComp })
+          dispatch(actionAggDiagAsync(values))
           actions.resetForm({
             values: {
               nombreComp: '',
@@ -79,8 +79,8 @@ const Diagnostico = () => {
 
         }}
       >
-        {({ errors, touched, handleReset }) => (
-          <DiagForm onReset={handleReset}>
+        {({ errors, touched }) => (
+          <DiagForm>
 
             <DiagLabel>Nombre completo del paciente *</DiagLabel>
             <DiagInput name='nombreComp' placeholder='Tu nombre aquí' />
@@ -137,6 +137,7 @@ const Diagnostico = () => {
           </DiagForm>
         )}
       </Formik>
+      <CitaDiagnostico user={userAgendado} disp={dispatch} />
     </>
   )
 }

@@ -8,7 +8,7 @@ export const actionAggDiagAsync = (formDiag) => {
         addDoc(collection(DB, "CitaDiagnostico"), formDiag)
             .then(resp => {
                 dispatch(actionAggDiagSync(formDiag))
-                dispatch(actionListCitaAsync())
+                dispatch(actionListCitaAsync(formDiag?.nombreComp))
             })
             .catch(error => { console.log(error) })
     }
@@ -26,7 +26,7 @@ export const actionListCitaAsync = () => {
         const listCitaDiag = await getDocs(collection(DB, "CitaDiagnostico"))
         const citaAgendada = []
         listCitaDiag.forEach(list => {
-            citaAgendada.push({ ...list.data() })
+            citaAgendada.push({...list.data()})
         })
         dispatch(actionListCitaSync(citaAgendada))
     }
@@ -42,7 +42,7 @@ export const actionListCitaSync = (citaDiag) => {
 export const actionEditarCitaAsync = (datosEdit) => {
     return async (dispatch) => {
         const listCitaDiag = collection(DB, "CitaDiagnostico")
-        const q = query(listCitaDiag, where("correo", "==", datosEdit.correo))
+        const q = query(listCitaDiag, where("correo", "==", datosEdit?.correo))
         const datosQ = await getDocs(q)
         let id
 
@@ -52,7 +52,7 @@ export const actionEditarCitaAsync = (datosEdit) => {
         await updateDoc(DocRecf, datosEdit)
             .then((resp) => {
                 dispatch(actionEditarCitaSync(datosEdit))
-                dispatch(actionListCitaAsync())
+                dispatch(actionListCitaAsync(datosEdit?.nombreComp))
             })
             .catch(err => console.log(err))
     }
