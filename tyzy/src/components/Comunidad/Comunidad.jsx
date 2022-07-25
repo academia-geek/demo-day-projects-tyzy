@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { IoMdPaw } from 'react-icons/io'
@@ -25,7 +24,6 @@ export default function Comunidad() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(formValue)
         dispatch(addComuniAsync(formValue))
         reset()
     }
@@ -45,27 +43,27 @@ export default function Comunidad() {
             <NavBarIn />
             <ComunidadList />
             <NewPubDiv>
-                <NewPubTitle><IoMdPaw style={{'fontSize':'32px', 'marginRight':'20px'}}/>Comparte tu momento Tyzy<IoMdPaw style={{'fontSize':'32px', 'marginLeft':'20px'}}/></NewPubTitle>
-            <NewPubForm className='w-2/3 ' onSubmit={handleSubmit}>
-                <div>
-                    <NewPubLabel className='cursor-pointer' htmlFor='imgup'><TbCameraPlus style={{'fontSize':'20px', 'marginRight':'10px'}}/>Sube tu imagen aquí!</NewPubLabel>
-                    <input className='-z-10 overflow-hidden opacity-0 w-1 h-1' name='image' onChange={handleFileChange} id='imgup' type='file' placeholder='Cambiar foto de perfil' />
-                </div>
-                <div>
-                    <NewPubLabel2>
-                    <LabelComunidad htmlFor='address'>Ubicación</LabelComunidad>
-                    <NewPubLocation onChange={handleInputChange} id='address' type='text' name='direccion' />
-                    </NewPubLabel2>
+                <NewPubTitle><IoMdPaw style={{ 'fontSize': '32px', 'marginRight': '20px' }} />Comparte tu momento Tyzy<IoMdPaw style={{ 'fontSize': '32px', 'marginLeft': '20px' }} /></NewPubTitle>
+                <NewPubForm className='w-2/3 ' onSubmit={handleSubmit}>
+                    <div>
+                        <NewPubLabel className='cursor-pointer' htmlFor='imgup'><TbCameraPlus style={{ 'fontSize': '20px', 'marginRight': '10px' }} />Sube tu imagen aquí!</NewPubLabel>
+                        <input className='-z-10 overflow-hidden opacity-0 w-1 h-1' name='image' onChange={handleFileChange} id='imgup' type='file' placeholder='Cambiar foto de perfil' />
+                    </div>
+                    <div>
+                        <NewPubLabel2>
+                            <LabelComunidad htmlFor='address'>Ubicación</LabelComunidad>
+                            <NewPubLocation onChange={handleInputChange} id='address' type='text' name='direccion' />
+                        </NewPubLabel2>
 
-                    <NewPubLabel2>
-                    <LabelComunidad htmlFor='descrpc'>Descripción</LabelComunidad>
-                    <NewDescription rows="4" cols="50" onChange={handleInputChange} id='descripc' type='text' name='descripcion' />
-                    </NewPubLabel2>
-                </div>
-                
-                <BtnDescrition type="submit"><AiOutlineCheck/>Publicar</BtnDescrition>
+                        <NewPubLabel2>
+                            <LabelComunidad htmlFor='descrpc'>Descripción</LabelComunidad>
+                            <NewDescription rows="4" cols="50" onChange={handleInputChange} id='descripc' type='text' name='descripcion' />
+                        </NewPubLabel2>
+                    </div>
 
-            </NewPubForm>
+                    <BtnDescrition type="submit"><AiOutlineCheck />Publicar</BtnDescrition>
+
+                </NewPubForm>
             </NewPubDiv>
         </div>
     )

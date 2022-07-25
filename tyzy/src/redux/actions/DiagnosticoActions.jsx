@@ -8,7 +8,7 @@ export const actionAggDiagAsync = (formDiag) => {
         addDoc(collection(DB, "CitaDiagnostico"), formDiag)
             .then(resp => {
                 dispatch(actionAggDiagSync(formDiag))
-                dispatch(actionListCitaAsync(formDiag?.nombreComp))
+                dispatch(actionListCitaAsync())
             })
             .catch(error => { console.log(error) })
     }
@@ -52,7 +52,7 @@ export const actionEditarCitaAsync = (datosEdit) => {
         await updateDoc(DocRecf, datosEdit)
             .then((resp) => {
                 dispatch(actionEditarCitaSync(datosEdit))
-                dispatch(actionListCitaAsync(datosEdit?.nombreComp))
+                dispatch(actionListCitaAsync())
             })
             .catch(err => console.log(err))
     }

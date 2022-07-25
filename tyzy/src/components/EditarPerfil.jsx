@@ -2,18 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
 import { editarInfoUserAsync, mostrarDatesUserAsync } from '../redux/actions/InfoUserActionCRUD';
-import { ActionGetUserAsync } from '../redux/actions/UserActions';
 
 const EditarPerfil = ({ si, no, data }) => {
 
     const dispatch = useDispatch()
     const [activo, setActivo] = useState(false)
-
-    useEffect(() => {
-        console.log(data[0]?.nombres);
-        console.log(data[0]);
-
-    }, [dispatch])
 
     const [valueFormEditar, setValueFormEditar] = useState({
         nombres: data[0]?.nombres,

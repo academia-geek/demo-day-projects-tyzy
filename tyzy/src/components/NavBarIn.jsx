@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Avatar } from 'flowbite-react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import Setting from './Setting';
 
@@ -47,7 +47,7 @@ export default function NavBarIn() {
         </section>
 
         <div className="flex items-center z-10 gap-2 text-black md:order-2 me-3">
-          <Avatar className='fs-6' alt={usuario?.displayName} img={usuario?.photoURL} rounded={true} />
+          <Avatar className='fs-6' alt={usuario?.proactiveRefresh?.timerId} img={usuario?.photoURL} rounded={true} />
           {
             ['end'].map((placement, idx) => (
               <Setting key={idx} placement={placement} name={placement} />

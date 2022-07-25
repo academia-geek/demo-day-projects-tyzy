@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup'
-import { ButtonsDiv, CancelButton, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, EditButton, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
+import { ButtonsDiv, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
 import NavBarIn from '../NavBarIn';
 import { useDispatch } from 'react-redux';
-import { actionAggDiagAsync, actionListCitaAsync } from '../../redux/actions/DiagnosticoActions';
+import { actionAggDiagAsync } from '../../redux/actions/DiagnosticoActions';
 import CitaDiagnostico from './CitaDiagnostico';
 
 const SignupSchema = Yup.object().shape({
@@ -19,15 +19,6 @@ const Diagnostico = () => {
   const dispatch = useDispatch()
   const [userAgendado, setUserAgendado] = useState({})
 
-  const handleEditar = () => {
-    dispatch(actionListCitaAsync())
-    console.log('modal abierto');
-  }
-
-  const handleCerrar = () => {
-    console.log('modal cerrado');
-  }
-
   return (
     <>
       <NavBarIn />
@@ -38,7 +29,6 @@ const Diagnostico = () => {
           <DiagIconArrow></DiagIconArrow>
         </DiagDiv>
       </ParallaxDiag>
-
       <div>
       </div>
 
@@ -76,28 +66,27 @@ const Diagnostico = () => {
               descripProblema: ''
             }
           })
-
         }}
       >
         {({ errors, touched }) => (
           <DiagForm>
 
-            <DiagLabel>Nombre completo del paciente *</DiagLabel>
+            <DiagLabel className='font-bold fs-6'>Nombre completo del paciente *</DiagLabel>
             <DiagInput name='nombreComp' placeholder='Tu nombre aquí' />
             {errors.nombreComp && touched.nombreComp ?
               (<div className='ms-3 fs-6 text-dark'>{errors.nombreComp}</div>) : null}
 
-            <DiagLabel style={{ 'marginTop': '3%' }}>Número de contácto *</DiagLabel>
+            <DiagLabel className='font-bold fs-6' style={{ 'marginTop': '3%' }}>Número de contácto *</DiagLabel>
             <DiagInput name='telefono' placeholder='Tu número de celular aquí' />
             {errors.telefono && touched.telefono ?
               (<div className='ms-3 fs-6 text-whdarkite'>{errors.telefono}</div>) : null}
 
-            <DiagLabel style={{ 'marginTop': '3%' }}>Correo electrónico de contácto *</DiagLabel>
+            <DiagLabel className='font-bold fs-6' style={{ 'marginTop': '3%' }}>Correo electrónico de contácto *</DiagLabel>
             <DiagInput name='correo' placeholder='Tu correo aquí' />
             {errors.correo && touched.correo ?
               (<div className='ms-3 fs-6 text-dark'>{errors.correo}</div>) : null}
 
-            <DiagLabel style={{ 'marginTop': '3%' }}>Selecciona 1 o más incomodidades:</DiagLabel>
+            <DiagLabel className='font-bold fs-6' style={{ 'marginTop': '3%' }}>Selecciona 1 o más incomodidades:</DiagLabel>
             <DiagDivRadius>
               <div>
                 <RadiusFlex><InputRadius type="checkbox" name='insomnio' />Problemas de insomnio</RadiusFlex>
@@ -122,22 +111,18 @@ const Diagnostico = () => {
               </div>
             </DiagDivRadius>
 
-            <DiagLabel style={{ 'marginTop': '3%' }}>Descripción del problema de salud mental que presentas actualmente *</DiagLabel>
+            <DiagLabel className='font-bold fs-6' style={{ 'marginTop': '3%' }}>Descripción del problema de salud mental que presentas actualmente *</DiagLabel>
             <Field as={TextDiag} rows="7" cols="50" name='descripProblema' placeholder='Breve descripción del problema' />
             {errors.descripProblema && touched.descripProblema ?
               (<div className='ms-3 fs-6 text-dark'>{errors.descripProblema}</div>) : null}
 
-            <ButtonsDiv>
-              <SaveButton type='submit'>GUARDAR Y ENVIAR</SaveButton>
-              <div>
-                <EditButton type='button' onClick={handleEditar}>EDITAR</EditButton>
-                <CancelButton type='button' onClick={handleCerrar}>CANCELAR</CancelButton>
-              </div>
+            <ButtonsDiv className='flex'>
+              <SaveButton type='submit' className='ms-auto'>GUARDAR</SaveButton>
             </ButtonsDiv>
           </DiagForm>
         )}
       </Formik>
-      <CitaDiagnostico user={userAgendado} disp={dispatch} />
+      <CitaDiagnostico user={userAgendado} />
     </>
   )
 }

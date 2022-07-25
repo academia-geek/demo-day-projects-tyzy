@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Field, Form } from "formik";
 import { Modal } from "react-bootstrap";
 import { BsArrowDown } from "react-icons/bs";
+import { Avatar } from "flowbite-react";
+import { Divider } from "@mui/material";
 
 // REGISTRO //
 
@@ -794,8 +796,8 @@ export const DiagText2 = styled.p`
   margin-top: 10%;
 `;
 
-export const DiagForm = styled.form`
-  color: white;
+export const DiagForm = styled(Form)`
+  color: black;
   padding: 6px;
   width: 70%;
   font-weight: 500;
@@ -812,7 +814,7 @@ export const DiagLabel = styled.label`
   color: #666666;
 `;
 
-export const DiagInput = styled.input`
+export const DiagInput = styled(Field)`
   border: 1px solid hsla(0, 0%, 80%, 1);
   padding: 8px;
   border-radius: 20px;
@@ -837,6 +839,11 @@ export const RadiusFlex = styled.div`
 `;
 
 export const InputRadius = styled(Field)`
+    border: 1px solid hsla(0, 0%, 80%, 1);
+    accent-color: #F26052;
+    border-radius: 50%;
+`
+export const InputRadio = styled.input`
     border: 1px solid hsla(0, 0%, 80%, 1);
     accent-color: #F26052;
     border-radius: 50%;
@@ -909,7 +916,7 @@ export const TitleComunidad = styled.p`
   align-items: center;
 `;
 
-export const SpanTitleComunidad = styled.p`
+export const SpanTitleComunidad = styled.span`
   color: #4ba695;
   margin-left: 12px;
 `;
@@ -939,7 +946,7 @@ export const UserPub = styled.div`
   padding: 12px;
 `;
 
-export const UserImgPub = styled.img`
+export const UserImgPub = styled(Avatar)`
   width: 50px;
   height: 50px;
   border-radius: 50px;
@@ -1112,3 +1119,9 @@ export const CarouselText = styled.p`
   border: 2px solid white;
   padding: 5px;
 `;
+
+export const HrDividir = styled(Divider)`
+ background-color: black;
+ padding: 40% 0 0 0;
+ width: 1px;
+`
