@@ -1,10 +1,13 @@
 
 import React, { useState } from 'react'
-import { BsFillCameraFill } from 'react-icons/bs'
+import { AiOutlineCheck } from 'react-icons/ai'
+import { IoMdPaw } from 'react-icons/io'
+import { TbCameraPlus } from 'react-icons/tb'
 import { useDispatch } from 'react-redux'
 import { FileUpload } from '../../helpers/FileUpload'
 import { useForm } from '../../helpers/UseForm'
 import { addComuniAsync } from '../../redux/actions/ActionAddComuni'
+import { BtnDescrition, NewDescription, NewPubDiv, NewPubForm, NewPubLabel, NewPubLabel2, NewPubLocation, NewPubTitle } from '../../styles/StylesGlobals'
 import NavBarIn from '../NavBarIn'
 import ComunidadList from './ComunidadList'
 
@@ -40,22 +43,28 @@ export default function Comunidad() {
     return (
         <div>
             <NavBarIn />
-
-            <form className='w-2/3 ' onSubmit={handleSubmit}>
-                <div className='flex gap-2 text-titleColor  justify-center py-3'>
-                    <label className='cursor-pointer' htmlFor='imgup'><BsFillCameraFill className='inline-block text-xl mr-2' />Subir imagen</label>
+            <ComunidadList />
+            <NewPubDiv>
+                <NewPubTitle><IoMdPaw style={{'fontSize':'32px', 'marginRight':'20px'}}/>Comparte tu momento Tyzy<IoMdPaw style={{'fontSize':'32px', 'marginLeft':'20px'}}/></NewPubTitle>
+            <NewPubForm className='w-2/3 ' onSubmit={handleSubmit}>
+                <div>
+                    <NewPubLabel className='cursor-pointer' htmlFor='imgup'><TbCameraPlus style={{'fontSize':'20px', 'marginRight':'10px'}}/>Sube tu imagen aquí!</NewPubLabel>
                     <input className='-z-10 overflow-hidden opacity-0 w-1 h-1' name='image' onChange={handleFileChange} id='imgup' type='file' placeholder='Cambiar foto de perfil' />
                 </div>
-                <div className='grid grid-cols-[1fr_1fr] gap-x-10 gap-y-2 px-5 items-center'>
-                    <label htmlFor='address'>Direccion:</label>
-                    <input className='appearance-none  rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-0' onChange={handleInputChange} id='address' type='text' name='direccion' />
+                <div>
+                    <NewPubLabel2 htmlFor='address'>Ubicación
+                    <NewPubLocation onChange={handleInputChange} id='address' type='text' name='direccion' />
+                    </NewPubLabel2>
 
-                    <label htmlFor='descripc'>Descripcion:</label>
-                    <input className='appearance-none  rounded-xl w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-0' onChange={handleInputChange} id='descripc' type='text' name='descripcion' />
+                    <NewPubLabel2 htmlFor='descripc'>Descripcion
+                    <NewDescription rows="4" cols="50" onChange={handleInputChange} id='descripc' type='text' name='descripcion' />
+                    </NewPubLabel2>
                 </div>
-                <button type="submit">Subir archivo</button>
-            </form>
-            <ComunidadList />
+                
+                <BtnDescrition type="submit"><AiOutlineCheck/>Publicar</BtnDescrition>
+
+            </NewPubForm>
+            </NewPubDiv>
         </div>
     )
 }

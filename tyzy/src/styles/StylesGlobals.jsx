@@ -436,204 +436,201 @@ export const HomeStyle = styled.div`
     color: #275556;
     text-align: center;
   }
-    
-    
-    //--------------------IMG principal
-    .IMGHome {
-        height: 100vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doaijv8m0/image/upload/v1657732952/Demoday/Image_kopayq.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .IMGHome section {
-        width: 50%;
-    }
-    .IMGHome h2 {
-        color: #FFFFFF;
-        font-size: 50px;
-        font-weight: 700;
-    }
-    .IMGHome p {
-        color: #FFFFFF;
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 19px;
-    }
-    .IMGHome h3 {
-        color: #FFFFFF;
-        font-size: 20px;
-    }
-    .IMGHome img {
-        width: 10px;
-        height: 15px;
-    }
 
-    //--------------------Consejos y Tips home
-    .TICShome {
-        margin-bottom: 3em !important;
+  //--------------------IMG principal
+  .IMGHome {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://res.cloudinary.com/doaijv8m0/image/upload/v1657732952/Demoday/Image_kopayq.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .IMGHome section {
+    width: 50%;
+  }
+  .IMGHome h2 {
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 700;
+  }
+  .IMGHome p {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+  }
+  .IMGHome h3 {
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .IMGHome img {
+    width: 10px;
+    height: 15px;
+  }
+
+  //--------------------Consejos y Tips home
+  .TICShome {
+    margin-bottom: 3em !important;
+  }
+  .TICShome .h2 {
+    margin: 0 auto;
+    text-align: center;
+    color: #4da796;
+    font-size: 36px;
+  }
+  .TICShome h4 {
+    margin: 0 auto;
+    width: 73%;
+    text-align: center;
+    color: #426666;
+    font-size: 16px;
+  }
+  .TICShome h3 {
+    margin-top: 28px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f26052;
+    text-align: center;
+  }
+  .TICShome section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    color: #000000;
+    width: 95%;
+  }
+  .Tips {
+    border-radius: 20px;
+    width: 100%;
+    height: 13rem;
+  }
+  .Tips div {
+    margin: 0.8em 0;
+  }
+  .Tips p {
+    margin: 4px 20px 0 0;
+    line-height: 20px !important;
+  }
+  .BGTips1 {
+    background-color: #a4dbd1;
+  }
+  .BGTips2 {
+    background-color: #f39991;
+  }
+  .BGTips3 {
+    background-color: #f6dd61;
+  }
+  .TICShome img {
+    width: 80px;
+    height: 80px;
+  }
+  .TICShome {
+    font-size: 20px;
+  }
+  .h2-2 {
+    width: 90%;
+    height: 30%;
+  }
+  .h2-2 h2 {
+    font-size: 18px;
+  }
+  .TICShome p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  //--------------------Equipo tecnico home
+  .EquipoTec h2 {
+    margin: 0 auto;
+    text-align: center;
+    color: #f26052;
+    font-size: 36px;
+  }
+  .EquipoTec h4 {
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+    color: #426666;
+    font-size: 16px;
+  }
+  .EquipoTec div {
+    width: 15rem;
+    height: 20rem;
+  }
+  .BORDERimg {
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 11px solid #ffffff;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  .EquipoTec img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+  }
+  .EquipoTec h3 {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #275556;
+    text-align: center;
+  }
+
+  //---------------------------------Carrusel Home
+  .UserAndPets {
+    margin: 0 2em;
+    height: 60vh;
+    img {
+      border-radius: 14px;
     }
-    .TICShome .h2 {
+    .div1 {
+      width: 70%;
+      height: 100%;
+      margin: 0 auto;
+      div {
+        width: 80%;
+        height: 80%;
         margin: 0 auto;
-        text-align: center;
-        color: #4DA796;
-        font-size: 36px;
-    }
-    .TICShome h4 {
-        margin: 0 auto;
-        width: 73%;
-        text-align: center;
-        color: #426666; 
-        font-size: 16px;
-    }
-    .TICShome h3 {
-        margin-top: 28px;
-        font-size: 18px;
-        font-weight: 600;
-        color: #F26052;
-        text-align: center;
-    }
-    .TICShome section {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+      }
+      section {
         gap: 15px;
-        color: #000000;
-        width: 95%;
+      }
+      img {
+        width: 150px;
+      }
     }
-    .Tips{
-        border-radius: 20px;
-        width: 100%;
-        height: 13rem;
-    }
-    .Tips div {
-        margin: .8em 0;
-    }
-    .Tips p {
-        margin: 4px 20px 0 0;
-        line-height: 20px !important;
-    }
-    .BGTips1 {
-        background-color: #A4DBD1;
-    }
-    .BGTips2 {
-        background-color: #F39991;
-    }
-    .BGTips3 {
-        background-color: #F6DD61;
-    }
-    .TICShome img {
-        width: 80px;
-        height: 80px;
-    }
-    .TICShome {
-        font-size: 20px;
-    }
-    .h2-2 {
-      width: 90%;
-      height: 30%;
-    }
-    .h2-2 h2 {
-      font-size: 18px;
-    }
-    .TICShome p {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 16px;
-    }
-
-    //--------------------Equipo tecnico home
-    .EquipoTec h2 {
-        margin: 0 auto;
-        text-align: center;
-        color: #F26052;
-        font-size: 36px;
-    }
-    .EquipoTec h4 {
-        margin: 0 auto;
-        width: 75%;
-        text-align: center;
-        color: #426666; 
-        font-size: 16px;
-    }
-    .EquipoTec div {
-        width: 15rem;
-        height: 20rem;
-    }
-    .BORDERimg {
-        border-radius: 50%;
-        box-sizing: border-box;
-        border: 11px solid #FFFFFF;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    }
-    .EquipoTec img {
-        border-radius: 50%;
+    .div2 {
+      height: 80%;
+      div {
         width: 100%;
         height: 100%;
-    }
-    .EquipoTec h3 {
-        margin-top: 8px;
-        font-size: 16px;
-        color: #275556;
-        text-align: center;
-    }
+      }
 
-    //---------------------------------Carrusel Home
-    .UserAndPets {
-        margin: 0 2em;
-        height: 60vh;
-        img {
-            border-radius: 14px;
-        }
-        .div1 {
-            width: 70%;
-            height: 100%;
-            margin: 0 auto;
-            div {
-                width: 80%;
-                height: 80%;
-                margin: 0 auto;
-            }
-            section {
-                gap: 15px;
-            }
-            img {
-                width: 150px;
-            }
-        }
-        .div2 {
-            height: 80%;
-            div{
-                width: 100%;
-                height: 100%;
-            } 
-
-            img {
-                width: 60%;
-                height: 100%;
-
-            }
-        }
-    }
-    .UserAndPets h2{
-        font-size: 30px;
-        color: #4BA695;
+      img {
         width: 60%;
-        font-weight: 600;
-
+        height: 100%;
+      }
     }
-    .UserAndPets span{
-        color: #F26052;
-        font-size: 14px;
-        font-weight: 600;
-    }
-    .UserAndPets p{
-        color: #426666;
-        font-size: 16px;
-        line-height: 28px;
-        width: 80%;
-        margin-bottom: auto; 
-    }
+  }
+  .UserAndPets h2 {
+    font-size: 30px;
+    color: #4ba695;
+    width: 60%;
+    font-weight: 600;
+  }
+  .UserAndPets span {
+    color: #f26052;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .UserAndPets p {
+    color: #426666;
+    font-size: 16px;
+    line-height: 28px;
+    width: 80%;
+    margin-bottom: auto;
+  }
 `;
-
 
 // REQUISITOS ******
 export const DivUnoRe = styled.div`
@@ -753,9 +750,9 @@ export const BtnNewsletter = styled.button`
 export const ParallaxDiag = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1658180946/Tyzy/pexels-alex-green-5699482_1_ve5zrg.jpg");
-   height: 80vh;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  height: 80vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -764,7 +761,7 @@ export const ParallaxDiag = styled.div`
 
 export const DiagDiv = styled.div`
   margin-left: 5%;
-`
+`;
 
 export const DiagText1 = styled.p`
   font-size: 45px;
@@ -778,7 +775,7 @@ export const DiagSubText1 = styled.p`
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 3px;
-  color:white;
+  color: white;
   margin-top: 20px;
 `;
 
@@ -791,95 +788,95 @@ export const DiagText2 = styled.p`
   color: #426666;
   font-size: 14px;
   line-height: 25px;
-  margin:0 auto;
+  margin: 0 auto;
   width: 60%;
   text-align: center;
   margin-top: 10%;
 `;
 
 export const DiagForm = styled.form`
-    color:white;
-    padding: 6px;
-    width: 70%;
-    font-weight: 500;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    margin:0 auto;
-    margin-top:5%;
-    margin-bottom: 10%;
-`
+  color: white;
+  padding: 6px;
+  width: 70%;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 10%;
+`;
 
 export const DiagLabel = styled.label`
-    font-size: 14px;
-    color:#666666;
-`
+  font-size: 14px;
+  color: #666666;
+`;
 
 export const DiagInput = styled.input`
-    border: 1px solid hsla(0, 0%, 80%, 1);
-    padding: 8px;
-    border-radius: 20px;
-    margin-top: 10px;
-    &::placeholder{
-      color: #666666;
-      font-size: 12px; 
-    }
-`
+  border: 1px solid hsla(0, 0%, 80%, 1);
+  padding: 8px;
+  border-radius: 20px;
+  margin-top: 10px;
+  &::placeholder {
+    color: #666666;
+    font-size: 12px;
+  }
+`;
 export const DiagDivRadius = styled.div`
-    display:grid;
-    grid-template-columns: auto auto auto;
-    margin-top: 10px;
-`
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-top: 10px;
+`;
 
 export const RadiusFlex = styled.div`
   display: flex;
   align-items: center;
-  gap:10px;
+  gap: 10px;
   font-size: 14px;
-  color:#666666;
-`
+  color: #666666;
+`;
 
 export const InputRadius = styled.input`
-    border: 1px solid hsla(0, 0%, 80%, 1);
-    accent-color: #F26052;
-`
+  border: 1px solid hsla(0, 0%, 80%, 1);
+  accent-color: #f26052;
+`;
 
 export const TextDiag = styled.textarea`
-    border: 1px solid hsla(0, 0%, 80%, 1);
-    border-radius: 10px;
-    margin-top: 10px;
-`
+  border: 1px solid hsla(0, 0%, 80%, 1);
+  border-radius: 10px;
+  margin-top: 10px;
+`;
 
 export const ButtonsDiv = styled.div`
-    display: flex;
-    width: 98%;
-    margin: 0 auto;
-    margin-top: 5%;
-    justify-content: space-between;
-`
+  display: flex;
+  width: 98%;
+  margin: 0 auto;
+  margin-top: 5%;
+  justify-content: space-between;
+`;
 
 export const SaveButton = styled.button`
-  background-color:#F26052;
+  background-color: #f26052;
   color: white;
-  border:none;
+  border: none;
   border-radius: 8px;
   padding: 10px;
-`
+`;
 export const EditButton = styled.button`
-  border: dashed 1.8px #F26052;
-  color: #F26052;
-  padding:10px;
-  border-radius:8px;
+  border: dashed 1.8px #f26052;
+  color: #f26052;
+  padding: 10px;
+  border-radius: 8px;
   margin-right: 20px;
-`
-export const CancelButton = styled.button` 
-  border: dashed 1.8px #F26052;
-  color: #F26052;
-  padding:10px;
-  border-radius:8px;
-`
+`;
+export const CancelButton = styled.button`
+  border: dashed 1.8px #f26052;
+  color: #f26052;
+  padding: 10px;
+  border-radius: 8px;
+`;
 
-// SETTINGS.JSX // 
+// SETTINGS.JSX //
 
 // modal detalle mascotas
 export const DetalleMascota = styled(Modal)`
@@ -896,4 +893,211 @@ export const DetalleMascota = styled(Modal)`
       border: none;
     }
   }
+`;
+
+//  -------- COMUNIDA ------
+
+export const TitleComunidad = styled.p`
+  font-size: 50px;
+  font-family: "Yeseva One", cursive;
+  width: 80%;
+  margin: 0 auto;
+  color: #f26052;
+  display: flex;
+  margin-top: 5%;
+  align-items: center;
+`;
+
+export const SpanTitleComunidad = styled.p`
+  color: #4ba695;
+  margin-left: 12px;
+`;
+
+export const ComunidadDiv = styled.div`
+  width: 75%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 5%;
+  margin: 0 auto;
+  margin-top: 5%;
+  justify-content: center;
+`;
+
+export const ComunidadPub = styled.div`
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 6px 7px 8px -4px rgba(0,0,0,0.2);
+`;
+export const UserPub = styled.div`
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+`;
+
+export const UserImgPub = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 2px solid #4ba695;
+`;
+export const UserNamePub = styled.p`
+  font-size: 14px;
+  font-weight: 700;
+  /* font-family: 'Yeseva One', cursive; */
+  letter-spacing: 2px;
+`;
+export const LocationPub = styled.p`
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+`;
+export const ImgPubComunidad = styled.img`
+  width: 90%;
+  height: 80vh;
+  margin:0 auto;
+`;
+
+export const DescripUser = styled.p`
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+`;
+
+export const PubDescription = styled.p`
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: 500;
+`;
+
+// ----------
+
+export const NewPubDiv = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 15%;
+`;
+export const NewPubTitle = styled.p`
+  font-size: 35px;
+  font-family: "Yeseva One", cursive;
+  display: flex;
+  justify-content: center;
+  color: #f2ba52;
+  align-items: center;
+`;
+
+export const NewPubForm = styled.form`
+  /* border-radius: 20px;
+  box-shadow: -4px 7px 8px -4px rgba(0,0,0,0.15);
+  background-color: white; */
+  width: 100%;
+  margin-top:2%;
+  margin-bottom: 20%;
+`;
+export const NewPubLabel = styled.label`
+  font-size: 14px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color:white;
+  background-color: #4BA695;
+  width:20%;
+  margin:0 auto;
+  margin-top: 5%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.15);
+`;
+export const NewPubLabel2 = styled.label`
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  margin:0 auto;
+  width:80%;
+  margin-top: 10px;
+  color:#404040;
+`;
+export const NewPubLocation = styled.input`
+  border: 1px solid #cccccc;
+  border-radius:20px;
+  margin-top:10px;
+  &:focus {
+    outline: none;
+  }
+`;
+export const NewDescription = styled.textarea`
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius:20px;
+  margin-top:10px;
+   &:focus {
+    outline: none;
+  }
+`;
+
+export const BtnDescrition = styled.button`
+  background-color: #F26052 ;
+  padding: 8px;
+  color:white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.15);
+  position: relative;
+  float: right;
+  margin-right: 10%;
+  margin-top: 2%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+  width: 12%;
+  font-weight: 700;
 `
+export const ImgCarousel1 = styled.div`
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1658717101/Tyzy/pexels-photo-8734435_sg6fgq.jpg");
+  height: 80vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`;
+
+export const ImgCarousel2 = styled.div`
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1658717184/Tyzy/pexels-anastasia-shuraeva-5126991_1_ixzlsw.jpg");
+  height: 80vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`;
+
+export const ImgCarousel3 = styled.div`
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1658717230/Tyzy/pexels-yaroslav-shuraev-9632391_hru9hf.jpg");
+  height: 80vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`;
+
+export const CarouselText = styled.p`
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 28px;
+  margin-bottom: 25%;
+  text-align: center;
+  border: 2px solid white;
+  padding: 5px;
+`;
