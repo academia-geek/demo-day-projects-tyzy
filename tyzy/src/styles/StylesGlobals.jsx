@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Field } from "formik";
+import { Field, Form } from "formik";
 import { Modal } from "react-bootstrap";
 import { BsArrowDown } from "react-icons/bs";
 
@@ -86,7 +86,7 @@ export const IngresaCon = styled.h3`
   margin-top: 12%;
   color: #275556;
   font-size: 14px;
-`;
+`
 
 export const DIVLogin = styled.div`
   margin-top: 20px;
@@ -836,10 +836,11 @@ export const RadiusFlex = styled.div`
   color: #666666;
 `;
 
-export const InputRadius = styled.input`
-  border: 1px solid hsla(0, 0%, 80%, 1);
-  accent-color: #f26052;
-`;
+export const InputRadius = styled(Field)`
+    border: 1px solid hsla(0, 0%, 80%, 1);
+    accent-color: #F26052;
+    border-radius: 50%;
+`
 
 export const TextDiag = styled.textarea`
   border: 1px solid hsla(0, 0%, 80%, 1);
@@ -926,7 +927,8 @@ export const ComunidadDiv = styled.div`
 export const ComunidadPub = styled.div`
   background-color: white;
   border-radius: 20px;
-  box-shadow: 6px 7px 8px -4px rgba(0,0,0,0.2);
+  /* box-shadow: 6px 7px 8px -4px rgba(0,0,0,0.2); */
+  border:1px solid #EBEDF0;
 `;
 export const UserPub = styled.div`
   display: flex;
@@ -1015,33 +1017,42 @@ export const NewPubLabel = styled.label`
   border-radius: 5px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.15);
 `;
-export const NewPubLabel2 = styled.label`
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 2px;
+export const NewPubLabel2 = styled.div`
   display: flex;
   flex-direction: column;
   margin:0 auto;
   width:80%;
   margin-top: 10px;
-  color:#404040;
 `;
+
+export const LabelComunidad = styled.label`
+font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+color:#404040;`
+
 export const NewPubLocation = styled.input`
   border: 1px solid #cccccc;
   border-radius:20px;
   margin-top:10px;
-  &:focus {
-    outline: none;
+  &::placeholder{
+    font-weight: 300 !important;
   }
+  &:focus {
+    outline:none;
+}
 `;
 export const NewDescription = styled.textarea`
   font-size: 14px;
   border: 1px solid #cccccc;
   border-radius:20px;
   margin-top:10px;
-   &:focus {
-    outline: none;
+  &::placeholder{
+    font-weight: 300 !important;
   }
+  &:focus {
+    outline:none;
+}
 `;
 
 export const BtnDescrition = styled.button`

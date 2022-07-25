@@ -1,8 +1,34 @@
-import React from 'react'
+import { Field, Formik } from 'formik';
+import * as Yup from 'yup'
+import React from 'react';
 import { ButtonsDiv, CancelButton, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, EditButton, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../styles/StylesGlobals'
-import NavBarIn from './NavBarIn'
+import NavBarIn from './NavBarIn';
+import { ActionLoginSync } from '../redux/actions/LoginActions';
+
+const SignupSchema = Yup.object().shape({
+  nombreComp: Yup.string().required("Nombre requerido"),
+  telefono: Yup.string().min(10, 'número incorrecto, muy corto').max(10, 'número incorrecto, demasiado largo').required("El número de celular es requerido"),
+  correo: Yup.string().email('El correo debe ser de tipo correo@ejemplo.com').required("Correo requerido"),
+  descripProblema: Yup.string().required("Descripción requerida"),
+})
 
 const Diagnostico = () => {
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(formValue);
+  //   reset();
+  // }
+
+  const handleEditar = () => {
+    console.log('modal abierto');
+  }
+
+  const handleCerrar = () => {
+    console.log('modal cerrado');
+  }
+
+
   return (
     <>
       <NavBarIn />
@@ -14,46 +40,103 @@ const Diagnostico = () => {
         </DiagDiv>
       </ParallaxDiag>
 
+      <div>
+      </div>
+
       <DiagText2>Una vez tengas una fecha registrada, quisieramos preguntarte algunas cosas, para que en tu reunión con los especialistas tengamos como equipo más claridad al momento de comunicarnos contigo</DiagText2>
-      <DiagForm>
-        <DiagLabel>Input Text Label</DiagLabel>
-        <DiagInput placeholder='type here' />
+      <Formik
+        initialValues={
+          {
+            nombreComp: '',
+            telefono: '',
+            correo: '',
+            insomnio: '',
+            inseguridad: '',
+            humor: '',
+            dCabeza: '',
+            fCariño: '',
+            fComprension: '',
+            descripProblema: ''
+          }
+        }
+        validationSchema={SignupSchema}
+        onSubmit={(values, actions) => {
+          console.log(values);
+          actions.resetForm({
+            values: {
+              nombreComp: '',
+              telefono: '',
+              correo: '',
+              insomnio: '',
+              inseguridad: '',
+              humor: '',
+              dCabeza: '',
+              fCariño: '',
+              fComprension: '',
+              descripProblema: ''
+            }
+          })
 
-        <DiagLabel style={{ 'marginTop': '3%' }}>Input Text Label</DiagLabel>
-        <DiagInput placeholder='type here' />
+        }}
+      >
+        {({ errors, touched, handleReset }) => (
+          <DiagForm onReset={handleReset}>
 
-        <DiagLabel style={{ 'marginTop': '3%' }}>Input Text Label</DiagLabel>
-        <DiagInput placeholder='type here' />
+            <DiagLabel>Nombre completo del paciente *</DiagLabel>
+            <DiagInput name='nombreComp' placeholder='Tu nombre aquí' />
+            {errors.nombreComp && touched.nombreComp ?
+              (<div className='ms-3 fs-6 text-dark'>{errors.nombreComp}</div>) : null}
 
-        <DiagLabel style={{ 'marginTop': '3%' }}>Input Text Label</DiagLabel>
-        <DiagDivRadius>
-          <div>
-            <RadiusFlex><InputRadius type="radio" />Radio selection</RadiusFlex>
-            <RadiusFlex style={{ 'marginTop': '10px' }}><InputRadius type="radio" />Radio selection</RadiusFlex>
-          </div>
+            <DiagLabel style={{ 'marginTop': '3%' }}>Número de contácto *</DiagLabel>
+            <DiagInput name='telefono' placeholder='Tu número de celular aquí' />
+            {errors.telefono && touched.telefono ?
+              (<div className='ms-3 fs-6 text-whdarkite'>{errors.telefono}</div>) : null}
 
-          <div>
-            <RadiusFlex><InputRadius type="radio" />Radio selection</RadiusFlex>
-            <RadiusFlex style={{ 'marginTop': '10px' }}><InputRadius type="radio" />Radio selection</RadiusFlex>
-          </div>
+            <DiagLabel style={{ 'marginTop': '3%' }}>Correo electrónico de contácto *</DiagLabel>
+            <DiagInput name='correo' placeholder='Tu correo aquí' />
+            {errors.correo && touched.correo ?
+              (<div className='ms-3 fs-6 text-dark'>{errors.correo}</div>) : null}
 
-          <div>
-            <RadiusFlex><InputRadius type="radio" />Radio selection</RadiusFlex>
-            <RadiusFlex style={{ 'marginTop': '10px' }}><InputRadius type="radio" />Radio selection</RadiusFlex>
-          </div>
-        </DiagDivRadius>
+            <DiagLabel style={{ 'marginTop': '3%' }}>Selecciona 1 o más incomodidades:</DiagLabel>
+            <DiagDivRadius>
+              <div>
+                <RadiusFlex><InputRadius type="checkbox" name='insomnio' />Problemas de insomnio</RadiusFlex>
+                <RadiusFlex style={{ 'marginTop': '10px' }}><InputRadius type="checkbox" name='dCabeza' />Dolor frecuente de cabeza</RadiusFlex>
+              </div>
 
-        <DiagLabel style={{ 'marginTop': '3%' }}>Text Area</DiagLabel>
-        <TextDiag rows="7" cols="50" placeholder='Write something' />
+              <div>
+                <RadiusFlex><InputRadius type="checkbox" name='inseguridad' />Inseguridad ante otras personas</RadiusFlex>
+                <RadiusFlex style={{ 'marginTop': '10px' }}><InputRadius type="checkbox" name='fCariño' />Falta de cariño</RadiusFlex>
+              </div>
 
-        <ButtonsDiv>
-          <SaveButton type='submit'>GUARDAR Y ENVIAR</SaveButton>
-          <div>
-            <EditButton>EDITAR</EditButton>
-            <CancelButton>CANCELAR</CancelButton>
-          </div>
-        </ButtonsDiv>
-      </DiagForm>
+              <div>
+                <RadiusFlex>
+                  <InputRadius type="checkbox" name='humor' />
+                  Cambio de humor repentino
+                </RadiusFlex>
+
+                <RadiusFlex style={{ 'marginTop': '10px' }}>
+                  <InputRadius type="checkbox" name='fComprension' />
+                  Falta de comprensión
+                </RadiusFlex>
+              </div>
+            </DiagDivRadius>
+
+            <DiagLabel style={{ 'marginTop': '3%' }}>Descripción del problema de salud mental que presentas actualmente *</DiagLabel>
+            <Field as={TextDiag} rows="7" cols="50" name='descripProblema' placeholder='Breve descripción del problema' />
+            {errors.descripProblema && touched.descripProblema ?
+              (<div className='ms-3 fs-6 text-dark'>{errors.descripProblema}</div>) : null}
+
+            <ButtonsDiv>
+              <SaveButton type='submit'>GUARDAR Y ENVIAR</SaveButton>
+              <div>
+                <EditButton type='button' onClick={handleEditar}>EDITAR</EditButton>
+                <CancelButton type='button' onClick={handleCerrar}>CANCELAR</CancelButton>
+              </div>
+            </ButtonsDiv>
+          </DiagForm>
+        )}
+      </Formik>
     </>
   )
 }

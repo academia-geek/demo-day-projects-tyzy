@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 import { FileUpload } from '../../helpers/FileUpload'
 import { useForm } from '../../helpers/UseForm'
 import { addComuniAsync } from '../../redux/actions/ActionAddComuni'
-import { BtnDescrition, NewDescription, NewPubDiv, NewPubForm, NewPubLabel, NewPubLabel2, NewPubLocation, NewPubTitle } from '../../styles/StylesGlobals'
+import { BtnDescrition, LabelComunidad, NewDescription, NewPubDiv, NewPubForm, NewPubLabel, NewPubLabel2, NewPubLocation, NewPubTitle } from '../../styles/StylesGlobals'
 import NavBarIn from '../NavBarIn'
 import ComunidadList from './ComunidadList'
 
@@ -52,11 +52,13 @@ export default function Comunidad() {
                     <input className='-z-10 overflow-hidden opacity-0 w-1 h-1' name='image' onChange={handleFileChange} id='imgup' type='file' placeholder='Cambiar foto de perfil' />
                 </div>
                 <div>
-                    <NewPubLabel2 htmlFor='address'>Ubicación
+                    <NewPubLabel2>
+                    <LabelComunidad htmlFor='address'>Ubicación</LabelComunidad>
                     <NewPubLocation onChange={handleInputChange} id='address' type='text' name='direccion' />
                     </NewPubLabel2>
 
-                    <NewPubLabel2 htmlFor='descripc'>Descripcion
+                    <NewPubLabel2>
+                    <LabelComunidad htmlFor='descrpc'>Descripción</LabelComunidad>
                     <NewDescription rows="4" cols="50" onChange={handleInputChange} id='descripc' type='text' name='descripcion' />
                     </NewPubLabel2>
                 </div>
