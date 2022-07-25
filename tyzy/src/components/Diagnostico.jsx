@@ -1,9 +1,12 @@
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup'
 import React from 'react';
-import { ButtonsDiv, CancelButton, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, EditButton, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../styles/StylesGlobals'
+import { AgendateCalendario, AgendateTxt, ButtonsDiv, CancelButton, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, DivCalendar, EditButton, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../styles/StylesGlobals'
 import NavBarIn from './NavBarIn';
 import { ActionLoginSync } from '../redux/actions/LoginActions';
+import { Calendar } from 'antd';
+import '../styles/styles.css'
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 const SignupSchema = Yup.object().shape({
   nombreComp: Yup.string().required("Nombre requerido"),
@@ -28,6 +31,9 @@ const Diagnostico = () => {
     console.log('modal cerrado');
   }
 
+  const onPanelChange = (value, mode) => {
+    console.log(value.format('YYYY-MM-DD'), mode);
+  }
 
   return (
     <>
@@ -40,8 +46,13 @@ const Diagnostico = () => {
         </DiagDiv>
       </ParallaxDiag>
 
-      <div>
-      </div>
+      <DivCalendar>
+        <AgendateCalendario>AGENDA TU PRIMERA CITA</AgendateCalendario>
+        <AgendateTxt>Para poder hablar con nuestro equipo Tyzy sobre tu primer diagnóstico que podrás diligenciar en la parte de abajo, debes agendar una cita en el día que más se acomode para tener una charla y la orientación nesaria en el inicio de esta etapa al lado de un compañero de cuatro patas</AgendateTxt>
+      <Calendar onPanelChange={onPanelChange} />
+      </DivCalendar>
+     
+     
 
       <DiagText2>Una vez tengas una fecha registrada, quisieramos preguntarte algunas cosas, para que en tu reunión con los especialistas tengamos como equipo más claridad al momento de comunicarnos contigo</DiagText2>
       <Formik
