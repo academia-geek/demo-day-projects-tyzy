@@ -231,3 +231,46 @@ body {
     color: #F26052;
     cursor: pointer;
 }
+
+
+/* calendario */
+
+.ant-picker-calendar{
+   border-radius: 20px !important;
+   background-color: white solid transparent !important;
+   width:100%;
+}
+
+.ant-picker-content{
+    width: 50%;
+    color:purple
+}
+
+.ant-picker-content{
+    width: 80px;
+    border-radius: 20px !important;
+}
+
+.ant-picker-content thead{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+
+.ant-picker-date-panel{
+    border-radius: 20px;
+    background-color: red solid transparent;
+}
+
+.ant-picker-body{
+    border-radius: 30px;
+    background-color: white;
+}
+
+.ant-picker-calendar-header{
+    justify-content: center !important;
+    margin-bottom: 4%;
+}
+
