@@ -793,7 +793,7 @@ export const DiagText2 = styled.p`
   margin: 0 auto;
   width: 60%;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 2%;
 `;
 
 export const DiagForm = styled(Form)`
@@ -1124,4 +1124,36 @@ export const HrDividir = styled(Divider)`
  background-color: black;
  padding: 40% 0 0 0;
  width: 1px;
+`
+// DIV CALENDAR
+
+export const DivCalendar = styled.div`
+  width:70%;
+  margin:0 auto;
+  border-radius: 20px;
+  position: relative;
+  bottom:65px;
+  background-color:white;
+  padding: 10px;
+  /* border: 1px solid #CCCCCC; */
+  box-shadow: 15px 17px 11px -20px #A3A3A3;
+`
+
+export const AgendateCalendario = styled.p`
+  color: #F26052;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 2%;
+`
+
+export const AgendateTxt = styled.p`
+  width: 85%;
+  font-size: 14px;
+  color: #426666;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 25px;
+  margin-bottom: 5%;
 `
