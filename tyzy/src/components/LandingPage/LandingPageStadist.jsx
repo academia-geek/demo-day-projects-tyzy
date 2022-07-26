@@ -17,8 +17,8 @@ const LandingPageStadist = () => {
     return (
         <div id='comunidad' className='LandingPageStadist d-flex flex-column'>
             <div className='mt-auto mb-5'>
-                <h2 className='text-center TitleLandingPageStadist'>Lorem ipsum dolor sit amet</h2>
-                <p className='mx-auto text-center P1LandingPageStadist'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2 className='text-center TitleLandingPageStadist'>Haz parte de la comunidad Tyzy</h2>
+                <p className='mx-auto text-center P1LandingPageStadist'>Ayudamos a nuestros usuarios a sentirse más cómodos y tranquilos, eso hace que este equipo crezca todos los días</p>
             </div>
 
             <section className='d-flex justify-content-evenly mb-auto'>
