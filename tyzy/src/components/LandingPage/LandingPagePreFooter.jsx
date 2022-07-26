@@ -17,8 +17,8 @@ export default function LandingPagePreFooter() {
   return (
     <div>
       <section className='py-20 d-flex flex-column'>
-        <h3 className='font-bold text-xl text-center text-titleColor'>Nuestros objetivos</h3>
-        <p className=' font-bold text-sm  text-center text-titleOrange'>LOREM IPSUM</p>
+        <h3 className='font-bold text-xl text-center text-titleColor'>Una aplicación para todos</h3>
+        <p className=' font-bold text-sm  text-center text-titleOrange'>ÚNETE Y EMPIEZA AHORA</p>
       </section>
       <section className='d-flex mx-auto gap-3 items-center justify-evenly py-10 w-100'>
       {

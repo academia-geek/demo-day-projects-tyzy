@@ -34,7 +34,7 @@ const LandingServices = () => {
             <ServicesDiv>
                 <ServiceImg src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657512206/Tyzy/Tips_ltmwa1.png' alt='vector' />
                 <InfoServices className='mb-3'>
-                    <ServiceTitle>Lorem ipsum dolor sit,<SpanTitle> consectetur</SpanTitle></ServiceTitle>
+                    <ServiceTitle>En nuestra aplicación,<SpanTitle> siempre encontrarás</SpanTitle></ServiceTitle>
                     {
                         datos?.map((dt) => (
                             <section key={dt?.id} className="box mb-5 ">
