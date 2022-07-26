@@ -30,7 +30,7 @@ const Diagnostico = () => {
     const fecha = dt.getFullYear()
     console.log(fecha);
 
-    if(fecha == value.format('YYYY')){
+    if (fecha == value.format('YYYY')) {
       console.log('fecha correcta');
     }
   }
@@ -74,7 +74,8 @@ const Diagnostico = () => {
         validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
           console.log(values)
-          console.log(userAgendado) 
+          console.log(userAgendado)
+          setUserAgendado({ nombre: values.nombreComp })
           // ramdonUid()
           dispatch(actionAggDiagAsync(values))
           actions.resetForm({

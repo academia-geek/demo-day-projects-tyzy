@@ -213,7 +213,8 @@ export const InfoServices = styled.div`
   .box.show {
     transform: translateX(0);
   }
-`;
+`
+
 export const ServiceTitle = styled.p`
   color: #f26052;
   font-weight: 700;
