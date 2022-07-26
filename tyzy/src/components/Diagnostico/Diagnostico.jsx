@@ -5,9 +5,7 @@ import NavBarIn from '../NavBarIn';
 import { useDispatch } from 'react-redux';
 import { actionAggDiagAsync } from '../../redux/actions/DiagnosticoActions';
 import CitaDiagnostico from './CitaDiagnostico';
-import { AgendateCalendario, AgendateTxt, ButtonsDiv, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, DivCalendar, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
-import { Calendar } from 'antd';
-import '../../styles/styles.css'
+import { AgendateCalendario, AgendateTxt, ButtonsDiv, CalendarioANDT, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, DivCalendar, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 const SignupSchema = Yup.object().shape({
@@ -41,8 +39,8 @@ const Diagnostico = () => {
 
       <DivCalendar>
         <AgendateCalendario>AGENDA TU PRIMERA CITA</AgendateCalendario>
-        <AgendateTxt>Para poder hablar con nuestro equipo Tyzy sobre tu primer diagnóstico que podrás diligenciar en la parte de abajo, debes agendar una cita en el día que más se acomode para tener una charla y la orientación nesaria en el inicio de esta etapa al lado de un compañero de cuatro patas</AgendateTxt>
-        <Calendar onPanelChange={onPanelChange} />
+        <AgendateTxt className='mt-3'>Para poder hablar con nuestro equipo Tyzy sobre tu primer diagnóstico que podrás diligenciar en la parte de abajo, debes agendar una cita en el día que más se acomode para tener una charla y la orientación nesaria en el inicio de esta etapa al lado de un compañero de cuatro patas</AgendateTxt>
+        <CalendarioANDT onPanelChange={onPanelChange} />
       </DivCalendar>
 
       <DiagText2>Una vez tengas una fecha registrada, quisieramos preguntarte algunas cosas, para que en tu reunión con los especialistas tengamos como equipo más claridad al momento de comunicarnos contigo</DiagText2>

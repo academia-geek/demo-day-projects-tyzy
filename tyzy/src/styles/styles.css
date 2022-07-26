@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color:#FDFDFD;
+    background-color: #FDFDFD;
 }
 
 ::-webkit-scrollbar {
@@ -218,6 +218,7 @@ body {
     background-size: cover;
     background-position: center;
 }
+
 .BTNeditar {
     border: 2px solid #F26052;
     background-color: #F26052;
@@ -235,42 +236,67 @@ body {
 
 /* calendario */
 
-.ant-picker-calendar{
-   border-radius: 20px !important;
-   background-color: white solid transparent !important;
-   width:100%;
+.ant-picker-calendar {
+    border-radius: 20px !important;
+    background-color: white solid transparent !important;
+    width: 100%;
 }
 
-.ant-picker-content{
+.ant-picker-content {
     width: 50%;
-    color:purple
+    color: purple
 }
 
-.ant-picker-content{
+.ant-picker-content {
     width: 80px;
     border-radius: 20px !important;
 }
 
-.ant-picker-content thead{
+.ant-picker-content thead {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 12px;
+    font-weight: 900 !important;
 }
 
 
-.ant-picker-date-panel{
+.ant-picker-date-panel {
     border-radius: 20px;
     background-color: red solid transparent;
 }
 
-.ant-picker-body{
+.ant-picker-body {
     border-radius: 30px;
     background-color: white;
 }
 
-.ant-picker-calendar-header{
+.ant-picker-calendar-header {
     justify-content: center !important;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
 }
 
+.ant-picker-cell-inner {
+    border-top: none !important;
+}
+
+.ant-picker-content {
+    width: 40vw !important;
+    margin: 0 auto 0 auto;
+}
+
+.ant-picker-calendar-date-content {
+    height: 20px !important;
+}
+
+.ant-picker-content th {
+    margin-left: 80px !important;
+}
+
+.ant-picker-calendar-date-value {
+    margin: 0 22px 0 0px !important;
+}
+
+.ant-picker-content th {
+    font-weight: 800 !important;
+}

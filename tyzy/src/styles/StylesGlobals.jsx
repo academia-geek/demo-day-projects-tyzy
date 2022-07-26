@@ -4,6 +4,7 @@ import { Modal } from "react-bootstrap";
 import { BsArrowDown } from "react-icons/bs";
 import { Avatar } from "flowbite-react";
 import { Divider } from "@mui/material";
+import { Calendar } from "antd";
 
 // REGISTRO //
 
@@ -1130,13 +1131,13 @@ export const HrDividir = styled(Divider)`
 export const DivCalendar = styled.div`
   width:70%;
   margin:0 auto;
-  border-radius: 20px;
+  border-radius: 40px;
   position: relative;
   bottom:65px;
   background-color:white;
   padding: 10px;
   /* border: 1px solid #CCCCCC; */
-  box-shadow: 15px 17px 11px -20px #A3A3A3;
+  box-shadow: 2px 5px 17px 2px rgba(0, 0, 0, 0.1);
 `
 
 export const AgendateCalendario = styled.p`
@@ -1156,4 +1157,10 @@ export const AgendateTxt = styled.p`
   text-align: center;
   line-height: 25px;
   margin-bottom: 5%;
+`
+
+export const CalendarioANDT = styled(Calendar)`
+    tbody {
+      margin: 20px 0 0 0 !important;
+    }
 `
