@@ -65,29 +65,6 @@ const Home = () => {
         }
     };
 
-    // const handlePrev = () => {
-    //     setAuto(1)
-    //     if (activeStep > 0) {
-    //         setActiveStep(activeStep - 1)
-    //         if (activeStep === 2) {
-    //             setActiveStepSecond1(2);
-    //             setActiveStepSecond2(activeStepSecond2 - 1);
-    //             setActiveStepSecond3(activeStepSecond3 - 1);
-    //         } else if (activeStep === 1) {
-    //             setActiveStepSecond1(activeStepSecond1 - 1);
-    //             setActiveStepSecond2(activeStepSecond2 - 1);
-    //             setActiveStepSecond3(2);
-    //         }
-    //     } else {
-    //         setActiveStep(2)
-    //         if (activeStep === 0) {
-    //             setActiveStepSecond1(activeStepSecond1 - 1);
-    //             setActiveStepSecond2(2);
-    //             setActiveStepSecond3(activeStepSecond3 - 1);
-    //         }
-    //     }
-    // };
-
     // -----------------------------------------------------------
     const [show, setShow] = useState(false);
 
