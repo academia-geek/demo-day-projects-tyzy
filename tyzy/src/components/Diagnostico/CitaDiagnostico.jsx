@@ -22,7 +22,6 @@ const CitaDiagnostico = memo(({ user }) => {
 
   return (
     <div className='flex flex-column'>
-      <EditButton className='ms-3 w-60 mx-auto' type='button' onClick={() => { filterUser() }}>Ver cita agendada</EditButton>
       {
         citaUser[0]?.nombreComp
           ? <div className='w-75 mx-auto flex flex-column bg-white p-4 rounded-xl drop-shadow-lg my-5'>
@@ -52,22 +51,22 @@ const CitaDiagnostico = memo(({ user }) => {
               <section className='flex flex-column w-100 ps-4 mt-4'>
                 <h3 className='mb-3 fs-4'>Sintomas presentados:</h3>
                 {
-                  citaUser[0]?.insomnio == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='radio' /> Problemas de insomnio</label> : ''
+                  citaUser[0]?.insomnio == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Problemas de insomnio</label> : ''
                 }
                 {
-                  citaUser[0]?.dCabeza == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='radio' /> Dolor frecuente de cabeza</label> : ''
+                  citaUser[0]?.dCabeza == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Dolor frecuente de cabeza</label> : ''
                 }
                 {
-                  citaUser[0]?.inseguridad == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='radio' /> Inseguridad frente a otras personas</label> : ''
+                  citaUser[0]?.inseguridad == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Inseguridad frente a otras personas</label> : ''
                 }
                 {
-                  citaUser[0]?.fCariño == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='radio' /> Falta de cariño</label> : ''
+                  citaUser[0]?.fCariño == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Falta de cariño</label> : ''
                 }
                 {
-                  citaUser[0]?.humor == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='radio' /> Cambio de humor repentino</label> : ''
+                  citaUser[0]?.humor == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Cambio de humor repentino</label> : ''
                 }
                 {
-                  citaUser[0]?.fComprension == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='radio' /> Falta de de comprensión</label> : ''
+                  citaUser[0]?.fComprension == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Falta de de comprensión</label> : ''
                 }
                 <div className='mt-auto flex justify-center'>
                   <span role='button' className='cursor-pointer p-2 me-2 py-2 rounded-lg border-dashed border-2 border-titleOrange text-white bg-titleOrange'>Borrar</span>
@@ -78,6 +77,9 @@ const CitaDiagnostico = memo(({ user }) => {
           </div>
           : ''
       }
+      
+      <EditButton className='ms-3 w-60 mx-auto' type='button' onClick={() => { filterUser() }}>Ver cita agendada</EditButton>
+
       {
         modalShow == true ? < EditarDiagnostico si={modalShow} no={setModalShow} citaUser={citaUser} /> : ''
       }
