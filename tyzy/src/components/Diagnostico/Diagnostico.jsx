@@ -1,11 +1,11 @@
+import React, { useState } from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup'
-import React from 'react';
-import { AgendateCalendario, AgendateTxt, ButtonsDiv, CancelButton, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, DivCalendar, EditButton, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../styles/StylesGlobals'
-import NavBarIn from './NavBarIn';
-import { ActionLoginSync } from '../redux/actions/LoginActions';
-import { Calendar } from 'antd';
-import '../styles/styles.css'
+import NavBarIn from '../NavBarIn';
+import { useDispatch } from 'react-redux';
+import { actionAggDiagAsync } from '../../redux/actions/DiagnosticoActions';
+import CitaDiagnostico from './CitaDiagnostico';
+import { AgendateCalendario, AgendateTxt, ButtonsDiv, CalendarioANDT, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, DivCalendar, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 const SignupSchema = Yup.object().shape({
@@ -17,19 +17,8 @@ const SignupSchema = Yup.object().shape({
 
 const Diagnostico = () => {
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(formValue);
-  //   reset();
-  // }
-
-  const handleEditar = () => {
-    console.log('modal abierto');
-  }
-
-  const handleCerrar = () => {
-    console.log('modal cerrado');
-  }
+  const dispatch = useDispatch()
+  const [userAgendado, setUserAgendado] = useState({})
 
   const onPanelChange = (value, mode) => {
     console.log(value.format('YYYY-MM-DD'), mode);
@@ -45,14 +34,14 @@ const Diagnostico = () => {
           <DiagIconArrow></DiagIconArrow>
         </DiagDiv>
       </ParallaxDiag>
+      <div>
+      </div>
 
       <DivCalendar>
         <AgendateCalendario>AGENDA TU PRIMERA CITA</AgendateCalendario>
-        <AgendateTxt>Para poder hablar con nuestro equipo Tyzy sobre tu primer diagnóstico que podrás diligenciar en la parte de abajo, debes agendar una cita en el día que más se acomode para tener una charla y la orientación nesaria en el inicio de esta etapa al lado de un compañero de cuatro patas</AgendateTxt>
-      <Calendar onPanelChange={onPanelChange} />
+        <AgendateTxt className='mt-3'>Para poder hablar con nuestro equipo Tyzy sobre tu primer diagnóstico que podrás diligenciar en la parte de abajo, debes agendar una cita en el día que más se acomode para tener una charla y la orientación nesaria en el inicio de esta etapa al lado de un compañero de cuatro patas</AgendateTxt>
+        <CalendarioANDT onPanelChange={onPanelChange} />
       </DivCalendar>
-     
-     
 
       <DiagText2>Una vez tengas una fecha registrada, quisieramos preguntarte algunas cosas, para que en tu reunión con los especialistas tengamos como equipo más claridad al momento de comunicarnos contigo</DiagText2>
       <Formik
@@ -72,7 +61,8 @@ const Diagnostico = () => {
         }
         validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
-          console.log(values);
+          setUserAgendado({ ...userAgendado, nombre: values.nombreComp })
+          dispatch(actionAggDiagAsync(values))
           actions.resetForm({
             values: {
               nombreComp: '',
@@ -87,28 +77,27 @@ const Diagnostico = () => {
               descripProblema: ''
             }
           })
-
         }}
       >
-        {({ errors, touched, handleReset }) => (
-          <DiagForm onReset={handleReset}>
+        {({ errors, touched }) => (
+          <DiagForm>
 
-            <DiagLabel>Nombre completo del paciente *</DiagLabel>
+            <DiagLabel className='font-bold fs-6'>Nombre completo del paciente *</DiagLabel>
             <DiagInput name='nombreComp' placeholder='Tu nombre aquí' />
             {errors.nombreComp && touched.nombreComp ?
               (<div className='ms-3 fs-6 text-dark'>{errors.nombreComp}</div>) : null}
 
-            <DiagLabel style={{ 'marginTop': '3%' }}>Número de contácto *</DiagLabel>
+            <DiagLabel className='font-bold fs-6' style={{ 'marginTop': '3%' }}>Número de contácto *</DiagLabel>
             <DiagInput name='telefono' placeholder='Tu número de celular aquí' />
             {errors.telefono && touched.telefono ?
               (<div className='ms-3 fs-6 text-whdarkite'>{errors.telefono}</div>) : null}
 
-            <DiagLabel style={{ 'marginTop': '3%' }}>Correo electrónico de contácto *</DiagLabel>
+            <DiagLabel className='font-bold fs-6' style={{ 'marginTop': '3%' }}>Correo electrónico de contácto *</DiagLabel>
             <DiagInput name='correo' placeholder='Tu correo aquí' />
             {errors.correo && touched.correo ?
               (<div className='ms-3 fs-6 text-dark'>{errors.correo}</div>) : null}
 
-            <DiagLabel style={{ 'marginTop': '3%' }}>Selecciona 1 o más incomodidades:</DiagLabel>
+            <DiagLabel className='font-bold fs-6' style={{ 'marginTop': '3%' }}>Selecciona 1 o más incomodidades:</DiagLabel>
             <DiagDivRadius>
               <div>
                 <RadiusFlex><InputRadius type="checkbox" name='insomnio' />Problemas de insomnio</RadiusFlex>
@@ -133,21 +122,18 @@ const Diagnostico = () => {
               </div>
             </DiagDivRadius>
 
-            <DiagLabel style={{ 'marginTop': '3%' }}>Descripción del problema de salud mental que presentas actualmente *</DiagLabel>
+            <DiagLabel className='font-bold fs-6' style={{ 'marginTop': '3%' }}>Descripción del problema de salud mental que presentas actualmente *</DiagLabel>
             <Field as={TextDiag} rows="7" cols="50" name='descripProblema' placeholder='Breve descripción del problema' />
             {errors.descripProblema && touched.descripProblema ?
               (<div className='ms-3 fs-6 text-dark'>{errors.descripProblema}</div>) : null}
 
-            <ButtonsDiv>
-              <SaveButton type='submit'>GUARDAR Y ENVIAR</SaveButton>
-              <div>
-                <EditButton type='button' onClick={handleEditar}>EDITAR</EditButton>
-                <CancelButton type='button' onClick={handleCerrar}>CANCELAR</CancelButton>
-              </div>
+            <ButtonsDiv className='flex'>
+              <SaveButton type='submit' className='ms-auto'>GUARDAR</SaveButton>
             </ButtonsDiv>
           </DiagForm>
         )}
       </Formik>
+      <CitaDiagnostico user={userAgendado} />
     </>
   )
 }

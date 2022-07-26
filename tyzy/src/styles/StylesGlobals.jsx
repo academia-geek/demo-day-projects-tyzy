@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { Field, Form } from "formik";
 import { Modal } from "react-bootstrap";
 import { BsArrowDown } from "react-icons/bs";
+import { Avatar } from "flowbite-react";
+import { Divider } from "@mui/material";
+import { Calendar } from "antd";
 
 // REGISTRO //
 
@@ -794,8 +797,8 @@ export const DiagText2 = styled.p`
   margin-top: 2%;
 `;
 
-export const DiagForm = styled.form`
-  color: white;
+export const DiagForm = styled(Form)`
+  color: black;
   padding: 6px;
   width: 70%;
   font-weight: 500;
@@ -812,7 +815,7 @@ export const DiagLabel = styled.label`
   color: #666666;
 `;
 
-export const DiagInput = styled.input`
+export const DiagInput = styled(Field)`
   border: 1px solid hsla(0, 0%, 80%, 1);
   padding: 8px;
   border-radius: 20px;
@@ -837,6 +840,11 @@ export const RadiusFlex = styled.div`
 `;
 
 export const InputRadius = styled(Field)`
+    border: 1px solid hsla(0, 0%, 80%, 1);
+    accent-color: #F26052;
+    border-radius: 50%;
+`
+export const InputRadio = styled.input`
     border: 1px solid hsla(0, 0%, 80%, 1);
     accent-color: #F26052;
     border-radius: 50%;
@@ -909,7 +917,7 @@ export const TitleComunidad = styled.p`
   align-items: center;
 `;
 
-export const SpanTitleComunidad = styled.p`
+export const SpanTitleComunidad = styled.span`
   color: #4ba695;
   margin-left: 12px;
 `;
@@ -939,7 +947,7 @@ export const UserPub = styled.div`
   padding: 12px;
 `;
 
-export const UserImgPub = styled.img`
+export const UserImgPub = styled(Avatar)`
   width: 50px;
   height: 50px;
   border-radius: 50px;
@@ -1113,20 +1121,23 @@ export const CarouselText = styled.p`
   padding: 5px;
 `;
 
-
+export const HrDividir = styled(Divider)`
+ background-color: black;
+ padding: 40% 0 0 0;
+ width: 1px;
+`
 // DIV CALENDAR
 
 export const DivCalendar = styled.div`
-    width:70%;
+  width:70%;
   margin:0 auto;
-  border-radius: 20px;
+  border-radius: 40px;
   position: relative;
   bottom:65px;
   background-color:white;
   padding: 10px;
   /* border: 1px solid #CCCCCC; */
-  box-shadow: 15px 17px 11px -20px #A3A3A3;
-
+  box-shadow: 2px 5px 17px 2px rgba(0, 0, 0, 0.1);
 `
 
 export const AgendateCalendario = styled.p`
@@ -1146,4 +1157,10 @@ export const AgendateTxt = styled.p`
   text-align: center;
   line-height: 25px;
   margin-bottom: 5%;
+`
+
+export const CalendarioANDT = styled(Calendar)`
+    tbody {
+      margin: 20px 0 0 0 !important;
+    }
 `

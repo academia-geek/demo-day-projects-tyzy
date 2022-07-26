@@ -53,7 +53,6 @@ const Perfil = memo(() => {
     dispatch(ActionGetUserAsync())
     dispatch(mostrarDatesUserAsync())
     estado()
-    console.log(DatosUser);
   }, [dispatch, setActivo, setDatos])
 
   return (
@@ -99,6 +98,9 @@ const Perfil = memo(() => {
                 <span role='button' onClick={() => {
                   setModalShow(true)
                 }} className={`'cursor-pointer px-4 py-2 rounded-lg mt-5' ${modalShow ? 'border-dashed border-2 text-titleOrange border-titleOrange' : 'text-white bg-titleOrange'}`}>Editar Perfil</span>
+                <span role='button' onClick={() => {
+                  estado()
+                }} className={`'cursor-pointer px-4 py-2 rounded-lg mt-5' ${modalShow ? 'border-dashed border-2 text-titleOrange border-titleOrange' : 'text-white bg-titleOrange'}`}>Actualizar datos</span>
               </div>
             </form>
           </div>
