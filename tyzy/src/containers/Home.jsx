@@ -20,10 +20,19 @@ const Home = () => {
             setDatos(data[0])
         }
     }
+    const IntroHomeState = () => {
+        const auth = getAuth()
+        onAuthStateChanged(auth, user => {
+            if (user.metadata.creationTime === user.metadata.lastSignInTime) {
+                setShow(true)
+            }
+        })
+    }
 
     useEffect(() => {
         dispatch(mostrarDatesUserAsync())
         DataApi()
+        IntroHomeState()
     }, [])
 
     // --------------------------------------------------------------
@@ -67,17 +76,13 @@ const Home = () => {
 
     // -----------------------------------------------------------
     const [show, setShow] = useState(false);
+    const [displey, setDispley] = useState({})
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setDispley({ display: 'Dnone' })
+        setShow(false)
+    };
     // -----------------------------------------------------------
-    useEffect(() => {
-        const auth = getAuth()
-        onAuthStateChanged(auth, user => {
-            if (user.metadata.creationTime === user.metadata.lastSignInTime) {
-                setShow(true)
-            }
-        })
-    }, [])
 
     return (
         <HomeStyle className='text-4xl'>
@@ -107,7 +112,7 @@ const Home = () => {
                                 <img className='p-3 my-auto' src={dt?.imagen} alt={dt?.id} />
                                 <div className=''>
                                     <div className='h2-2 my-auto d-flex'>
-                                      <h2 className='my-auto'>{dt?.titulo}</h2>  
+                                        <h2 className='my-auto'>{dt?.titulo}</h2>
                                     </div>
                                     <p>{dt?.parrafo}</p>
                                 </div>
@@ -162,7 +167,7 @@ const Home = () => {
             </section>
 
             <div>
-                <ModalPrimeraVez className=''
+                <ModalPrimeraVez className={`${displey.display}`}
                     show={show}
                     onHide={handleClose}
                     backdrop="static"

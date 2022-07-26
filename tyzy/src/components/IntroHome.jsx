@@ -19,6 +19,7 @@ const IntroHome = ({ close }) => {
     const handleUsuario = () => {
         setValueFormAgregar({
             ...valueFormAgregar,
+            id: Math.round(Math.random() * (100 - 1) + 1),
             nombres: user?.displayName,
             correo: user?.email
         })

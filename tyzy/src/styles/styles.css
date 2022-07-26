@@ -286,7 +286,7 @@ body {
 }
 
 .ant-picker-calendar-date-content {
-    height: 20px !important;
+    height: 10px !important;
 }
 
 .ant-picker-content th {
@@ -299,4 +299,8 @@ body {
 
 .ant-picker-content th {
     font-weight: 800 !important;
+}
+
+.Dnone {
+    display: none !important;
 }

@@ -42,7 +42,7 @@ export const actionListCitaSync = (citaDiag) => {
 export const actionEditarCitaAsync = (datosEdit) => {
     return async (dispatch) => {
         const listCitaDiag = collection(DB, "CitaDiagnostico")
-        const q = query(listCitaDiag, where("correo", "==", datosEdit.correo))
+        const q = query(listCitaDiag, where("id", "==", datosEdit.id))
         const datosQ = await getDocs(q)
         let id = '';
 

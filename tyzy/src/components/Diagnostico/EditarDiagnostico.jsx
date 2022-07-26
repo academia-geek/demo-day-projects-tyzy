@@ -9,7 +9,9 @@ const EditarDiagnostico = ({ si, no, citaUser }) => {
 
   const dispatch = useDispatch()
   const [formValue, handleInputChange, reset] = useForm({
+    id: citaUser[0].id,
     nombreComp: citaUser[0].nombreComp,
+    fecha: citaUser[0].fecha,
     telefono: citaUser[0].telefono,
     correo: citaUser[0].correo,
     insomnio: citaUser[0].insomnio,
@@ -29,7 +31,7 @@ const EditarDiagnostico = ({ si, no, citaUser }) => {
 
   return (
     <Modal
-      size="lg"
+      size="xl"
       aria-labelledby="contained-modal-title-vcenter"
       show={si}
       centered
@@ -37,9 +39,15 @@ const EditarDiagnostico = ({ si, no, citaUser }) => {
       <form onSubmit={handleSubmit} className='px-5'>
 
         <div className='w-100 mx-auto flex flex-column bg-white p-4 rounded-xl drop-shadow-lg my-5'>
-          <h2 className='mb-3 fs-2 text-center font-bold'>Editar Datos</h2>
-          <div className='flex'>
+          <section className='flex'>
+            <h2 className='mb-3 fs-2 mx-auto font-bold'>Editar cita</h2>
+          </section>
+          <div className='flex mx-auto'>
             <section className='flex flex-column justify-center'>
+              <div className='ms-2 flex mb-3'>
+                <label htmlFor="" className='fs-6 my-auto'>Día de la cita:</label>
+                <input name='fecha' onChange={handleInputChange} value={formValue.fecha} className='fs-6 border-1 border-gray-600 bg-slate-50 text-center ms-4 py-1 w-64 rounded-xl' />
+              </div>
               <div className='ms-2 flex mb-3 flex-column'>
                 <label htmlFor="nombreComp">Nombre del paciente</label>
                 <input name='nombreComp' onChange={handleInputChange} value={formValue.nombreComp} className='fs-6 border-1 border-gray-600 bg-slate-50 ps-4 py-1 w-96 rounded-xl' />
@@ -58,7 +66,7 @@ const EditarDiagnostico = ({ si, no, citaUser }) => {
               </div>
             </section>
 
-            <HrDividir className='ms-4 mt-52' orientation="vertical" />
+            <HrDividir className='ms-4 mt-4' orientation="vertical" />
 
             <section className='flex flex-column w-100 ps-4 mt-4'>
               <h3 className='mb-3 fs-4'>Sintomas presentados:</h3>

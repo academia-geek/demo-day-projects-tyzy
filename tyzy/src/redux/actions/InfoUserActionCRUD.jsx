@@ -42,7 +42,7 @@ export const mostrarDatesUserSync = (datos) => {
 export const editarInfoUserAsync = (datosEditar) => {
     return async (dispatch) => {
         const datosUsers = collection(DB, "InfoUserCRUD")
-        const datosFirebaseUsers = query(datosUsers, where("correo", "==", datosEditar.correo))
+        const datosFirebaseUsers = query(datosUsers, where("id", "==", datosEditar.id))
         const filterDatosUser = await getDocs(datosFirebaseUsers)
         let id = '';
 

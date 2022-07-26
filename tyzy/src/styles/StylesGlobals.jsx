@@ -795,7 +795,6 @@ export const DiagText2 = styled.p`
   margin: 0 auto;
   width: 60%;
   text-align: center;
-  margin-top: 2%;
 `;
 
 export const DiagForm = styled(Form)`
@@ -1157,7 +1156,7 @@ export const AgendateTxt = styled.p`
   margin: 0 auto;
   text-align: center;
   line-height: 25px;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 `
 
 export const CalendarioANDT = styled(Calendar)`
