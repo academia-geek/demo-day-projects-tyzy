@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup'
 import NavBarIn from '../NavBarIn';
@@ -19,9 +19,20 @@ const Diagnostico = () => {
 
   const dispatch = useDispatch()
   const [userAgendado, setUserAgendado] = useState({})
+  const ramdonUid = () => {
+    let uid = Math.round(Math.random() * (100 - 1) + 1)
+    setUserAgendado({ id: uid })
+  }
 
   const onPanelChange = (value, mode) => {
-    console.log(value.format('YYYY-MM-DD'), mode);
+    console.log(value.format('DD/MM/YYYY'));
+    const dt = new Date()
+    const fecha = dt.getFullYear()
+    console.log(fecha);
+
+    if (fecha == value.format('YYYY')) {
+      console.log('fecha correcta');
+    }
   }
 
   return (
@@ -47,6 +58,7 @@ const Diagnostico = () => {
       <Formik
         initialValues={
           {
+            // id: userAgendado?.id,
             nombreComp: '',
             telefono: '',
             correo: '',
@@ -61,10 +73,14 @@ const Diagnostico = () => {
         }
         validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
-          setUserAgendado({ ...userAgendado, nombre: values.nombreComp })
+          console.log(values)
+          console.log(userAgendado)
+          setUserAgendado({ nombre: values.nombreComp })
+          // ramdonUid()
           dispatch(actionAggDiagAsync(values))
           actions.resetForm({
             values: {
+              id: '',
               nombreComp: '',
               telefono: '',
               correo: '',

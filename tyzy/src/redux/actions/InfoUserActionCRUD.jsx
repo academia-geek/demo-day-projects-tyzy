@@ -47,8 +47,8 @@ export const editarInfoUserAsync = (datosEditar) => {
         let id = '';
 
         filterDatosUser.forEach(async (info) => { id = info.id })
-
         const infoFirebaseUser = doc(DB, 'InfoUserCRUD', id)
+        
         await updateDoc(infoFirebaseUser, datosEditar)
             .then((resp) => {
                 dispatch(editarInfoUserSync(datosEditar))

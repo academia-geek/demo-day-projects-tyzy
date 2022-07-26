@@ -16,7 +16,7 @@ export const DiagnosticoReducers = (state = initialState, action) => {
             }
         case TypesDiagnostico.edit:
             return {
-                citaDiagnostico: [...action.payload]
+                ...state
             }
         case TypesDiagnostico.delete:
             return {
