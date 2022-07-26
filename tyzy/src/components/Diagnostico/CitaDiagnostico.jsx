@@ -22,7 +22,7 @@ const CitaDiagnostico = memo(({ user }) => {
 
   return (
     <div className='flex flex-column'>
-      <EditButton className='ms-3 w-60' type='button' onClick={() => { filterUser() }}>Ver cita agendada</EditButton>
+      <EditButton className='ms-3 w-60 mx-auto' type='button' onClick={() => { filterUser() }}>Ver cita agendada</EditButton>
       {
         citaUser[0]?.nombreComp
           ? <div className='w-75 mx-auto flex flex-column bg-white p-4 rounded-xl drop-shadow-lg my-5'>
