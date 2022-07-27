@@ -6,6 +6,34 @@ import { Avatar } from "flowbite-react";
 import { Divider } from "@mui/material";
 import { Calendar } from "antd";
 
+
+// LANDING PAGE
+
+
+export const ProcesoTxt = styled.p`
+  text-align: center;
+  color:#4BA695;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 70px;
+`
+
+export const ButtonDiagnostico = styled.button`
+  background-color: #F26052;
+  padding: 10px;
+  color:white;
+  width: 30%;
+  border-radius: 50px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  font-weight: 700;
+`
+
+
 // REGISTRO //
 
 export const DivRegister = styled.div`
