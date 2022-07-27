@@ -9,6 +9,7 @@ import { addComuniAsync } from '../../redux/actions/ActionAddComuni'
 import { BtnDescrition, LabelComunidad, NewDescription, NewPubDiv, NewPubForm, NewPubLabel, NewPubLabel2, NewPubLocation, NewPubTitle } from '../../styles/StylesGlobals'
 import NavBarIn from '../../containers/NavBarIn'
 import ComunidadList from './ComunidadList'
+import Swal from 'sweetalert2'
 
 export default function Comunidad() {
 
@@ -45,7 +46,13 @@ export default function Comunidad() {
         FileUpload(file)
             .then((resp) => {
                 formValue.imagen = resp
-                alert('imagen cargada')
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'imagen cargada',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
             })
             .catch((error) => { console.warn(error) });
     }
