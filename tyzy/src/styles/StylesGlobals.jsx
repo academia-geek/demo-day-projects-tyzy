@@ -798,6 +798,8 @@ export const DiagText2 = styled.p`
   margin: 0 auto;
   width: 60%;
   text-align: center;
+  position: relative;
+  bottom: 80px;
 `;
 
 export const DiagForm = styled(Form)`
@@ -879,7 +881,9 @@ export const EditButton = styled.button`
   color: #f26052;
   padding: 10px;
   border-radius: 8px;
-  margin-right: 20px;
+  position: relative;
+  left: 40%;
+  margin-bottom: 50px;
 `;
 export const CancelButton = styled.button`
   border: dashed 1.8px #f26052;
@@ -907,7 +911,77 @@ export const DetalleMascota = styled(Modal)`
   }
 `;
 
-//  -------- COMUNIDA ------
+
+// EDITAR DIAGNOSTICO -------
+
+export const  DivAnimalito = styled.div`
+  width:80%;
+  margin-top: 20px;
+  margin-left: 20px;
+`
+
+export const  DivAnimalito2 = styled.div`
+  width:100%;
+  margin-top: 20px;
+  margin-left: 35px;
+`
+
+export const MatchingAnimal = styled.p`
+  font-size: 14px;
+  font-weight: 600;
+  
+`
+
+export const DivAnimalitoFlex = styled.div`
+  display: flex;
+  align-items: center;
+  gap:10px;
+  margin-top: 12px;
+`
+export const FotoAnimalito = styled.img`
+  width:40%;
+  border-radius: 10px;
+`
+
+export const NameAnimalito = styled.p`
+  font-size: 14px;
+  color: #4BA695;
+  font-weight: 700;
+  margin-bottom: 10px;
+`
+
+export const AnimalitoItem = styled.p`
+  font-weight: 700;
+  color:#242424;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap:5px;
+
+`
+
+export const SpanItem = styled.p`
+  font-weight: 500;
+  color:#505050;
+  font-size: 14px;
+`
+
+export const AnimalitoItem2 = styled.p`
+  font-weight: 700;
+  color:#242424;
+  font-size: 14px;
+  display: flex;
+  align-items: top;
+  gap:5px;
+  margin-top: 8px;
+`
+
+export const SpanItem2= styled.p`
+  font-weight: 500;
+  color:#505050;
+  font-size: 14px;
+`
+//  -------- COMUNIDAD ------
 
 export const TitleComunidad = styled.p`
   font-size: 50px;
@@ -994,7 +1068,7 @@ export const PubDescription = styled.p`
 export const NewPubDiv = styled.div`
   width: 80%;
   margin: 0 auto;
-  margin-top: 15%;
+  margin-top: 25%;
 `;
 export const NewPubTitle = styled.p`
   font-size: 35px;
@@ -1136,7 +1210,7 @@ export const DivCalendar = styled.div`
   margin:0 auto;
   border-radius: 40px;
   position: relative;
-  bottom:65px;
+  bottom:175px;
   background-color:white;
   padding: 10px;
   /* border: 1px solid #CCCCCC; */
