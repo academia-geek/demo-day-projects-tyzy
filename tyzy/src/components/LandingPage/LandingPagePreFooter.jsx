@@ -32,6 +32,8 @@ export default function LandingPagePreFooter() {
           ))
         }
       </section>
+      
+      <button>Hola</button>
     </div>
   )
 }

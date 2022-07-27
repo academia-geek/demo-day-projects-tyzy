@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { EditButton, HrDividir, InputRadio } from '../../styles/StylesGlobals';
+import { AnimalitoItem, AnimalitoItem2, DivAnimalito, DivAnimalito2, DivAnimalitoFlex, EditButton, FotoAnimalito, HrDividir, InputRadio, MatchingAnimal, NameAnimalito, SpanItem, SpanItem2 } from '../../styles/StylesGlobals';
 import EditarDiagnostico from './EditarDiagnostico';
 
 const CitaDiagnostico = memo(({ user }) => {
@@ -55,6 +55,7 @@ const CitaDiagnostico = memo(({ user }) => {
 
               <HrDividir className='ms-4 mt-2' orientation="vertical" />
 
+              <div>
               <section className='flex flex-column w-100 ps-4 mt-4'>
                 <h3 className='mb-3 fs-4'>Sintomas presentados:</h3>
                 {
@@ -75,11 +76,26 @@ const CitaDiagnostico = memo(({ user }) => {
                 {
                   citaUser[0]?.fComprension == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Falta de de comprensión</label> : ''
                 }
-                <div className='mt-auto flex justify-center'>
+              </section>
+
+              <DivAnimalito2>
+                <MatchingAnimal>Según la información ingresada tu animalito ideal sería:</MatchingAnimal>
+              <DivAnimalitoFlex>
+                  <FotoAnimalito src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1658885871/Tyzy/Mateo_uo8zpl.jpg' alt='fotoAnimalito'/>                
+                  <div>
+                    <NameAnimalito>Mateo</NameAnimalito>
+                    <AnimalitoItem>Raza:<SpanItem>Golgen Retriever</SpanItem></AnimalitoItem>
+                    <AnimalitoItem>Edad:<SpanItem>2 años</SpanItem></AnimalitoItem>
+                  </div>
+              </DivAnimalitoFlex>
+              <AnimalitoItem2>Especialidad:<SpanItem2>Con equilibrio emocional alto y de personalidad dócil, ideal para personas con discapacidad visual</SpanItem2></AnimalitoItem2>
+              </DivAnimalito2>
+              </div>
+
+              <div className='mt-auto flex justify-center w-100'>
                   <span role='button' className='cursor-pointer p-2 me-2 py-2 rounded-lg border-dashed border-2 border-titleOrange text-white bg-titleOrange'>Borrar</span>
                   <span onClick={() => { setModalShow(true) }} role='button' className='cursor-pointer p-2 py-2 rounded-lg border-dashed border-2 border-titleOrange text-white bg-titleOrange'>Editar antes de enviar</span>
                 </div>
-              </section>
             </div>
           </div>
           : ''
