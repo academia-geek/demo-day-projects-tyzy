@@ -10,7 +10,7 @@ const CitaDiagnostico = memo(({ user }) => {
   const [citaUser, setCitaUser] = useState([])
 
   const filterUser = () => {
-    const filtro = citaDiagnostico.filter((usr) => usr.nombreComp === user.nombre)
+    const filtro = citaDiagnostico.filter((usr) => usr.id === user.id)
     if (filtro != []) {
       setCitaUser(filtro)
     }
@@ -25,23 +25,30 @@ const CitaDiagnostico = memo(({ user }) => {
       {
         citaUser[0]?.nombreComp
           ? <div className='w-75 mx-auto flex flex-column bg-white p-4 rounded-xl drop-shadow-lg my-5'>
-            <h2 className='mb-3 fs-2 text-center font-bold'>Datos de la cita</h2>
+            <section className='flex'>
+              <div className=' flex mt-4'>
+                <label htmlFor="" className='fs-5 mt-2'>Día de la cita:</label>
+                <input disabled className='fs-6 ms-2 bg-white mt-2 w-40 rounded-xl' placeholder={citaUser[0]?.fecha} />
+              </div>
+              <h2 className='mb-3 fs-2 text-center font-bold'>Datos de la cita</h2>
+            </section>
+
             <div className='flex'>
               <section className='flex flex-column justify-center'>
                 <div className='ms-2 flex mb-3 flex-column'>
-                  <label htmlFor="">Nombre del paciente</label>
+                  <label htmlFor="">Nombre del paciente:</label>
                   <input disabled className='fs-6 border-1 border-gray-600 bg-slate-50 ps-4 py-1 w-96 rounded-xl' placeholder={citaUser[0]?.nombreComp} />
                 </div>
                 <div className='ms-2 flex mb-3 flex-column'>
-                  <label htmlFor="">Número de celular</label>
+                  <label htmlFor="">Número de celular:</label>
                   <input disabled className='fs-6 border-1 border-gray-600 bg-slate-50 ps-4 py-1 w-96 rounded-xl' placeholder={citaUser[0]?.telefono} />
                 </div>
                 <div className='ms-2 flex mb-3 flex-column'>
-                  <label htmlFor="">Correo de contácto</label>
+                  <label htmlFor="">Correo de contácto:</label>
                   <input disabled className='fs-6 border-1 border-gray-600 bg-slate-50 ps-4 py-1 w-96 rounded-xl' placeholder={citaUser[0]?.correo} />
                 </div>
                 <div className='ms-2 flex mb-3 flex-column'>
-                  <label htmlFor="">Problema que presenta</label>
+                  <label htmlFor="">Problema que presenta:</label>
                   <textarea disabled className='fs-6 bg-slate-50 ps-4 py-1 w-96 rounded-xl' placeholder={citaUser[0]?.descripProblema} />
                 </div>
               </section>
@@ -77,7 +84,7 @@ const CitaDiagnostico = memo(({ user }) => {
           </div>
           : ''
       }
-      
+
       <EditButton className='ms-3 w-60 mx-auto' type='button' onClick={() => { filterUser() }}>Ver cita agendada</EditButton>
 
       {

@@ -9,6 +9,7 @@ const EditarPerfil = ({ si, no, data }) => {
     const [activo, setActivo] = useState(false)
 
     const [valueFormEditar, setValueFormEditar] = useState({
+        id: data[0].id,
         nombres: data[0]?.nombres,
         correo: data[0]?.correo,
         telefono: data[0]?.telefono,

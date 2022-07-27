@@ -17,6 +17,7 @@ const Perfil = memo(() => {
   const [activo, setActivo] = useState(true)
   const [modalShow, setModalShow] = useState(false);
   const [datos, setDatos] = useState([])
+  const [idUser, setIdUser] = useState()
 
   const { user } = useSelector(store => store.user)
   const { DatosUser } = useSelector(store => store.datosUserStore)
@@ -43,16 +44,24 @@ const Perfil = memo(() => {
     const filtro = DatosUser.filter((usr) => usr.correo === user?.email)
     if (filtro[0] !== undefined) {
       setActivo(true)
-      setDatos(filtro)
+      setIdUser(filtro[0].id)
     } else {
       setActivo(false)
     }
   }
 
+  const dUser = () => {
+    const DatosUsuario = DatosUser.filter((usr) => usr.id === idUser)
+    setDatos(DatosUsuario)
+  }
+
   useEffect(() => {
+    estado()
     dispatch(ActionGetUserAsync())
     dispatch(mostrarDatesUserAsync())
+    dUser()
     estado()
+    dUser()
   }, [dispatch, setActivo, setDatos])
 
   return (
@@ -99,7 +108,7 @@ const Perfil = memo(() => {
                   setModalShow(true)
                 }} className={`'cursor-pointer px-4 py-2 rounded-lg mt-5' ${modalShow ? 'border-dashed border-2 text-titleOrange border-titleOrange' : 'text-white bg-titleOrange'}`}>Editar Perfil</span>
                 <span role='button' onClick={() => {
-                  estado()
+                  dUser()
                 }} className={`'cursor-pointer px-4 py-2 rounded-lg mt-5' ${modalShow ? 'border-dashed border-2 text-titleOrange border-titleOrange' : 'text-white bg-titleOrange'}`}>Actualizar datos</span>
               </div>
             </form>

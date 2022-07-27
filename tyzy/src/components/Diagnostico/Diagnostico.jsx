@@ -7,33 +7,37 @@ import { actionAggDiagAsync } from '../../redux/actions/DiagnosticoActions';
 import CitaDiagnostico from './CitaDiagnostico';
 import { AgendateCalendario, AgendateTxt, ButtonsDiv, CalendarioANDT, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, DivCalendar, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import moment from 'moment';
 
 const SignupSchema = Yup.object().shape({
   nombreComp: Yup.string().required("Nombre requerido"),
   telefono: Yup.string().min(10, 'número incorrecto, muy corto').max(10, 'número incorrecto, demasiado largo').required("El número de celular es requerido"),
   correo: Yup.string().email('El correo debe ser de tipo correo@ejemplo.com').required("Correo requerido"),
   descripProblema: Yup.string().required("Descripción requerida"),
+  fecha: Yup.string().required('Fecha requerida')
 })
 
 const Diagnostico = () => {
 
   const dispatch = useDispatch()
   const [userAgendado, setUserAgendado] = useState({})
-  const ramdonUid = () => {
-    let uid = Math.round(Math.random() * (100 - 1) + 1)
-    setUserAgendado({ id: uid })
-  }
 
-  const onPanelChange = (value, mode) => {
-    console.log(value.format('DD/MM/YYYY'));
-    const dt = new Date()
-    const fecha = dt.getFullYear()
-    console.log(fecha);
+  const dt = new Date();
+  const año = dt.getFullYear();
+  const mes = dt.getMonth() + 1;
+  const dia = dt.getDate();
 
-    if (fecha == value.format('YYYY')) {
-      console.log('fecha correcta');
-    }
-  }
+  const [value, setValue] = useState(moment(`${año}-${mes}-${dia}`));
+  const [selectedValue, setSelectedValue] = useState(moment(`${año}-${mes}-${dia + 1}`));
+
+  const onSelect = (newValue) => {
+    setValue(newValue);
+    setSelectedValue(newValue);
+  };
+
+  const onPanelChange = (newValue) => {
+    setValue(newValue);
+  };
 
   return (
     <>
@@ -45,21 +49,13 @@ const Diagnostico = () => {
           <DiagIconArrow></DiagIconArrow>
         </DiagDiv>
       </ParallaxDiag>
-      <div>
-      </div>
 
-      <DivCalendar>
-        <AgendateCalendario>AGENDA TU PRIMERA CITA</AgendateCalendario>
-        <AgendateTxt className='mt-3'>Para poder hablar con nuestro equipo Tyzy sobre tu primer diagnóstico que podrás diligenciar en la parte de abajo, debes agendar una cita en el día que más se acomode para tener una charla y la orientación nesaria en el inicio de esta etapa al lado de un compañero de cuatro patas</AgendateTxt>
-        <CalendarioANDT onPanelChange={onPanelChange} />
-      </DivCalendar>
-
-      <DiagText2>Una vez tengas una fecha registrada, quisieramos preguntarte algunas cosas, para que en tu reunión con los especialistas tengamos como equipo más claridad al momento de comunicarnos contigo</DiagText2>
       <Formik
         initialValues={
           {
-            // id: userAgendado?.id,
+            id: Math.round(Math.random() * (100 - 1) + 1),
             nombreComp: '',
+            fecha: `${selectedValue?.format('YYYY-MM-DD')}`,
             telefono: '',
             correo: '',
             insomnio: '',
@@ -73,30 +69,42 @@ const Diagnostico = () => {
         }
         validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
-          console.log(values)
-          console.log(userAgendado)
-          setUserAgendado({ nombre: values.nombreComp })
-          // ramdonUid()
-          dispatch(actionAggDiagAsync(values))
-          actions.resetForm({
-            values: {
-              id: '',
-              nombreComp: '',
-              telefono: '',
-              correo: '',
-              insomnio: '',
-              inseguridad: '',
-              humor: '',
-              dCabeza: '',
-              fCariño: '',
-              fComprension: '',
-              descripProblema: ''
-            }
-          })
+          if (selectedValue?.format('YYYY') >= `${año}` && selectedValue?.format('MM') >= `0${mes}` && selectedValue?.format('DD') >= `${dia}`) {
+            dispatch(actionAggDiagAsync(values))
+            setUserAgendado({ id: values.id })
+            actions.resetForm({
+              values: {
+                id: Math.round(Math.random() * (100 - 1) + 1),
+                nombreComp: '',
+                fecha: `${selectedValue?.format('YYYY-MM-DD')}`,
+                telefono: '',
+                correo: '',
+                insomnio: '',
+                inseguridad: '',
+                humor: '',
+                dCabeza: '',
+                fCariño: '',
+                fComprension: '',
+                descripProblema: ''
+              }
+            })
+          } else {
+            alert('fecha incorrecta vuelve a intentarlo')
+          }
         }}
       >
         {({ errors, touched }) => (
           <DiagForm>
+            <DivCalendar>
+              <AgendateCalendario>AGENDA TU PRIMERA CITA</AgendateCalendario>
+              <AgendateTxt className='mt-3'>Para poder hablar con nuestro equipo Tyzy sobre tu primer diagnóstico que podrás diligenciar en la parte de abajo, debes agendar una cita en el día que más se acomode para tener una charla y la orientación nesaria en el inicio de esta etapa al lado de un compañero de cuatro patas</AgendateTxt>
+              <CalendarioANDT name='fecha' value={value} onSelect={onSelect} onPanelChange={onPanelChange} />
+              {errors.fecha && touched.fecha ?
+                (<div className='ms-3 fs-6 text-dark'>{errors.fecha}</div>) : null}
+            </DivCalendar>
+
+            <DiagText2 className='mb-5'>Una vez tengas una fecha registrada, quisieramos preguntarte algunas cosas, para que en tu reunión con los especialistas tengamos como equipo más claridad al momento de comunicarnos contigo</DiagText2>
+
 
             <DiagLabel className='font-bold fs-6'>Nombre completo del paciente *</DiagLabel>
             <DiagInput name='nombreComp' placeholder='Tu nombre aquí' />
