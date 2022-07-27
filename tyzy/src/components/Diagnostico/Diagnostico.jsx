@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup'
-import NavBarIn from '../NavBarIn';
+import NavBarIn from '../../containers/NavBarIn';
 import { useDispatch } from 'react-redux';
 import { actionAggDiagAsync } from '../../redux/actions/DiagnosticoActions';
 import CitaDiagnostico from './CitaDiagnostico';

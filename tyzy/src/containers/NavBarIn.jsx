@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Navbar, Avatar } from 'flowbite-react';
 import { NavLink } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
-import Setting from './Setting';
+import Setting from '../components/Setting';
 
 export default function NavBarIn() {
   // ----------------------------------------------------------

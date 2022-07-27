@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import NavBarIn from './NavBarIn'
+import NavBarIn from '../../containers/NavBarIn'
 import { AiOutlineArrowDown } from "react-icons/ai";
-import { MascotasURL } from '../helpers/UrlsAPI';
-import { Peticiones } from '../helpers/Peticiones';
+import { MascotasURL } from '../../helpers/UrlsAPI';
+import { Peticiones } from '../../helpers/Peticiones';
 import DetalleMascotas from './DetalleMascotas';
 
 export default function OurMasc() {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
-import { editarInfoUserAsync, mostrarDatesUserAsync } from '../redux/actions/InfoUserActionCRUD';
+import { editarInfoUserAsync, mostrarDatesUserAsync } from '../../redux/actions/InfoUserActionCRUD';
 
 const EditarPerfil = ({ si, no, data }) => {
 

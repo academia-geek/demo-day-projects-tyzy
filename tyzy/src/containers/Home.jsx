@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import NavBarIn from '../components/NavBarIn';
+import NavBarIn from './NavBarIn';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import IntroHome from '../components/IntroHome';
+import IntroHome from './IntroHome';
 import { HomeStyle, ModalPrimeraVez } from '../styles/StylesGlobals';
 import Carousel from 'react-bootstrap/Carousel';
 import { Peticiones } from '../helpers/Peticiones';

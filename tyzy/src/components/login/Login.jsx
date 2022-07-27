@@ -3,8 +3,8 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { ActionFacebookRegister, ActionGoogleRegister, ActionLoginAsync } from '../redux/actions/LoginActions';
-import { BtnLogin, DIVLogin, DivLogin, FieldInput2, ImageLogin, IngresaCon2, LabelInicio, LoginForm, LoginText, LoginTitle, LogoTyzy2, SpanInciar2 } from '../styles/StylesGlobals';
+import { ActionFacebookRegister, ActionGoogleRegister, ActionLoginAsync } from '../../redux/actions/LoginActions';
+import { BtnLogin, DIVLogin, DivLogin, FieldInput2, ImageLogin, IngresaCon2, LabelInicio, LoginForm, LoginText, LoginTitle, LogoTyzy2, SpanInciar2 } from '../../styles/StylesGlobals';
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string().email('el correo debe ser de tipo nombre@ejemplo.com').required("correo electronico requerido"),
