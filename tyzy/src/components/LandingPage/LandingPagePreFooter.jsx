@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Peticiones } from '../../helpers/Peticiones'
 import { LandingPageURL } from '../../helpers/UrlsAPI'
+import { ButtonDiagnostico, ProcesoTxt } from '../../styles/StylesGlobals'
 
 export default function LandingPagePreFooter() {
 
@@ -33,7 +35,8 @@ export default function LandingPagePreFooter() {
         }
       </section>
       
-      <button>Hola</button>
+      <ProcesoTxt>Empieza tu proceso con nosotros</ProcesoTxt>
+      <Link to='/login'><ButtonDiagnostico>¡Haz tu diagnóstico ahora!</ButtonDiagnostico></Link>
     </div>
   )
 }
