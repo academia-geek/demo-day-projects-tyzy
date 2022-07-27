@@ -76,7 +76,7 @@ const IntroHome = ({ close }) => {
                     inputValue: 1,
                     inputPlaceholder: 'I agree with the terms and conditions',
                     confirmButtonText: 'Continue <i class="fa fa-arrow-right"></i>',
-                    footer: '<a href="">Why do I have this issue?</a>',
+                    footer: '<a target="_blank" href="https://pages.flycricket.io/tyzy/privacy.html">Terminos de politica y privacidad.</a>',
                     inputValidator: (result) => {
                         return !result && 'You need to agree with T&C'
                     }

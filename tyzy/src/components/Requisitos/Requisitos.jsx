@@ -60,7 +60,7 @@ export default function Requisitos() {
         <DivUnoRe>
           <DivServiceAnimal></DivServiceAnimal>
           <BtnRequisitosUno>
-            <NavLink to='/NuestrosAnimales' className='hover:text-red-500'>Conocer mascotas</NavLink>
+            <NavLink to='/NuestrosAnimales' className='text-red-500 hover:text-red-500'>Conocer mascotas</NavLink>
           </BtnRequisitosUno>
         </DivUnoRe>
         <article>
@@ -140,7 +140,7 @@ export default function Requisitos() {
             funcionamiento cognitivo.
           </p>
           <BtnRequisitosDos>
-            <NavLink to='/NuestrosAnimales' className='hover:text-red-500'>Conocer mascotas</NavLink>
+            <NavLink to='/NuestrosAnimales' className='text-red-500 hover:text-red-500'>Conocer mascotas</NavLink>
           </BtnRequisitosDos>
         </Article2Req>
 
