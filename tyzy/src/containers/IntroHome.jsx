@@ -19,7 +19,7 @@ const IntroHome = ({ close }) => {
     const handleUsuario = () => {
         setValueFormAgregar({
             ...valueFormAgregar,
-            id: Math.round(Math.random() * (100 - 1) + 1),
+            id: user?.uid,
             nombres: user?.displayName,
             correo: user?.email
         })
@@ -52,9 +52,9 @@ const IntroHome = ({ close }) => {
     });
 
     const handleNext = () => {
-        if (activeStep < 2) {
+        if (activeStep < 3) {
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
-            if (activeStep === 1) {
+            if (activeStep === 2) {
                 setIntro({
                     btnNo: '',
                     btnSi: 'no'
@@ -67,7 +67,7 @@ const IntroHome = ({ close }) => {
         <div className={`d-flex flex-column rounded-pill`}>
             <div className='ConteImgH2 w-100 mx-auto rounded'>
                 <section className={`mb-3 BGIMG${datos[activeStep]?.id}`}>
-                    <Box className='h-100 w-100' component="img" src={datos == 0 ? '' : datos[activeStep]?.imagen} alt={datos?.id} />
+                    <Box className='h-100 w-100' component="img" src={datos[activeStep]?.imagen} alt={datos?.id} />
                 </section>
                 <div className='ConteH2 d-flex flex-column'>
                     <h2 className='mx-auto'>{datos[activeStep]?.parrafo}</h2>
@@ -77,7 +77,7 @@ const IntroHome = ({ close }) => {
             <MobileStepper
                 className='d-flex flex-column mb-0 rounded-pill'
                 variant="dots"
-                steps={3}
+                steps={4}
                 position="static"
                 activeStep={activeStep}
                 sx={{

@@ -3,34 +3,34 @@ import { addDoc, collection, getDocs } from "firebase/firestore"
 import { DB } from "../../firebase/Firebase"
 import { typesComunidad } from "../types/Types"
 
-export const addComuniAsync = (planta) => {
+export const addComuniAsync = (comu) => {
     return async (dispatch) => {
-        addDoc(collection(DB, "comunidad"), planta)
+        addDoc(collection(DB, "comunidad"), comu)
             .then(resp => {
-                dispatch(addComuniSync(planta))
-                //dispatch(listPlantaAsync())
+                dispatch(addComuniSync(comu))
+                dispatch(listaComuniAsync())
             })
             .catch(error => console.warn(error))
     }
 }
-export const addComuniSync = (planta) => {
+export const addComuniSync = (comu) => {
     return {
         type: typesComunidad.add,
-        payload: planta
+        payload: comu
     }
 }
 
-//------------------Listar Plantas------------------------------------/
+//------------------Listar comu------------------------------------/
 export const listaComuniAsync = () => {
     return async (dispatch) => {
         const collectionListar = await getDocs(collection(DB, "comunidad"))
-        const plantas = []
+        const momentoHappy = []
         collectionListar.forEach(lista => {
-            plantas.push({
+            momentoHappy.push({
                 ...lista.data()
             })
         })
-        dispatch(listaComuniSync(plantas))
+        dispatch(listaComuniSync(momentoHappy))
     }
 }
 export const listaComuniSync = (comunidad) => {

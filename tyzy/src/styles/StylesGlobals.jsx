@@ -283,6 +283,9 @@ export const ModalPrimeraVez = styled(Modal)`
       height: 70%;
       border-radius: 48px 48px 0 0;
     }
+    .BGIMG4 {
+      padding: 50px 0 0 0;
+    }
   }
 
   .css-26w9jf-MuiMobileStepper-dot {
@@ -1044,7 +1047,7 @@ export const ImgPubComunidad = styled.img`
   margin:0 auto;
 `;
 
-export const DescripUser = styled.p`
+export const DescripUser = styled.h3`
   font-size: 14px;
   font-weight: 700;
   display: flex;

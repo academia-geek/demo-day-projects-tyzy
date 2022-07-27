@@ -26,7 +26,6 @@ export const addCuentaAsync = (data)=>{
     return async (dispatch)=>{
         const upinfo = await addDoc(collection(DB, "userInfo"), data)
         dispatch(addCuentaSync(upinfo))
-
     }
 }
 export const addCuentaSync = (cuenta)=>{
