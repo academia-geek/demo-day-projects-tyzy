@@ -1,5 +1,5 @@
 import React from "react";
-import NavBarIn from "./NavBarIn";
+import NavBarIn from "../../containers/NavBarIn";
 import { MdOutlinePets } from "react-icons/md";
 import {
   Article2Req,
@@ -16,8 +16,8 @@ import {
   NewsletterDiv,
   NewsletterPrg,
   NewsletterText,
-} from "../styles/StylesGlobals";
-import LandingPageFooter from '../components/LandingPage/LandinPageFooter';
+} from "../../styles/StylesGlobals";
+import LandingPageFooter from '../LandingPage/LandinPageFooter';
 
 export default function Requisitos() {
   return (

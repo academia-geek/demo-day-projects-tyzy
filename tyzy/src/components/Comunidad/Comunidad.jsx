@@ -7,7 +7,7 @@ import { FileUpload } from '../../helpers/FileUpload'
 import { useForm } from '../../helpers/UseForm'
 import { addComuniAsync } from '../../redux/actions/ActionAddComuni'
 import { BtnDescrition, LabelComunidad, NewDescription, NewPubDiv, NewPubForm, NewPubLabel, NewPubLabel2, NewPubLocation, NewPubTitle } from '../../styles/StylesGlobals'
-import NavBarIn from '../NavBarIn'
+import NavBarIn from '../../containers/NavBarIn'
 import ComunidadList from './ComunidadList'
 
 export default function Comunidad() {

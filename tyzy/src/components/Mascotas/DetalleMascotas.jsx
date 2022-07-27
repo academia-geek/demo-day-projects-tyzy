@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { DetalleMascota } from '../styles/StylesGlobals';
+import { DetalleMascota } from '../../styles/StylesGlobals';
 
 const DetalleMascotas = ({ si, no, data }) => {
     console.log(data);

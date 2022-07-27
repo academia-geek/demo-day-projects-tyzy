@@ -1,13 +1,13 @@
 import React, { memo, useEffect, useState } from 'react'
-import NavBarIn from './NavBarIn'
+import NavBarIn from '../../containers/NavBarIn'
 import { BsFillCameraFill } from "react-icons/bs";
 import { getAuth, updateProfile } from 'firebase/auth';
 import { Avatar } from 'flowbite-react';
-import { FileUpload } from '../helpers/FileUpload';
+import { FileUpload } from '../../helpers/FileUpload';
 import { useDispatch, useSelector } from 'react-redux';
-import { ActionGetUserAsync } from '../redux/actions/UserActions';
-import { mostrarDatesUserAsync } from '../redux/actions/InfoUserActionCRUD';
+import { mostrarDatesUserAsync } from '../../redux/actions/InfoUserActionCRUD';
 import EditarPerfil from './EditarPerfil';
+import { ActionGetUserAsync } from '../../redux/actions/UserActions';
 
 const Perfil = memo(() => {
 

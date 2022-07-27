@@ -2,8 +2,8 @@ import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import { useDispatch } from 'react-redux';
-import { ActionFacebookRegister, ActionGoogleRegister, ActionRegisterAsync } from '../redux/actions/LoginActions';
-import { BtnRegister, DIVLogin, DivRegister, FieldInput, ImageRegister, IngresaCon, LabelRegistro, LoginRegister, LogoTyzy, RegisterForm, RegisterText, RegisterTitle, SpanInciar } from '../styles/StylesGlobals';
+import { ActionFacebookRegister, ActionGoogleRegister, ActionRegisterAsync } from '../../redux/actions/LoginActions';
+import { BtnRegister, DIVLogin, DivRegister, FieldInput, ImageRegister, IngresaCon, LabelRegistro, LoginRegister, LogoTyzy, RegisterForm, RegisterText, RegisterTitle, SpanInciar } from '../../styles/StylesGlobals';
 import { Link, NavLink } from 'react-router-dom';
 
 const SignupSchema = Yup.object().shape({

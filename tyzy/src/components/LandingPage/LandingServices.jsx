@@ -16,10 +16,10 @@ const LandingServices = () => {
     // ----------------------------------------------------------------------------------------
     const boxes = document.querySelectorAll(".box");
     const checkBoxes = () => {
-        const triggerBottom = (window.innerHeight / 5) * 3;
+        const triggerBottom = (window.innerHeight / 5) * 4;
         boxes?.forEach((box) => {
             const boxTop = box.getBoundingClientRect().top
-            if (boxTop < triggerBottom) {
+            if (boxTop <= triggerBottom) {
                 box.classList.add("show")
             } else {
                 box.classList.remove("show")
@@ -28,26 +28,29 @@ const LandingServices = () => {
     }
 
     window.addEventListener("scroll", checkBoxes);
-    checkBoxes()
+    useEffect(() => {
+        DataApi()
+        checkBoxes()
+    }, [])
 
     return (
-            <ServicesDiv>
-                <ServiceImg src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657512206/Tyzy/Tips_ltmwa1.png' alt='vector' />
-                <InfoServices className='mb-3'>
-                    <ServiceTitle>En nuestra aplicación,<SpanTitle> siempre encontrarás</SpanTitle></ServiceTitle>
-                    {
-                        datos?.map((dt) => (
-                            <section key={dt?.id} className="box mb-5 ">
-                                <IconCard src={dt?.img} alt={dt?.id} />
-                                <div>
-                                    <TitleCard>{dt?.titulo}</TitleCard>
-                                    <CardTxt>{dt?.texto}</CardTxt>
-                                </div>
-                            </section>
-                        ))
-                    }
-                </InfoServices>
-            </ServicesDiv>
+        <ServicesDiv>
+            <ServiceImg src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657512206/Tyzy/Tips_ltmwa1.png' alt='vector' />
+            <InfoServices className='mb-3'>
+                <ServiceTitle>En nuestra aplicación,<SpanTitle> siempre encontrarás</SpanTitle></ServiceTitle>
+                {
+                    datos?.map((dt) => (
+                        <section key={dt?.id} className="box mb-5 ">
+                            <IconCard src={dt?.img} alt={dt?.id} />
+                            <div>
+                                <TitleCard>{dt?.titulo}</TitleCard>
+                                <CardTxt>{dt?.texto}</CardTxt>
+                            </div>
+                        </section>
+                    ))
+                }
+            </InfoServices>
+        </ServicesDiv>
     )
 }
 
