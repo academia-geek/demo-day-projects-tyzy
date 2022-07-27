@@ -4,6 +4,7 @@ import { MdOutlinePets } from "react-icons/md";
 import { Article2Req, BtnNewsletter, BtnRequisitosDos, BtnRequisitosUno, Div2Requisitos, DivServiceAnimal, DivUnoRe, FormNewsletter, ImgRequisitos2, InputNewsletter, NewsletterDiv, NewsletterPrg, NewsletterText } from "../../styles/StylesGlobals";
 import { useForm } from "../../helpers/UseForm";
 import { NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Requisitos() {
 
@@ -13,7 +14,13 @@ export default function Requisitos() {
 
   const handleSuscripcion = (e) => {
     e.preventDefault()
-    alert('suscripcion agregada')
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'suscripcion agregada',
+      showConfirmButton: false,
+      timer: 1500
+    })
     console.log(formValue);
     reset();
   }
@@ -53,7 +60,7 @@ export default function Requisitos() {
         <DivUnoRe>
           <DivServiceAnimal></DivServiceAnimal>
           <BtnRequisitosUno>
-            <NavLink to='/NuestrosAnimales' className='hover:text-red-500'>Conocer mascotas</NavLink>
+            <NavLink to='/NuestrosAnimales' className='text-red-500 hover:text-red-500'>Conocer mascotas</NavLink>
           </BtnRequisitosUno>
         </DivUnoRe>
         <article>
@@ -133,7 +140,7 @@ export default function Requisitos() {
             funcionamiento cognitivo.
           </p>
           <BtnRequisitosDos>
-            <NavLink to='/NuestrosAnimales' className='hover:text-red-500'>Conocer mascotas</NavLink>
+            <NavLink to='/NuestrosAnimales' className='text-red-500 hover:text-red-500'>Conocer mascotas</NavLink>
           </BtnRequisitosDos>
         </Article2Req>
 

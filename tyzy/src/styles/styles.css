@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.flex-none{
+    display: none;
+}
+
 * {
     margin: 0;
     padding: 0;
