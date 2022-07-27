@@ -129,7 +129,7 @@ const Diagnostico = () => {
 
               <div>
                 <RadiusFlex><InputRadius type="checkbox" name='inseguridad' />Inseguridad ante otras personas</RadiusFlex>
-                <RadiusFlex style={{ 'marginTop': '10px' }}><InputRadius type="checkbox" name='fCariño' />Falta de cariño</RadiusFlex>
+                <RadiusFlex style={{ 'marginTop': '10px' }}><InputRadius type="checkbox" name='fCariño' />Discapacidad Visual</RadiusFlex>
               </div>
 
               <div>
@@ -140,7 +140,7 @@ const Diagnostico = () => {
 
                 <RadiusFlex style={{ 'marginTop': '10px' }}>
                   <InputRadius type="checkbox" name='fComprension' />
-                  Falta de comprensión
+                  Discapacidad física
                 </RadiusFlex>
               </div>
             </DiagDivRadius>
@@ -149,6 +149,11 @@ const Diagnostico = () => {
             <Field as={TextDiag} rows="7" cols="50" name='descripProblema' placeholder='Breve descripción del problema' />
             {errors.descripProblema && touched.descripProblema ?
               (<div className='ms-3 fs-6 text-dark'>{errors.descripProblema}</div>) : null}
+
+           <div>
+            <p>Recuerda que estos datos que ingresas no eximen del diagnóstico final profesional, es solo un acercamiento y el animalito que salga a continuación podría cambiar al finalizar el proceso en la llamada que estas agendando, gracias!</p>
+
+            </div>
 
             <ButtonsDiv className='flex'>
               <SaveButton type='submit' className='ms-auto'>GUARDAR</SaveButton>

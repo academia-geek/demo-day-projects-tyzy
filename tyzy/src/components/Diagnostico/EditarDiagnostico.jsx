@@ -3,7 +3,7 @@ import { Modal } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useForm } from '../../helpers/UseForm';
 import { actionEditarCitaAsync } from '../../redux/actions/DiagnosticoActions';
-import { HrDividir, InputRadio } from '../../styles/StylesGlobals';
+import { AnimalitoItem, AnimalitoItem2, DivAnimalito, DivAnimalitoFlex, FotoAnimalito, HrDividir, InputRadio, MatchingAnimal, NameAnimalito, SpanItem, SpanItem2 } from '../../styles/StylesGlobals';
 
 const EditarDiagnostico = ({ si, no, citaUser }) => {
 
@@ -88,9 +88,23 @@ const EditarDiagnostico = ({ si, no, citaUser }) => {
               {
                 citaUser[0]?.fComprension == true ? <label className='ms-3 mb-3' htmlFor="fComprension"><InputRadio name='fComprension' onChange={handleInputChange} className='me-1' defaultChecked type='checkbox' /> Falta de de comprensión</label> : ''
               }
+
+              <DivAnimalito>
+                <MatchingAnimal>Según la información ingresada tu animalito ideal sería:</MatchingAnimal>
+              <DivAnimalitoFlex>
+                  <FotoAnimalito src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1658885871/Tyzy/Mateo_uo8zpl.jpg' alt='fotoAnimalito'/>                
+                  <div>
+                    <NameAnimalito>Mateo</NameAnimalito>
+                    <AnimalitoItem>Raza:<SpanItem>Golgen Retriever</SpanItem></AnimalitoItem>
+                    <AnimalitoItem>Edad:<SpanItem>2 años</SpanItem></AnimalitoItem>
+                  </div>
+              </DivAnimalitoFlex>
+              <AnimalitoItem2>Especialidad:<SpanItem2>Con equilibrio emocional alto y de personalidad dócil, ideal para personas con discapacidad visual</SpanItem2></AnimalitoItem2>
+              </DivAnimalito>
+
               <div className='mt-auto flex justify-center'>
                 <span role='button' onClick={() => { no(false) }} className='cursor-pointer p-2 me-2 py-2 my-auto rounded-lg border-dashed border-2 border-titleOrange text-white bg-titleOrange'>Borrar</span>
-                <button type='submit' className='cursor-pointer p-2 py-2 rounded-lg border-dashed my-auto  border-2 border-titleOrange text-white bg-titleOrange'>Editar antes de enviar</button>
+                <button type='submit' className='cursor-pointer p-2 py-2 rounded-lg border-dashed my-auto  border-2 border-titleOrange text-white bg-titleOrange'>¡Listo!</button>
               </div>
             </section>
           </div>

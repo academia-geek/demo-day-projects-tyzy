@@ -48,7 +48,7 @@ export default function OurMasc() {
           {
             datos?.map((dt) => (
               <div key={dt?.id} className='drop-shadow-lg  bg-white rounded-2xl'>
-                <img className='rounded-t-2xl w-100 h-50' src={dt?.foto} alt={dt?.id} />
+                <img className='rounded-t-2xl w-100 h-80' src={dt?.foto} alt={dt?.id} />
 
                 <div className='py-3 px-4 d-flex'>
                   <div className='w-75'>
