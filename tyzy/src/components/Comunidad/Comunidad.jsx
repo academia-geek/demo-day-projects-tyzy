@@ -59,7 +59,7 @@ export default function Comunidad() {
         <div>
             <NavBarIn />
             <ComunidadList />
-            <NewPubDiv>
+            <NewPubDiv className='h-100'>
                 <NewPubTitle><IoMdPaw style={{ 'fontSize': '32px', 'marginRight': '20px' }} />Comparte tu momento Tyzy<IoMdPaw style={{ 'fontSize': '32px', 'marginLeft': '20px' }} /></NewPubTitle>
                 <NewPubForm className='w-2/3 ' onSubmit={handleSubmit}>
                     <div>

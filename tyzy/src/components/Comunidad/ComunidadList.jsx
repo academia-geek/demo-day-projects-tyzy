@@ -47,7 +47,7 @@ export default function ComunidadList() {
       </Carousel>
 
       <TitleComunidad><IoMdPaw style={{ 'fontSize': '32px', 'marginRight': '20px' }} />Momentos<SpanTitleComunidad>Tyzy</SpanTitleComunidad></TitleComunidad>
-      <ComunidadDiv>
+      <ComunidadDiv className='h-100'>
         {
           comunidad?.map((p, idx) => (
             <ComunidadPub key={idx}>

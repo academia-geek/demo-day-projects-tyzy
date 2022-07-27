@@ -283,6 +283,9 @@ export const ModalPrimeraVez = styled(Modal)`
       height: 70%;
       border-radius: 48px 48px 0 0;
     }
+    .BGIMG4 {
+      padding: 50px 0 0 0;
+    }
   }
 
   .css-26w9jf-MuiMobileStepper-dot {
