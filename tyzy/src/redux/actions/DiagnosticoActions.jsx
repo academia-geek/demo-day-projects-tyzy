@@ -65,21 +65,21 @@ export const actionEditarCitaSync = (datosEdit) => {
 }
 
 //-------------------------------Eliminar----------------------------------
-export const actionEliminarCitaAsync = (correo) => {
+export const actionEliminarCitaAsync = (uid) => {
     return async (dispatch) => {
         const listCitaDiag = collection(DB, "CitaDiagnostico")
-        const q = query(listCitaDiag, where("correo", "==", correo))
+        const q = query(listCitaDiag, where("id", "==", uid.id))
         const datosQ = await getDocs(q)
 
         datosQ.forEach(docu => {
             deleteDoc(doc(DB, "CitaDiagnostico", docu.id))
         })
-        dispatch(actionEliminarCitaSync(correo))
+        dispatch(actionEliminarCitaSync(uid))
     }
 }
-export const actionEliminarCitaSync = (correo) => {
+export const actionEliminarCitaSync = (uid) => {
     return {
         type: TypesDiagnostico.delete,
-        payload: correo
+        payload: uid
     }
 }
