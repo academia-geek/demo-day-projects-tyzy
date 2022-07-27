@@ -1,9 +1,12 @@
 import React, { memo, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionEliminarCitaAsync } from '../../redux/actions/DiagnosticoActions';
 import { EditButton, HrDividir, InputRadio } from '../../styles/StylesGlobals';
 import EditarDiagnostico from './EditarDiagnostico';
 
 const CitaDiagnostico = memo(({ user }) => {
+
+  const dispatch = useDispatch()
 
   const { citaDiagnostico } = useSelector(store => store.citaDiagnosticoStore)
   const [modalShow, setModalShow] = useState(false);
@@ -14,6 +17,12 @@ const CitaDiagnostico = memo(({ user }) => {
     if (filtro != []) {
       setCitaUser(filtro)
     }
+  }
+
+  const CancelarCita = () => {
+    alert('cita cancelada')
+    setCitaUser('')
+    dispatch(actionEliminarCitaAsync(citaUser[0]))
   }
 
   useEffect(() => {
@@ -58,25 +67,25 @@ const CitaDiagnostico = memo(({ user }) => {
               <section className='flex flex-column w-100 ps-4 mt-4'>
                 <h3 className='mb-3 fs-4'>Sintomas presentados:</h3>
                 {
-                  citaUser[0]?.insomnio == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Problemas de insomnio</label> : ''
+                  citaUser[0]?.insomnio == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' defaultChecked={true} type='checkbox' /> Problemas de insomnio</label> : ''
                 }
                 {
-                  citaUser[0]?.dCabeza == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Dolor frecuente de cabeza</label> : ''
+                  citaUser[0]?.dCabeza == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' defaultChecked={true} type='checkbox' /> Dolor frecuente de cabeza</label> : ''
                 }
                 {
-                  citaUser[0]?.inseguridad == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Inseguridad frente a otras personas</label> : ''
+                  citaUser[0]?.inseguridad == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' defaultChecked={true} type='checkbox' /> Inseguridad frente a otras personas</label> : ''
                 }
                 {
-                  citaUser[0]?.fCariño == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Falta de cariño</label> : ''
+                  citaUser[0]?.fCariño == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' defaultChecked={true} type='checkbox' /> Falta de cariño</label> : ''
                 }
                 {
-                  citaUser[0]?.humor == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Cambio de humor repentino</label> : ''
+                  citaUser[0]?.humor == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' defaultChecked={true} type='checkbox' /> Cambio de humor repentino</label> : ''
                 }
                 {
-                  citaUser[0]?.fComprension == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' checked type='checkbox' /> Falta de de comprensión</label> : ''
+                  citaUser[0]?.fComprension == true ? <label className='ms-3 mb-3' htmlFor=""><InputRadio className='me-1' defaultChecked={true} type='checkbox' /> Falta de de comprensión</label> : ''
                 }
                 <div className='mt-auto flex justify-center'>
-                  <span role='button' className='cursor-pointer p-2 me-2 py-2 rounded-lg border-dashed border-2 border-titleOrange text-white bg-titleOrange'>Borrar</span>
+                  <span role='button' onClick={() => { CancelarCita() }} className='cursor-pointer p-2 me-2 py-2 rounded-lg border-dashed border-2 border-titleOrange text-white bg-titleOrange'>Cancelar cita</span>
                   <span onClick={() => { setModalShow(true) }} role='button' className='cursor-pointer p-2 py-2 rounded-lg border-dashed border-2 border-titleOrange text-white bg-titleOrange'>Editar antes de enviar</span>
                 </div>
               </section>

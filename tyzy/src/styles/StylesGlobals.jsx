@@ -970,7 +970,7 @@ export const ImgPubComunidad = styled.img`
   margin:0 auto;
 `;
 
-export const DescripUser = styled.p`
+export const DescripUser = styled.h3`
   font-size: 14px;
   font-weight: 700;
   display: flex;

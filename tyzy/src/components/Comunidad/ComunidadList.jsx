@@ -8,6 +8,7 @@ import { CarouselText, ComunidadDiv, ComunidadPub, DescripUser, ImgCarousel1, Im
 export default function ComunidadList() {
 
   const dispatch = useDispatch()
+
   const { comunidad } = useSelector(store => store.comunidades)
 
   useEffect(() => {
@@ -51,15 +52,15 @@ export default function ComunidadList() {
           comunidad?.map((p, idx) => (
             <ComunidadPub key={idx}>
               <UserPub>
-                <UserImgPub alt={idx} img='' rounded={true} />
+                <UserImgPub alt={idx} img={p?.logoUser} rounded={true} />
 
                 <div>
-                  <UserNamePub>Jenny Epitia</UserNamePub>
+                  <UserNamePub>{p.nombre}</UserNamePub>
                   <LocationPub>{p.direccion}</LocationPub>
                 </div>
               </UserPub>
               <ImgPubComunidad src={p.imagen} alt={idx} />
-              <DescripUser>Jenny Espitia<PubDescription>{p.descripcion}</PubDescription></DescripUser>
+              <DescripUser>{p.nombre}<PubDescription>{p.descripcion}</PubDescription></DescripUser>
             </ComunidadPub>
           ))
         }

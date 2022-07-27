@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { IoMdPaw } from 'react-icons/io'
 import { TbCameraPlus } from 'react-icons/tb'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { FileUpload } from '../../helpers/FileUpload'
 import { useForm } from '../../helpers/UseForm'
 import { addComuniAsync } from '../../redux/actions/ActionAddComuni'
@@ -12,11 +12,22 @@ import ComunidadList from './ComunidadList'
 
 export default function Comunidad() {
 
-    const [activo, setActivo] = useState(true)
-
     const dispatch = useDispatch()
 
+    const { user } = useSelector(store => store.user)
+    const { DatosUser } = useSelector(store => store.datosUserStore)
+
+    const [activo, setActivo] = useState(true)
+    const [datos, setDatos] = useState({});
+
+    const estado = () => {
+        const filtro = DatosUser.filter((usr) => usr.id === user?.uid)
+        setDatos(filtro[0])
+    }
+
     const [formValue, handleInputChange, reset] = useForm({
+        logoUser: user?.photoURL,
+        nombre: datos?.nombres,
         direccion: '',
         descripcion: '',
         imagen: ''
@@ -34,9 +45,15 @@ export default function Comunidad() {
         FileUpload(file)
             .then((resp) => {
                 formValue.imagen = resp
+                alert('imagen cargada')
             })
             .catch((error) => { console.warn(error) });
     }
+
+    useEffect(() => {
+        estado()
+    }, [])
+
 
     return (
         <div>
@@ -52,12 +69,12 @@ export default function Comunidad() {
                     <div>
                         <NewPubLabel2>
                             <LabelComunidad htmlFor='address'>Ubicación</LabelComunidad>
-                            <NewPubLocation onChange={handleInputChange} id='address' type='text' name='direccion' />
+                            <NewPubLocation value={formValue.direccion} onChange={handleInputChange} id='address' type='text' name='direccion' />
                         </NewPubLabel2>
 
                         <NewPubLabel2>
                             <LabelComunidad htmlFor='descrpc'>Descripción</LabelComunidad>
-                            <NewDescription rows="4" cols="50" onChange={handleInputChange} id='descripc' type='text' name='descripcion' />
+                            <NewDescription rows="4" cols="50" value={formValue.descripcion} onChange={handleInputChange} id='descripc' type='text' name='descripcion' />
                         </NewPubLabel2>
                     </div>
 
