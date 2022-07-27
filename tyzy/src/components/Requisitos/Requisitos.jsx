@@ -3,6 +3,7 @@ import NavBarIn from "../../containers/NavBarIn";
 import { MdOutlinePets } from "react-icons/md";
 import { Article2Req, BtnNewsletter, BtnRequisitosDos, BtnRequisitosUno, Div2Requisitos, DivServiceAnimal, DivUnoRe, FormNewsletter, ImgRequisitos2, InputNewsletter, NewsletterDiv, NewsletterPrg, NewsletterText } from "../../styles/StylesGlobals";
 import { useForm } from "../../helpers/UseForm";
+import { NavLink } from "react-router-dom";
 
 export default function Requisitos() {
 
@@ -51,7 +52,9 @@ export default function Requisitos() {
       <section className="grid grid-cols-2 gap-20 px-32 my-24 items-center">
         <DivUnoRe>
           <DivServiceAnimal></DivServiceAnimal>
-          <BtnRequisitosUno>Conocer animales</BtnRequisitosUno>
+          <BtnRequisitosUno>
+            <NavLink to='/NuestrosAnimales' className='hover:text-red-500'>Conocer mascotas</NavLink>
+          </BtnRequisitosUno>
         </DivUnoRe>
         <article>
           <h3
@@ -129,7 +132,9 @@ export default function Requisitos() {
             clínico, para mejorar su bienestar físico, social, emocional y/o el
             funcionamiento cognitivo.
           </p>
-          <BtnRequisitosDos>Conocer animales</BtnRequisitosDos>
+          <BtnRequisitosDos>
+            <NavLink to='/NuestrosAnimales' className='hover:text-red-500'>Conocer mascotas</NavLink>
+          </BtnRequisitosDos>
         </Article2Req>
 
         <ImgRequisitos2></ImgRequisitos2>
