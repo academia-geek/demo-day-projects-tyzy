@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
-import Swal from 'sweetalert2';
 import { editarInfoUserAsync, mostrarDatesUserAsync } from '../../redux/actions/InfoUserActionCRUD';
 
 const EditarPerfil = ({ si, no, data }) => {
@@ -10,7 +9,7 @@ const EditarPerfil = ({ si, no, data }) => {
     const [activo, setActivo] = useState(false)
 
     const [valueFormEditar, setValueFormEditar] = useState({
-        id: data[0]?.id,
+        id: data[0].id,
         nombres: data[0]?.nombres,
         correo: data[0]?.correo,
         telefono: data[0]?.telefono,
@@ -27,13 +26,6 @@ const EditarPerfil = ({ si, no, data }) => {
         dispatch(editarInfoUserAsync(valueFormEditar))
         dispatch(mostrarDatesUserAsync())
         no(false)
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: '!Tu información ha sido guardada con éxito!',
-            showConfirmButton: false,
-            timer: 1500
-          })
     }
 
     return (

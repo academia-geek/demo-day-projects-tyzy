@@ -69,7 +69,6 @@ const Setting = ({ name, ...props }) => {
                             <NavLink className='nav-link text-white' to="#Footer"><h4 className='text-white'>Configuración</h4></NavLink>
                             <Link className='my-auto ms-auto' to='#'><MdSettings color='#B2D9D1' /></Link>
                         </div>
-                            
                         <div className='d-flex ms-3 me-5 mt-2'>
                             <div role='button' className='my-auto ms-3' onClick={() => dispatch(ActionLogoutAsync())}>
                                 <h2 className='text-white'>Cerrar sesión</h2>
