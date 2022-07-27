@@ -10,6 +10,7 @@ const LandingPageStadist = () => {
         const data = await Peticiones(LandingPageURL)
         setDatos(data[0].sectionEstadistica)
     }
+    
     useEffect(() => {
         DataApi()
     }, [])
