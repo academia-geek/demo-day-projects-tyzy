@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { mostrarDatesUserAsync } from '../../redux/actions/InfoUserActionCRUD';
 import EditarPerfil from './EditarPerfil';
 import { ActionGetUserAsync } from '../../redux/actions/UserActions';
+import Swal from 'sweetalert2';
 
 const Perfil = memo(() => {
 
@@ -34,6 +35,13 @@ const Perfil = memo(() => {
     FileUpload(file)
       .then((res) => {
         UpImg(res)
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'imagen cargada',
+          showConfirmButton: false,
+          timer: 1500
+        })
       })
       .catch((err) => {
         console.warn(err);
