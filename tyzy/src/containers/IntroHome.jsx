@@ -6,7 +6,6 @@ import { Peticiones } from '../helpers/Peticiones';
 import { HomeURL } from '../helpers/UrlsAPI';
 import { useDispatch, useSelector } from 'react-redux';
 import { agregarInfoUserAsync } from "../redux/actions/InfoUserActionCRUD";
-import Swal from "sweetalert2";
 
 const IntroHome = ({ close }) => {
 
@@ -32,15 +31,6 @@ const IntroHome = ({ close }) => {
         } else {
             dispatch(agregarInfoUserAsync(valueFormAgregar))
         }
-        // return (
-        //     Swal.fire({
-        //         allowOutsideClick: 'falso',
-        //         icon: 'error',
-        //         title: 'Oops...',
-        //         text: 'Something went wrong!',
-        //         footer: '<a href="">Why do I have this issue?</a>'
-        //     })
-        // )
         close()
     }
 
@@ -61,25 +51,13 @@ const IntroHome = ({ close }) => {
         btnNo: 'no'
     });
 
-    const handleNext = async () => {
+    const handleNext = () => {
         if (activeStep < 3) {
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
             if (activeStep === 2) {
                 setIntro({
                     btnNo: '',
                     btnSi: 'no'
-                })
-                const { value: accept } = await Swal.fire({
-                    title: 'Terms and conditions',
-                    input: 'checkbox',
-                    allowOutsideClick: false,
-                    inputValue: 1,
-                    inputPlaceholder: 'I agree with the terms and conditions',
-                    confirmButtonText: 'Continue <i class="fa fa-arrow-right"></i>',
-                    footer: '<a target="_blank" href="https://pages.flycricket.io/tyzy/privacy.html">Terminos de politica y privacidad.</a>',
-                    inputValidator: (result) => {
-                        return !result && 'You need to agree with T&C'
-                    }
                 })
             }
         }

@@ -64,7 +64,7 @@ const DetalleMascotas = ({ si, no, data }) => {
                             volver
                         </span>
                         <span className='bg-amber-300 text-white cursor-pointer py-2 px-4 rounded-lg'>
-                            <NavLink to='/diagnostico' className='text-white hover:text-white'>Quiero conocerlo</NavLink>
+                            <NavLink to='/diagnostico' className='hover:text-white'>Quiero conocerlo</NavLink>
                         </span>
                     </div>
 

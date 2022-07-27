@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { actionAggDiagAsync } from '../../redux/actions/DiagnosticoActions';
 import CitaDiagnostico from './CitaDiagnostico';
 import { AgendateCalendario, AgendateTxt, ButtonsDiv, CalendarioANDT, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, DivCalendar, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import moment from 'moment';
 
 const SignupSchema = Yup.object().shape({
