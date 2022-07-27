@@ -1,27 +1,24 @@
 import React from "react";
 import NavBarIn from "../../containers/NavBarIn";
 import { MdOutlinePets } from "react-icons/md";
-import {
-  Article2Req,
-  BtnNewsletter,
-  BtnRequisitosDos,
-  BtnRequisitosUno,
-  Div2Requisitos,
-  DivDosRe,
-  DivServiceAnimal,
-  DivUnoRe,
-  FormNewsletter,
-  ImgRequisitos2,
-  InputNewsletter,
-  NewsletterDiv,
-  NewsletterPrg,
-  NewsletterText,
-} from "../../styles/StylesGlobals";
-import LandingPageFooter from '../LandingPage/LandinPageFooter';
+import { Article2Req, BtnNewsletter, BtnRequisitosDos, BtnRequisitosUno, Div2Requisitos, DivServiceAnimal, DivUnoRe, FormNewsletter, ImgRequisitos2, InputNewsletter, NewsletterDiv, NewsletterPrg, NewsletterText } from "../../styles/StylesGlobals";
+import { useForm } from "../../helpers/UseForm";
 
 export default function Requisitos() {
+
+  const [formValue, handleInputChange, reset] = useForm({
+    correo: ''
+  })
+
+  const handleSuscripcion = (e) => {
+    e.preventDefault()
+    alert('suscripcion agregada')
+    console.log(formValue);
+    reset();
+  }
+
   return (
-    <div  style={{ background: "#FDFDFD" }}>
+    <div style={{ background: "#FDFDFD" }}>
       <NavBarIn />
       <section className="relative w-full">
         <div className="dogBanner bg-cover bg-bottom bg-no-repeat bg-gray-700 h-96"></div>
@@ -32,7 +29,7 @@ export default function Requisitos() {
         </div>
       </section>
       <section className="grid grid-cols-2 gap-10 px-40 my-24 items-center">
-        <div style={{'marginLeft':'12%'}}>
+        <div style={{ 'marginLeft': '12%' }}>
           <h3 className="text-titleOrange py-4">LOREM IPSUM</h3>
           <p className="text-pGreen">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -88,7 +85,7 @@ export default function Requisitos() {
           </p>
           <p className="py-2 text-textGray">
             <MdOutlinePets className="inline-block text-2xl" /> <strong>Perro de
-            servicio psiquiátrico: </strong> Es un perro que ha sido entrenado para
+              servicio psiquiátrico: </strong> Es un perro que ha sido entrenado para
             llevar a cabo tareas que ayudan a las personas con discapacidades a
             detectar el inicio de episodios psiquiátricos y aminorar sus efectos
           </p>
@@ -102,7 +99,7 @@ export default function Requisitos() {
           <p className="py-2 text-textGray">
             {" "}
             <MdOutlinePets className="inline-block text-2xl" /> <strong>Perro que
-            Responde a Convulsiones:</strong> Es un perro entrenado para ayudar a una
+              Responde a Convulsiones:</strong> Es un perro entrenado para ayudar a una
             persona con un trastorno convulsivo. Cómo el perro le sirve a la
             persona depende de las necesidades de la persona. El perro puede
             vigilar a la persona durante una convulsión o el perro puede ir a
@@ -136,15 +133,15 @@ export default function Requisitos() {
         </Article2Req>
 
         <ImgRequisitos2></ImgRequisitos2>
-       
+
       </Div2Requisitos>
 
       <NewsletterDiv>
-            <NewsletterText>Suscribete a nuestro newsletter</NewsletterText>
-            <NewsletterPrg>Dejanos tu correo, y conoce todas las actualizaciónes respecto a esta y otra formación que puede ser de tu interés, haz clic en “suscribe” y espera un correo de confirmación!</NewsletterPrg>
-        <FormNewsletter>
-            <InputNewsletter placeholder="Correo electrónico"/>
-            <BtnNewsletter>Suscribirse</BtnNewsletter>
+        <NewsletterText>Suscribete a nuestro newsletter</NewsletterText>
+        <NewsletterPrg>Dejanos tu correo, y conoce todas las actualizaciónes respecto a esta y otra formación que puede ser de tu interés, haz clic en “suscribe” y espera un correo de confirmación!</NewsletterPrg>
+        <FormNewsletter onSubmit={handleSuscripcion}>
+          <InputNewsletter name="correo" value={formValue.correo} onChange={handleInputChange} placeholder="Correo electrónico" />
+          <BtnNewsletter type="submit">Suscribirse</BtnNewsletter>
         </FormNewsletter>
       </NewsletterDiv>
     </div>
