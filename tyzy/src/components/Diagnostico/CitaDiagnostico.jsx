@@ -21,8 +21,6 @@ const CitaDiagnostico = memo(({ user, setUser }) => {
     const idRandom = Math.round(Math.random() * (20 - 1) + 1)
     const Fmascota = data[0].listaMascotas.filter((sd) => sd.id == idRandom)
     setDatos(Fmascota[0])
-    console.log(user);
-
   }
 
   const filterUser = () => {
@@ -147,7 +145,7 @@ const CitaDiagnostico = memo(({ user, setUser }) => {
       <EditButton className={`ms-3 w-60 mx-auto ${user?.BTNcita}`} type='button' onClick={() => { filterUser() }}>Ver cita agendada</EditButton>
 
       {
-        modalShow == true ? < EditarDiagnostico si={modalShow} no={setModalShow} citaUser={citaUser} /> : ''
+        modalShow == true ? < EditarDiagnostico si={modalShow} no={setModalShow} citaUser={citaUser} dmascota={datos} /> : ''
       }
     </div>
   )

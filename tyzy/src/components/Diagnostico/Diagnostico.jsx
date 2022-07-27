@@ -10,11 +10,11 @@ import moment from 'moment';
 import Swal from 'sweetalert2';
 
 const SignupSchema = Yup.object().shape({
-  nombreComp: Yup.string().required("Nombre requerido"),
-  telefono: Yup.string().min(10, 'número incorrecto, muy corto').max(10, 'número incorrecto, demasiado largo').required("El número de celular es requerido"),
-  correo: Yup.string().email('El correo debe ser de tipo correo@ejemplo.com').required("Correo requerido"),
-  descripProblema: Yup.string().required("Descripción requerida"),
-  fecha: Yup.string().required('Fecha requerida')
+  nombreComp: Yup.string().required("Nombre requerido*"),
+  telefono: Yup.string().min(10, 'número incorrecto, muy corto').max(10, 'número incorrecto, demasiado largo').required("El número de celular es requerido*"),
+  correo: Yup.string().email('El correo debe ser de tipo correo@ejemplo.com').required("Correo requerido*"),
+  descripProblema: Yup.string().required("Descripción requerida*"),
+  fecha: Yup.string().required('Fecha requerida*')
 })
 
 const Diagnostico = () => {
