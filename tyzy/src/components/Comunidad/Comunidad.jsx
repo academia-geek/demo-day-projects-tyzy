@@ -18,7 +18,8 @@ export default function Comunidad() {
     const { user } = useSelector(store => store.user)
     const { DatosUser } = useSelector(store => store.datosUserStore)
 
-    const [activo, setActivo] = useState(true)
+    const [activo, setActivo] = useState(false)
+    const [stateIMG, setStateIMG] = useState({ STtrue: 'Imagen cargada', STfalse: 'Imagen no cargada', estadoImagen: 'false' })
     const [datos, setDatos] = useState({});
 
     const estado = () => {
@@ -36,8 +37,26 @@ export default function Comunidad() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(addComuniAsync(formValue))
-        reset()
+        formValue.imagen == '' ? setStateIMG({ ...stateIMG, estadoImagen: 'false' }) : setStateIMG({ ...stateIMG, estadoImagen: 'true' })
+        if (formValue.imagen != '' && formValue.direccion != '' && formValue.descripcion != '') {
+            dispatch(addComuniAsync(formValue))
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: '¡Momento compartido con éxito!',
+                showConfirmButton: false,
+                timer: 1000
+            })
+            setStateIMG({ ...stateIMG, estadoImagen: 'false' })
+            reset()
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'complete todos los campos',
+                showConfirmButton: false,
+                timer: 1000
+            })
+        }
     }
 
     const handleFileChange = (e) => {
@@ -45,14 +64,12 @@ export default function Comunidad() {
         //llamar a la configuracion de Cloudinary
         FileUpload(file)
             .then((resp) => {
-                formValue.imagen = resp
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'imagen cargada',
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
+                if (resp != undefined) {
+                    formValue.imagen = resp
+                    setStateIMG({ ...stateIMG, estadoImagen: 'true' })
+                } else {
+                    setStateIMG({ ...stateIMG, estadoImagen: 'false' })
+                }
             })
             .catch((error) => { console.warn(error) });
     }
@@ -71,7 +88,10 @@ export default function Comunidad() {
                 <NewPubForm className='w-2/3 ' onSubmit={handleSubmit}>
                     <div>
                         <NewPubLabel className='cursor-pointer' htmlFor='imgup'><TbCameraPlus style={{ 'fontSize': '20px', 'marginRight': '10px' }} />Sube tu imagen aquí!</NewPubLabel>
-                        <input className='-z-10 overflow-hidden opacity-0 w-1 h-1' name='image' onChange={handleFileChange} id='imgup' type='file' placeholder='Cambiar foto de perfil' />
+                        {
+                            stateIMG?.estadoImagen != 'false' ? <h4 className='text-green-500 text-center mt-0 flex-non'>{stateIMG.STtrue}</h4> : <h4 className='text-red-500 text-center mt-0 flex-noe'>{stateIMG.STfalse}</h4>
+                        }
+                        <input className='-z-10 overflow-hidden mb-0 opacity-0 w-1 h-1' name='image' onChange={handleFileChange} id='imgup' type='file' placeholder='Cambiar foto de perfil' />
                     </div>
                     <div>
                         <NewPubLabel2>
