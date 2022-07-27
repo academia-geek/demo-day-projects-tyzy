@@ -21,7 +21,6 @@ export default function Requisitos() {
       showConfirmButton: false,
       timer: 1500
     })
-    console.log(formValue);
     reset();
   }
 

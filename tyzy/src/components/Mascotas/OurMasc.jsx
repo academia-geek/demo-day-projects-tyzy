@@ -30,7 +30,7 @@ export default function OurMasc() {
       <NavBarIn />
       <section className='dogBanner2 grid grid-cols-2   px-28  bg-cover bg-top bg-no-repeat bg-gray-700 h-96 text-white'>
         <div className='justify-center flex flex-col'>
-          <h4 className='text-3xl font-bold'>¿Estás listo para empezar a <br></br>compartir tu vida?</h4>
+          <h4 className='text-3xl text-white font-bold'>¿Estás listo para empezar a <br></br>compartir tu vida?</h4>
 
           <div className='items-center flex flex-col w-min'>
             <p className='pt-2 text-sm '>CONÓCELOS</p>

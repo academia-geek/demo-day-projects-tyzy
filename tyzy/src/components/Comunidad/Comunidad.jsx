@@ -18,7 +18,6 @@ export default function Comunidad() {
     const { user } = useSelector(store => store.user)
     const { DatosUser } = useSelector(store => store.datosUserStore)
 
-    const [activo, setActivo] = useState(false)
     const [stateIMG, setStateIMG] = useState({ STtrue: 'Imagen cargada', STfalse: 'Imagen no cargada', estadoImagen: 'false' })
     const [datos, setDatos] = useState({});
 
@@ -89,7 +88,7 @@ export default function Comunidad() {
                     <div>
                         <NewPubLabel className='cursor-pointer' htmlFor='imgup'><TbCameraPlus style={{ 'fontSize': '20px', 'marginRight': '10px' }} />Sube tu imagen aquí!</NewPubLabel>
                         {
-                            stateIMG?.estadoImagen != 'false' ? <h4 className='text-green-500 text-center mt-0 flex-non'>{stateIMG.STtrue}</h4> : <h4 className='text-red-500 text-center mt-0 flex-noe'>{stateIMG.STfalse}</h4>
+                            stateIMG?.estadoImagen != 'false' ? <h4 className='text-green-500 text-center'>{stateIMG.STtrue}</h4> : <h4 className='text-red-500 text-center'>{stateIMG.STfalse}</h4>
                         }
                         <input className='-z-10 overflow-hidden mb-0 opacity-0 w-1 h-1' name='image' onChange={handleFileChange} id='imgup' type='file' placeholder='Cambiar foto de perfil' />
                     </div>

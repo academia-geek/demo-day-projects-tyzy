@@ -4,10 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.flex-none{
-    display: none;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -305,6 +301,7 @@ body {
     font-weight: 800 !important;
 }
 
-.Dnone {
+.BTNcitaAgenda {
     display: none !important;
 }
+
