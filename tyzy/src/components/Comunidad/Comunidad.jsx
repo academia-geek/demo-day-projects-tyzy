@@ -25,7 +25,7 @@ export default function Comunidad() {
         const filtro = DatosUser.filter((usr) => usr.id === user?.uid)
         setDatos(filtro[0])
     }
-    console.log(datos);
+    
     const [formValue, handleInputChange, reset] = useForm({
         logoUser: user?.photoURL,
         nombre: user?.displayName,
@@ -33,7 +33,6 @@ export default function Comunidad() {
         descripcion: '',
         imagen: ''
     })
-    console.log(formValue);
 
     const handleSubmit = (e) => {
         e.preventDefault()
