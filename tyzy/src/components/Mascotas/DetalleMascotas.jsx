@@ -10,13 +10,14 @@ const DetalleMascotas = ({ si, no, data }) => {
                 show={si}
                 centered
             >
-                <div className='BORDERMODAL drop-shadow-lg h-100'>
-                    <img className='h-64 w-screen' src={data?.foto} alt='perritos lindos' />
+                
+                <div className='BORDERMODAL drop-shadow-lg'>
+                    <img className='h-64 w-screen object-cover' src={data?.foto} alt='perritos lindos' />
 
                     <div className='py-3 px-4 Ndescrip'>
                         <div className='mb-2'>
-                            <h2 className='fs-5 font-bold text-titleOrange mb-1'>{data?.nombre}</h2>
-                            <p className='font-semibold tracking-wides mt-2 mb-2'>{data?.descripcion}</p>
+                            <h2 className='fs-5 font-bold text-titleOrange'>{data?.nombre}</h2>
+                            <p className='tracking-wides mt-3 mb-2'>{data?.descripcion}</p>
                             <div className='d-flex'>
                                 <div className='ms-3'>
                                     <div className='flex'>
@@ -52,7 +53,7 @@ const DetalleMascotas = ({ si, no, data }) => {
                                     <span className='pl-2'>{data?.caracteristicas.peso}</span>
                                 </div>
                                 <div className='flex'>
-                                    <p className='font-bold'>Especialidad: <span className='pl-2 font-medium'>{data?.caracteristicas.especialidad}</span></p>
+                                    <p className='font-bold'>Especialidad: <span className='pl-2 font-normal'>{data?.caracteristicas.especialidad}</span></p>
                                     
                                 </div>
                             </div>

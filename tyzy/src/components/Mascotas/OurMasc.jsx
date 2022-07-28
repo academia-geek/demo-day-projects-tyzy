@@ -4,7 +4,7 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import { MascotasURL } from '../../helpers/UrlsAPI';
 import { Peticiones } from '../../helpers/Peticiones';
 import DetalleMascotas from './DetalleMascotas';
-import { ButtonDiagnostico, DiagSubText1, DiagText1, ProcesoTxt } from '../../styles/StylesGlobals';
+import { ButtonDiagnostico, DiagSubText1, DiagText1, ItemGallery, ProcesoTxt } from '../../styles/StylesGlobals';
 import { Link } from 'react-router-dom';
 
 export default function OurMasc() {
@@ -47,13 +47,13 @@ export default function OurMasc() {
       </section>
 
       <div className='px-20 py-16'>
-        <section className="grid   grid-cols-3 gap-8">
+        <section className="grid grid-cols-3 gap-8">
           {
             datos?.map((dt) => (
-              <div key={dt?.id} className='drop-shadow-lg  bg-white rounded-2xl'>
-                <img className='rounded-t-2xl w-100 h-80' src={dt?.foto} alt={dt?.id} />
+              <ItemGallery key={dt?.id}>
+                <img className='rounded-t-2xl w-100 h-80 object-cover' src={dt?.foto} alt={dt?.id} />
 
-                <div className='py-3 px-4 d-flex'>
+                <div className='py-3 px-4 d-flex justify-center'>
                   <div className='w-75'>
                     <div className='flex justify-between '>
                       <p className='font-bold text-titleOrange'>{dt?.nombre}</p>
@@ -69,7 +69,7 @@ export default function OurMasc() {
 
                   <p className='font-semibold my-auto tracking-widest cursor-pointer text-verdeMasClaro' onClick={() => { handleModal(dt) }}>VER MÁS</p>
                 </div>
-              </div>
+              </ItemGallery>
             ))
           }
           {

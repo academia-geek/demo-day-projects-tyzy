@@ -14,7 +14,6 @@ export const ProcesoTxt = styled.p`
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 2px;
-  margin-top: 70px;
 `;
 
 export const ButtonDiagnostico = styled.button`
@@ -772,6 +771,14 @@ export const TextDiag = styled.textarea`
   margin-top: 10px;
 `;
 
+export const PrivacyPolicy = styled.p`
+  font-size: 12px;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 10px;
+  color:rgb(46, 46, 46);
+`
+
 export const ButtonsDiv = styled.div`
   display: flex;
   width: 98%;
@@ -803,7 +810,169 @@ export const CancelButton = styled.button`
   border-radius: 8px;
 `;
 
-// SETTINGS.JSX //
+//  MASCOTAS GALLERY 
+
+export const ItemGallery = styled.div`
+  box-shadow: 5px 6px 9px -1px rgba(198,198,198,0.57);
+  border-radius: 20px;
+  &:nth-child(1){
+    height:80vh;
+    img{
+    height: 60vh !important;
+  }
+}
+  &:nth-child(2){
+    img{
+    height: 60vh !important;
+  }
+}
+  &:nth-child(3){
+    height:70vh;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(4){
+    grid-column-start:span 2;
+    height:70vh;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(5){
+    height:80vh;
+    position: relative;
+    bottom:12%;
+    img{
+    height: 60vh !important;
+  }
+  }
+  &:nth-child(6){
+    height:80vh;
+    position: relative;
+    bottom:12%;
+    img{
+    height: 60vh !important;
+  }
+  }
+  &:nth-child(7){
+     height:70vh;
+    position: relative;
+    bottom:12%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(8){
+     height:70vh;
+    position: relative;
+    bottom:12%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(9){
+     height:70vh;
+    position: relative;
+    bottom:12%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(10){
+    position: relative;
+    bottom:25%;
+    grid-column-start:span 2;
+    height:80vh;
+    img{
+    height: 60vh !important;
+  }
+  }
+  &:nth-child(11){
+     height:70vh;
+    position: relative;
+    bottom:26%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(12){
+     height:70vh;
+    position: relative;
+    bottom:26%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(13){
+     height:70vh;
+    position: relative;
+    bottom:26%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(14){
+    height:80vh;
+    position: relative;
+    bottom:24%;
+    img{
+    height: 60vh !important;
+    object-fit: cover;
+    object-position: left;
+  }
+  }
+  &:nth-child(15){
+     height:70vh;
+    position: relative;
+    bottom:24%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(16){
+     height:70vh;
+    position: relative;
+    bottom:24%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(17){
+     height:70vh;
+    position: relative;
+    bottom:25%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(18){
+     height:70vh;
+    position: relative;
+    bottom:40%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(19){
+     height:70vh;
+    position: relative;
+    bottom:40%;
+    img{
+    height: 50vh !important;
+  }
+  }
+  &:nth-child(20){
+     height:70vh;
+    position: relative;
+    bottom:22%;
+    img{
+    height: 50vh !important;
+  }
+  }
+
+`
+
 
 // modal detalle mascotas
 export const DetalleMascota = styled(Modal)`
@@ -915,9 +1084,9 @@ export const SpanTitleComunidad = styled.span`
 `;
 
 export const ComunidadDiv = styled.div`
-  width: 75%;
+  width: 85%;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(2,1fr);
   gap: 5%;
   margin: 0 auto;
   margin-top: 5%;
@@ -927,6 +1096,7 @@ export const ComunidadDiv = styled.div`
 export const ComunidadPub = styled.div`
   background-color: white;
   border-radius: 20px;
+  width: 90%;
   /* box-shadow: 6px 7px 8px -4px rgba(0,0,0,0.2); */
   border: 1px solid #ebedf0;
 `;
@@ -959,6 +1129,7 @@ export const ImgPubComunidad = styled.img`
   width: 90%;
   height: 80vh;
   margin: 0 auto;
+  object-fit: cover;
 `;
 
 export const DescripUser = styled.h3`
@@ -1153,3 +1324,64 @@ export const CalendarioANDT = styled(Calendar)`
     margin: 20px 0 0 0 !important;
   }
 `;
+
+
+//  MODAL MASCOTAS SUGERIDAS
+
+export const TitleSeleccionado = styled.p`
+  color:white;
+  font-family: "Yeseva One", cursive;
+  display:flex;
+  gap:10px;
+  align-items: center;
+  font-size: 25px;
+  margin: 0 auto;
+`
+
+export const ModalSelecciondado = styled(Modal)`
+   .modal-content{
+    width:1250px;
+    background-color: #00000000;
+}
+`
+
+export const Seleccionados = styled.section`
+  display:grid;
+  grid-template-columns: auto auto auto;
+  gap:10px;
+  margin-top: 5%;
+  margin-right: 5%;
+  margin-left: 5%;
+  justify-content: center;
+`
+export const ImgSeleccionados = styled.img`
+  border-radius: 10px;
+  height: 200px;
+  width: 250px;
+  object-fit: cover;
+`
+export const NameSeleccionado = styled.p`
+  background-color: rgba(255, 255, 255, 0.86);
+  position: relative;
+  bottom: 50px;
+  justify-self: center;
+  width: 98%;
+  margin: 0 auto;
+  margin-right: 2.5px;
+  padding-top: 5px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 16px;
+`
+
+export const CerrarSeleccionados = styled.button`
+  color: white;
+  text-align: center;
+  display: flex;
+  font-size: 16px;
+  margin: 0 auto;
+&:hover{
+  color:#F8C15C;
+}
+`

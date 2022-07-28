@@ -1,31 +1,40 @@
 import React from 'react'
 import { Modal } from 'react-bootstrap';
+import { CerrarSeleccionados, ImgSeleccionados, ModalCover, ModalSelecciondado, NameSeleccionado, Seleccionados, TitleSeleccionado } from '../../styles/StylesGlobals';
+import {FaPaw}from 'react-icons/fa'
 
 const ModalMascotasSugeridas = ({ si, no, mascotas }) => {
     return (
-        <Modal
-            size="xl"
+        <ModalSelecciondado
+            size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             show={si}
             centered
         >
-            <div className='px-5'>
-                <section className='w-100 mx-auto flex bg-white p-4 rounded-xl gap-4 drop-shadow-lg my-5'>
+
+<Modal.Header>
+          <TitleSeleccionado><FaPaw/>Las mascotas seleccionadas para ti son<FaPaw/></TitleSeleccionado>
+        </Modal.Header>
+            <div className='px-5' style={{'backgroundColor':'#00000000'}}>
+                <section>
+                    <Seleccionados>
                     {
                         mascotas?.map((dt) => (
-                            <div key={dt?.id} className='BORDERMODAL drop-shadow-lg w-50'>
+                            <div key={dt?.id}>
                                 <section>
-                                    <img className='rounded-circle drop-shadow-2xl' src={dt?.foto} alt='perritos lindos' />
-                                    <h3 className='text-center font-bold fs-5 mt-3 text-green-500'>{dt?.nombre}</h3>
+                                    <ImgSeleccionados src={dt?.foto} alt='perritos lindos' />
+                                    <NameSeleccionado>{dt?.nombre}</NameSeleccionado>
                                 </section>
                             </div>
                         ))
                     }
-
-                    <button onClick={() => { no(false) }}>cerrar</button>
+                    </Seleccionados>
+                    <div>
+                    <CerrarSeleccionados onClick={() => { no(false) }}>cerrar</CerrarSeleccionados>
+                    </div>
                 </section>
             </div>
-        </Modal>
+        </ModalSelecciondado>
     )
 }
 
