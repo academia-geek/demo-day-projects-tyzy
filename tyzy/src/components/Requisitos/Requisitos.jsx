@@ -4,6 +4,7 @@ import { MdOutlinePets } from "react-icons/md";
 import { Article2Req, BtnNewsletter, BtnRequisitosDos, BtnRequisitosUno, Div2Requisitos, DivServiceAnimal, DivUnoRe, FormNewsletter, ImgRequisitos2, InputNewsletter, NewsletterDiv, NewsletterPrg, NewsletterText } from "../../styles/StylesGlobals";
 import { useForm } from "../../helpers/UseForm";
 import { NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Requisitos() {
 
@@ -13,8 +14,13 @@ export default function Requisitos() {
 
   const handleSuscripcion = (e) => {
     e.preventDefault()
-    alert('suscripcion agregada')
-    console.log(formValue);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'suscripcion agregada',
+      showConfirmButton: false,
+      timer: 1500
+    })
     reset();
   }
 
@@ -120,6 +126,7 @@ export default function Requisitos() {
             ANIMALES DE APOYO EMOCIONAL O ANIMALES DE CONFORT
           </p>
           <p className=" py-6 text-textGray">
+            
             No se consideran animales de servicio bajo la ADA. Estos animales de
             apoyo proporcionan compañía, alivian la soledad y a veces ayudan con
             la depresión, la ansiedad, y ciertas fobias, pero no tienen

@@ -40,6 +40,7 @@ export default function OurMasc() {
           </div>
         </div>
       </section>
+      
       <section className='text-center pt-10 px-20'>
         <h3 className='text-3xl font-bold text-titleColor'>Nuestros animales</h3>
         <p className='text-titleColor inline w-3/4'>A continuación te mostramos algunos de nuestros animalitos, da clic en ver más y conoce detalles sobre cada uno que hará tu desición y tu guía en el diagnóstico más fácil.</p>

@@ -10,7 +10,7 @@ const LandingPageFooter = () => {
       <img className='IMGFooter my-auto ms-5' src="https://res.cloudinary.com/doaijv8m0/image/upload/v1657514582/Demoday/LogoB_1_mfmniv.png" alt="logo tyzy" />
       <div className='d-flex my-auto text-white fs-6'>
         <p className='my-auto'>Challenge
-          <a target="_blank" href='https://www.privacypolicytemplate.net/live.php?token=To9N5VfwJD2C96nA4alVTJazuHtCtBCO' className='hover:text-white mx-1'>
+          <a target="_blank" href='https://www.privacypolicytemplate.net/live.php?token=To9N5VfwJD2C96nA4alVTJazuHtCtBCO' className='text-white hover:text-white mx-1'>
             &copy;.
           </a>
            Coded by

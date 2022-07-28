@@ -5,7 +5,7 @@ import { useForm } from '../../helpers/UseForm';
 import { actionEditarCitaAsync } from '../../redux/actions/DiagnosticoActions';
 import { AnimalitoItem, AnimalitoItem2, DivAnimalito, DivAnimalitoFlex, FotoAnimalito, HrDividir, InputRadio, MatchingAnimal, NameAnimalito, SpanItem, SpanItem2 } from '../../styles/StylesGlobals';
 
-const EditarDiagnostico = ({ si, no, citaUser }) => {
+const EditarDiagnostico = ({ si, no, citaUser, dmascota }) => {
 
   const dispatch = useDispatch()
   const [formValue, handleInputChange, reset] = useForm({
@@ -92,18 +92,18 @@ const EditarDiagnostico = ({ si, no, citaUser }) => {
               <DivAnimalito>
                 <MatchingAnimal>Según la información ingresada tu animalito ideal sería:</MatchingAnimal>
               <DivAnimalitoFlex>
-                  <FotoAnimalito src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1658885871/Tyzy/Mateo_uo8zpl.jpg' alt='fotoAnimalito'/>                
+                  <FotoAnimalito src={dmascota?.foto} alt={dmascota?.id}/>                
                   <div>
-                    <NameAnimalito>Mateo</NameAnimalito>
-                    <AnimalitoItem>Raza:<SpanItem>Golgen Retriever</SpanItem></AnimalitoItem>
-                    <AnimalitoItem>Edad:<SpanItem>2 años</SpanItem></AnimalitoItem>
+                    <NameAnimalito>{dmascota?.nombre}</NameAnimalito>
+                    <AnimalitoItem>Raza:<SpanItem>{dmascota?.raza}</SpanItem></AnimalitoItem>
+                    <AnimalitoItem>Edad:<SpanItem>{dmascota?.edad}</SpanItem></AnimalitoItem>
                   </div>
               </DivAnimalitoFlex>
-              <AnimalitoItem2>Especialidad:<SpanItem2>Con equilibrio emocional alto y de personalidad dócil, ideal para personas con discapacidad visual</SpanItem2></AnimalitoItem2>
+              <AnimalitoItem2>Especialidad:<SpanItem2>{dmascota?.caracteristicas.especialidad}</SpanItem2></AnimalitoItem2>
               </DivAnimalito>
 
               <div className='mt-auto flex justify-center'>
-                <span role='button' onClick={() => { no(false) }} className='cursor-pointer p-2 me-2 py-2 my-auto rounded-lg border-dashed border-2 border-titleOrange text-white bg-titleOrange'>Borrar</span>
+                <span role='button' onClick={() => { no(false) }} className='cursor-pointer p-2 me-2 py-2 my-auto rounded-lg border-dashed border-2 border-titleOrange text-white bg-titleOrange'>cancelar</span>
                 <button type='submit' className='cursor-pointer p-2 py-2 rounded-lg border-dashed my-auto  border-2 border-titleOrange text-white bg-titleOrange'>¡Listo!</button>
               </div>
             </section>

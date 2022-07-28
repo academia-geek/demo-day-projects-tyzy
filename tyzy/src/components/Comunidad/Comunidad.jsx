@@ -9,6 +9,7 @@ import { addComuniAsync } from '../../redux/actions/ActionAddComuni'
 import { BtnDescrition, LabelComunidad, NewDescription, NewPubDiv, NewPubForm, NewPubLabel, NewPubLabel2, NewPubLocation, NewPubTitle } from '../../styles/StylesGlobals'
 import NavBarIn from '../../containers/NavBarIn'
 import ComunidadList from './ComunidadList'
+import Swal from 'sweetalert2'
 
 export default function Comunidad() {
 
@@ -17,26 +18,45 @@ export default function Comunidad() {
     const { user } = useSelector(store => store.user)
     const { DatosUser } = useSelector(store => store.datosUserStore)
 
-    const [activo, setActivo] = useState(true)
+    const [stateIMG, setStateIMG] = useState({ STtrue: <div className='pt-3'>tu imagen se subio por favor llena los otros campos para publicar</div>, STfalse: 'Imagen no cargada', estadoImagen: 'false' })
     const [datos, setDatos] = useState({});
 
     const estado = () => {
         const filtro = DatosUser.filter((usr) => usr.id === user?.uid)
         setDatos(filtro[0])
     }
-
+    console.log(datos);
     const [formValue, handleInputChange, reset] = useForm({
         logoUser: user?.photoURL,
-        nombre: datos?.nombres,
+        nombre: user?.displayName,
         direccion: '',
         descripcion: '',
         imagen: ''
     })
+    console.log(formValue);
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(addComuniAsync(formValue))
-        reset()
+        formValue.imagen == '' ? setStateIMG({ ...stateIMG, estadoImagen: 'false' }) : setStateIMG({ ...stateIMG, estadoImagen: 'true' })
+        if (formValue.imagen != '' && formValue.direccion != '' && formValue.descripcion != '') {
+            dispatch(addComuniAsync(formValue))
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: '¡Momento compartido con éxito!',
+                showConfirmButton: false,
+                timer: 1000
+            })
+            setStateIMG({ ...stateIMG, estadoImagen: 'false' })
+            reset()
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'complete todos los campos',
+                showConfirmButton: false,
+                timer: 1000
+            })
+        }
     }
 
     const handleFileChange = (e) => {
@@ -44,8 +64,12 @@ export default function Comunidad() {
         //llamar a la configuracion de Cloudinary
         FileUpload(file)
             .then((resp) => {
-                formValue.imagen = resp
-                alert('imagen cargada')
+                if (resp != undefined) {
+                    formValue.imagen = resp
+                    setStateIMG({ ...stateIMG, estadoImagen: 'true' })
+                } else {
+                    setStateIMG({ ...stateIMG, estadoImagen: 'false' })
+                }
             })
             .catch((error) => { console.warn(error) });
     }
@@ -64,7 +88,10 @@ export default function Comunidad() {
                 <NewPubForm className='w-2/3 ' onSubmit={handleSubmit}>
                     <div>
                         <NewPubLabel className='cursor-pointer' htmlFor='imgup'><TbCameraPlus style={{ 'fontSize': '20px', 'marginRight': '10px' }} />Sube tu imagen aquí!</NewPubLabel>
-                        <input className='-z-10 overflow-hidden opacity-0 w-1 h-1' name='image' onChange={handleFileChange} id='imgup' type='file' placeholder='Cambiar foto de perfil' />
+                        {
+                            stateIMG?.estadoImagen != 'false' ? <h4 className='text-green-500 text-center'>{stateIMG.STtrue}</h4> : <h4 className='text-red-500 text-center'>{stateIMG.STfalse}</h4>
+                        }
+                        <input className='-z-10 overflow-hidden mb-0 opacity-0 w-1 h-1' name='image' onChange={handleFileChange} id='imgup' type='file' placeholder='Cambiar foto de perfil' />
                     </div>
                     <div>
                         <NewPubLabel2>

@@ -105,7 +105,7 @@ const Home = () => {
                 <h4>Podrás conocer más acerca de la posibilidad de acompañarte con uno de nuestros peludos, que te ayudarán a mejorar tu estilo de vida además de sacarte una sonrisa y ser complice de tu día a día.</h4>
                 <h3 className='mb-5'>ENCONTRARÁS</h3>
 
-                <section className='mx-auto'>
+                <section className='mx-auto w-75'>
                     {
                         datos.targetas?.map((dt) => (
                             <div key={dt?.id} className={`d-flex Tips BGTips${dt?.clase}`} >
