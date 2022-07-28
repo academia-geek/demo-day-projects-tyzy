@@ -58,9 +58,6 @@ export default function Requisitos() {
       <section className="grid grid-cols-2 gap-20 px-32 my-24 items-center">
         <DivUnoRe>
           <DivServiceAnimal></DivServiceAnimal>
-          <BtnRequisitosUno>
-            <NavLink to='/NuestrosAnimales' className='text-red-500 hover:text-red-500'>Conocer mascotas</NavLink>
-          </BtnRequisitosUno>
         </DivUnoRe>
         <article>
           <h3
@@ -129,6 +126,7 @@ export default function Requisitos() {
             ANIMALES DE APOYO EMOCIONAL O ANIMALES DE CONFORT
           </p>
           <p className=" py-6 text-textGray">
+            
             No se consideran animales de servicio bajo la ADA. Estos animales de
             apoyo proporcionan compañía, alivian la soledad y a veces ayudan con
             la depresión, la ansiedad, y ciertas fobias, pero no tienen
@@ -139,7 +137,7 @@ export default function Requisitos() {
             funcionamiento cognitivo.
           </p>
           <BtnRequisitosDos>
-            <NavLink to='/NuestrosAnimales' className='text-red-500 hover:text-red-500'>Conocer mascotas</NavLink>
+            <NavLink to='/diagnostico' className='hover:text-red-500'>Haz tu primer diagnóstico</NavLink>
           </BtnRequisitosDos>
         </Article2Req>
 

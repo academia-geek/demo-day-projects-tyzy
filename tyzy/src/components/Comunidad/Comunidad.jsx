@@ -18,21 +18,22 @@ export default function Comunidad() {
     const { user } = useSelector(store => store.user)
     const { DatosUser } = useSelector(store => store.datosUserStore)
 
-    const [stateIMG, setStateIMG] = useState({ STtrue: 'Imagen cargada', STfalse: 'Imagen no cargada', estadoImagen: 'false' })
+    const [stateIMG, setStateIMG] = useState({ STtrue: <div className='pt-3'>tu imagen se subio por favor llena los otros campos para publicar</div>, STfalse: 'Imagen no cargada', estadoImagen: 'false' })
     const [datos, setDatos] = useState({});
 
     const estado = () => {
         const filtro = DatosUser.filter((usr) => usr.id === user?.uid)
         setDatos(filtro[0])
     }
-
+    console.log(datos);
     const [formValue, handleInputChange, reset] = useForm({
         logoUser: user?.photoURL,
-        nombre: datos?.nombres,
+        nombre: user?.displayName,
         direccion: '',
         descripcion: '',
         imagen: ''
     })
+    console.log(formValue);
 
     const handleSubmit = (e) => {
         e.preventDefault()

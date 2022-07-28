@@ -6,23 +6,21 @@ import { Avatar } from "flowbite-react";
 import { Divider } from "@mui/material";
 import { Calendar } from "antd";
 
-
 // LANDING PAGE
-
 
 export const ProcesoTxt = styled.p`
   text-align: center;
-  color:#4BA695;
+  color: #4ba695;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 2px;
   margin-top: 70px;
-`
+`;
 
 export const ButtonDiagnostico = styled.button`
-  background-color: #F26052;
+  background-color: #f26052;
   padding: 10px;
-  color:white;
+  color: white;
   width: 30%;
   border-radius: 50px;
   display: flex;
@@ -31,8 +29,7 @@ export const ButtonDiagnostico = styled.button`
   margin-top: 20px;
   margin-bottom: 100px;
   font-weight: 700;
-`
-
+`;
 
 // REGISTRO //
 
@@ -117,7 +114,7 @@ export const IngresaCon = styled.h3`
   margin-top: 12%;
   color: #275556;
   font-size: 14px;
-`
+`;
 
 export const DIVLogin = styled.div`
   margin-top: 20px;
@@ -241,7 +238,7 @@ export const InfoServices = styled.div`
   .box.show {
     transform: translateX(0);
   }
-`
+`;
 
 export const ServiceTitle = styled.p`
   color: #f26052;
@@ -344,11 +341,14 @@ export const ModalPrimeraVez = styled(Modal)`
 export const HomeStyle = styled.div`
   //--------------------IMG principal
   .IMGHome {
-    height: 100vh;
+    height: 80vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("https://res.cloudinary.com/doaijv8m0/image/upload/v1657732952/Demoday/Image_kopayq.png");
+      url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1658717184/Tyzy/pexels-anastasia-shuraeva-5126991_1_ixzlsw.jpg");
+    height: 80vh;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
   }
   .IMGHome section {
     width: 50%;
@@ -381,31 +381,42 @@ export const HomeStyle = styled.div`
     margin: 0 auto;
     text-align: center;
     color: #4da796;
-    font-size: 36px;
+    margin-top: 5%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
   }
   .TICShome h4 {
     margin: 0 auto;
-    width: 73%;
+    width: 60%;
     text-align: center;
     color: #426666;
     font-size: 16px;
+    line-height: 25px;
+    margin-top: 2%;
   }
   .TICShome h3 {
-    margin-top: 28px;
-    font-size: 18px;
-    font-weight: 600;
+    margin: 0 auto;
     color: #f26052;
     text-align: center;
+    width: 20%;
+    margin-top: 2%;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 500;
   }
   .TICShome section {
+    width: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
     color: #000000;
-    width: 95%;
+    margin-top: 2%;
   }
   .Tips {
-    border-radius: 20px;
+    border-radius: 15px;
+    padding: 8px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.151);
     width: 100%;
   }
   .Tips div {
@@ -415,194 +426,58 @@ export const HomeStyle = styled.div`
     margin: 10px 15px 0 0;
   }
   .BGTips1 {
-    background-color: #a4dbd1;
+    background-color: #a4dbd1cf;
   }
   .BGTips2 {
-    background-color: #f39991;
+    background-color: #f39991c7;
   }
   .BGTips3 {
-    background-color: #f6dd61;
+    background-color: #ffde71c0;
   }
   .TICShome img {
     width: 80px;
     height: 80px;
   }
   .TICShome .h2-2 {
-    font-size: 20px;
-  }
-  .TICShome p {
     font-size: 14px;
-    font-weight: 400;
-    line-height: 16px;
-  }
-
-  //--------------------Equipo tecnico home
-  .EquipoTec h2 {
-    margin: 0 auto;
-    text-align: center;
-    color: #f26052;
-    font-size: 36px;
-  }
-  .EquipoTec h4 {
-    margin: 0 auto;
-    width: 75%;
-    text-align: center;
-    color: #426666;
-    font-size: 16px;
-  }
-  .EquipoTec div {
-    width: 15rem;
-    height: 20rem;
-  }
-  .BORDERimg {
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 11px solid #ffffff;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  .EquipoTec img {
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-  }
-  .EquipoTec h3 {
-    margin-top: 8px;
-    font-size: 16px;
-    color: #275556;
-    text-align: center;
-  }
-
-  //--------------------IMG principal
-  .IMGHome {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("https://res.cloudinary.com/doaijv8m0/image/upload/v1657732952/Demoday/Image_kopayq.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .IMGHome section {
-    width: 50%;
-  }
-  .IMGHome h2 {
-    color: #ffffff;
-    font-size: 50px;
-    font-weight: 700;
-  }
-  .IMGHome p {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 19px;
-  }
-  .IMGHome h3 {
-    color: #ffffff;
-    font-size: 20px;
-  }
-  .IMGHome img {
-    width: 10px;
-    height: 15px;
-  }
-
-  //--------------------Consejos y Tips home
-  .TICShome {
-    margin-bottom: 3em !important;
-  }
-  .TICShome .h2 {
-    margin: 0 auto;
-    text-align: center;
-    color: #4da796;
-    font-size: 36px;
-  }
-  .TICShome h4 {
-    margin: 0 auto;
-    width: 73%;
-    text-align: center;
-    color: #426666;
-    font-size: 16px;
-  }
-  .TICShome h3 {
-    margin-top: 28px;
-    font-size: 18px;
     font-weight: 600;
-    color: #f26052;
-    text-align: center;
-  }
-  .TICShome section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
-    color: #000000;
-    width: 95%;
-  }
-  .Tips {
-    border-radius: 20px;
-    width: 100%;
-    height: 13rem;
-  }
-  .Tips div {
-    margin: 0.8em 0;
-  }
-  .Tips p {
-    margin: 4px 20px 0 0;
-    line-height: 20px !important;
-  }
-  .BGTips1 {
-    background-color: #a4dbd1;
-  }
-  .BGTips2 {
-    background-color: #f39991;
-  }
-  .BGTips3 {
-    background-color: #f6dd61;
-  }
-  .TICShome img {
-    width: 80px;
-    height: 80px;
-  }
-  .TICShome {
-    font-size: 20px;
-  }
-  .h2-2 {
-    width: 90%;
-    height: 30%;
-  }
-  .h2-2 h2 {
-    font-size: 18px;
   }
   .TICShome p {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 16px;
+    line-height: 22px;
   }
 
   //--------------------Equipo tecnico home
   .EquipoTec h2 {
     margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
     text-align: center;
     color: #f26052;
-    font-size: 36px;
+    font-size: 28px
   }
   .EquipoTec h4 {
     margin: 0 auto;
-    width: 75%;
+    width: 45%;
     text-align: center;
     color: #426666;
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 1.5%;
+    line-height: 22px;
   }
   .EquipoTec div {
     width: 15rem;
     height: 20rem;
   }
-  .BORDERimg {
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 11px solid #ffffff;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
   .EquipoTec img {
     border-radius: 50%;
-    width: 100%;
-    height: 100%;
+    border: 5px solid white;
+    width: 80%;
+    height: 80%;
+    box-shadow:4px 6px 33px -18px rgba(0,0,0,0.97);
   }
   .EquipoTec h3 {
     margin-top: 8px;
@@ -613,8 +488,10 @@ export const HomeStyle = styled.div`
 
   //---------------------------------Carrusel Home
   .UserAndPets {
-    margin: 0 2em;
+    width: 75%;
     height: 60vh;
+    margin: 0 auto;
+    margin-bottom: 150px;
     img {
       border-radius: 14px;
     }
@@ -625,24 +502,30 @@ export const HomeStyle = styled.div`
       div {
         width: 80%;
         height: 80%;
-        margin: 0 auto;
-      }
+       }
+       h2{
+        width: 100%;
+       }
+       p{
+        margin-top: 2%;
+       }
       section {
         gap: 15px;
+        margin-top: 5%;
       }
       img {
-        width: 150px;
+        width: 160px;
       }
     }
     .div2 {
-      height: 80%;
+      height: 100%;
       div {
         width: 100%;
         height: 100%;
       }
 
       img {
-        width: 60%;
+        width: 80%;
         height: 100%;
       }
     }
@@ -873,15 +756,15 @@ export const RadiusFlex = styled.div`
 `;
 
 export const InputRadius = styled(Field)`
-    border: 1px solid hsla(0, 0%, 80%, 1);
-    accent-color: #F26052;
-    border-radius: 50%;
-`
+  border: 1px solid hsla(0, 0%, 80%, 1);
+  accent-color: #f26052;
+  border-radius: 50%;
+`;
 export const InputRadio = styled.input`
-    border: 1px solid hsla(0, 0%, 80%, 1);
-    accent-color: #F26052;
-    border-radius: 50%;
-`
+  border: 1px solid hsla(0, 0%, 80%, 1);
+  accent-color: #f26052;
+  border-radius: 50%;
+`;
 
 export const TextDiag = styled.textarea`
   border: 1px solid hsla(0, 0%, 80%, 1);
@@ -939,76 +822,73 @@ export const DetalleMascota = styled(Modal)`
   }
 `;
 
-
 // EDITAR DIAGNOSTICO -------
 
-export const  DivAnimalito = styled.div`
-  width:80%;
+export const DivAnimalito = styled.div`
+  width: 80%;
   margin-top: 20px;
   margin-left: 20px;
-`
+`;
 
-export const  DivAnimalito2 = styled.div`
-  width:100%;
+export const DivAnimalito2 = styled.div`
+  width: 100%;
   margin-top: 20px;
   margin-left: 35px;
-`
+`;
 
 export const MatchingAnimal = styled.p`
   font-size: 14px;
   font-weight: 600;
-  
-`
+`;
 
 export const DivAnimalitoFlex = styled.div`
   display: flex;
   align-items: center;
-  gap:10px;
+  gap: 10px;
   margin-top: 12px;
-`
+`;
 export const FotoAnimalito = styled.img`
-  width:40%;
+  width: 40%;
   border-radius: 10px;
-`
+`;
 
 export const NameAnimalito = styled.p`
   font-size: 14px;
-  color: #4BA695;
+  color: #4ba695;
   font-weight: 700;
   margin-bottom: 10px;
-`
+`;
 
 export const AnimalitoItem = styled.p`
   font-weight: 700;
-  color:#242424;
+  color: #242424;
   font-size: 14px;
   display: flex;
   align-items: center;
-  gap:5px;
-
-`
+  gap: 5px;
+`;
 
 export const SpanItem = styled.p`
   font-weight: 500;
-  color:#505050;
+  color: #505050;
   font-size: 14px;
-`
+`;
 
 export const AnimalitoItem2 = styled.p`
   font-weight: 700;
-  color:#242424;
+  color: #242424;
   font-size: 14px;
   display: flex;
   align-items: top;
-  gap:5px;
+  gap: 5px;
   margin-top: 8px;
-`
+`;
 
-export const SpanItem2= styled.p`
+export const SpanItem2 = styled.p`
   font-weight: 500;
-  color:#505050;
+  color: #505050;
   font-size: 14px;
-`
+`;
 //  -------- COMUNIDAD ------
 
 export const TitleComunidad = styled.p`
@@ -1041,7 +921,7 @@ export const ComunidadPub = styled.div`
   background-color: white;
   border-radius: 20px;
   /* box-shadow: 6px 7px 8px -4px rgba(0,0,0,0.2); */
-  border:1px solid #EBEDF0;
+  border: 1px solid #ebedf0;
 `;
 export const UserPub = styled.div`
   display: flex;
@@ -1072,7 +952,7 @@ export const LocationPub = styled.p`
 export const ImgPubComunidad = styled.img`
   width: 90%;
   height: 80vh;
-  margin:0 auto;
+  margin: 0 auto;
 `;
 
 export const DescripUser = styled.h3`
@@ -1112,19 +992,19 @@ export const NewPubForm = styled.form`
   box-shadow: -4px 7px 8px -4px rgba(0,0,0,0.15);
   background-color: white; */
   width: 100%;
-  margin-top:2%;
+  margin-top: 2%;
   margin-bottom: 20%;
 `;
 export const NewPubLabel = styled.label`
   font-size: 14px;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color:white;
-  background-color: #4BA695;
-  width:20%;
-  margin:0 auto;
+  color: white;
+  background-color: #4ba695;
+  width: 20%;
+  margin: 0 auto;
   margin-top: 5%;
   padding: 5px;
   border-radius: 5px;
@@ -1133,58 +1013,59 @@ export const NewPubLabel = styled.label`
 export const NewPubLabel2 = styled.div`
   display: flex;
   flex-direction: column;
-  margin:0 auto;
-  width:80%;
+  margin: 0 auto;
+  width: 80%;
   margin-top: 10px;
 `;
 
 export const LabelComunidad = styled.label`
-font-size: 14px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
-color:#404040;`
+  color: #404040;
+`;
 
 export const NewPubLocation = styled.input`
   border: 1px solid #cccccc;
-  border-radius:20px;
-  margin-top:10px;
-  &::placeholder{
+  border-radius: 20px;
+  margin-top: 10px;
+  &::placeholder {
     font-weight: 300 !important;
   }
   &:focus {
-    outline:none;
-}
+    outline: none;
+  }
 `;
 export const NewDescription = styled.textarea`
   font-size: 14px;
   border: 1px solid #cccccc;
-  border-radius:20px;
-  margin-top:10px;
-  &::placeholder{
+  border-radius: 20px;
+  margin-top: 10px;
+  &::placeholder {
     font-weight: 300 !important;
   }
   &:focus {
-    outline:none;
-}
+    outline: none;
+  }
 `;
 
 export const BtnDescrition = styled.button`
-  background-color: #F26052 ;
+  background-color: #f26052;
   padding: 8px;
-  color:white;
+  color: white;
   border-radius: 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.15);
   position: relative;
   float: right;
   margin-right: 10%;
   margin-top: 2%;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap:10px;
+  gap: 10px;
   width: 12%;
   font-weight: 700;
-`
+`;
 export const ImgCarousel1 = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1658717101/Tyzy/pexels-photo-8734435_sg6fgq.jpg");
@@ -1227,32 +1108,32 @@ export const CarouselText = styled.p`
 `;
 
 export const HrDividir = styled(Divider)`
- background-color: black;
- padding: 40% 0 0 0;
- width: 1px;
-`
+  background-color: black;
+  padding: 40% 0 0 0;
+  width: 1px;
+`;
 // DIV CALENDAR
 
 export const DivCalendar = styled.div`
-  width:70%;
-  margin:0 auto;
+  width: 70%;
+  margin: 0 auto;
   border-radius: 40px;
   position: relative;
-  bottom:175px;
-  background-color:white;
+  bottom: 175px;
+  background-color: white;
   padding: 10px;
   /* border: 1px solid #CCCCCC; */
   box-shadow: 2px 5px 17px 2px rgba(0, 0, 0, 0.1);
-`
+`;
 
 export const AgendateCalendario = styled.p`
-  color: #F26052;
+  color: #f26052;
   font-weight: 600;
   letter-spacing: 3px;
   text-align: center;
   font-size: 16px;
   margin-top: 2%;
-`
+`;
 
 export const AgendateTxt = styled.p`
   width: 85%;
@@ -1262,10 +1143,10 @@ export const AgendateTxt = styled.p`
   text-align: center;
   line-height: 25px;
   margin-bottom: 2%;
-`
+`;
 
 export const CalendarioANDT = styled(Calendar)`
-    tbody {
-      margin: 20px 0 0 0 !important;
-    }
-`
+  tbody {
+    margin: 20px 0 0 0 !important;
+  }
+`;

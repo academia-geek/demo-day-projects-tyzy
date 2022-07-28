@@ -89,9 +89,9 @@ const Home = () => {
             <NavBarIn />
 
             <section className='IMGHome d-flex'>
-                <section className='d-flex flex-column ms-auto mt-64 me-5'>
+                <section className='d-flex flex-column ms-auto mt-40 me-5'>
                     <h2 className=''>Somos un equipo que puede ayudarte</h2>
-                    <p className='mt-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p className='mt-3'>En Tyzy nos comprometemos a identificar los problemas que están afectando tu día a día y así brindarte las opciones necesarias para que un animal de servicio o de terapia te ayude a superar las dificultades. </p>
 
                     <div className='d-flex flex-column mt-4'>
                         <h3 className='mx-auto'>Leer mas</h3>
@@ -102,8 +102,8 @@ const Home = () => {
 
             <section className='TICShome d-flex flex-column my-5 mx-4'>
                 <h2 className='h2'>Haciendo parte de nuestra comunidad</h2>
-                <h4 className='mt-2'>Podrás conocer más acerca de la posibilidad de acompañarte con uno de nuestros peludos, que te ayudarán a mejorar tu estilo de vida además de sacarte una sonrisa y ser complice de tu día a día.</h4>
-                <h3 className='mb-5'>AQUÍ PODRÁS ENCONTRAR...</h3>
+                <h4>Podrás conocer más acerca de la posibilidad de acompañarte con uno de nuestros peludos, que te ayudarán a mejorar tu estilo de vida además de sacarte una sonrisa y ser complice de tu día a día.</h4>
+                <h3 className='mb-5'>ENCONTRARÁS</h3>
 
                 <section className='mx-auto w-75'>
                     {
@@ -124,8 +124,8 @@ const Home = () => {
 
             <div className='EquipoTec d-flex flex-column my-5 mx-4'>
                 <h2>Conoce nuestro equipo Tyzy</h2>
-                <h4 className='mt-2'>Somos un equipo grande de profesionales y especialistas que siempre estarán a tu disposición para que encuentres ese compañero ideal</h4>
-                <section className='d-flex gap-3 mt-5 justify-content-evenly mx-auto w-100'>
+                <h4>Somos un equipo grande de profesionales y especialistas que siempre estarán a tu disposición para que encuentres ese compañero ideal</h4>
+                <section className='d-flex gap-5 mt-5 justify-content-evenly mx-auto'>
                     {
                         datos.especialistas?.map((dt) => (
                             <div key={dt?.id}>

@@ -4,6 +4,8 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import { MascotasURL } from '../../helpers/UrlsAPI';
 import { Peticiones } from '../../helpers/Peticiones';
 import DetalleMascotas from './DetalleMascotas';
+import { DiagSubText1, DiagText1 } from '../../styles/StylesGlobals';
+import { Link } from 'react-router-dom';
 
 export default function OurMasc() {
 
@@ -30,14 +32,15 @@ export default function OurMasc() {
       <NavBarIn />
       <section className='dogBanner2 grid grid-cols-2   px-28  bg-cover bg-top bg-no-repeat bg-gray-700 h-96 text-white'>
         <div className='justify-center flex flex-col'>
-          <h4 className='text-3xl text-white font-bold'>¿Estás listo para empezar a <br></br>compartir tu vida?</h4>
+          <DiagText1 style={{'width':'100%'}}>¿Estás listo para empezar a <br></br>compartir tu vida?</DiagText1>
 
           <div className='items-center flex flex-col w-min'>
-            <p className='pt-2 text-sm '>CONÓCELOS</p>
+            <DiagSubText1>CONÓCELOS</DiagSubText1>
             <AiOutlineArrowDown />
           </div>
         </div>
       </section>
+      
       <section className='text-center pt-10 px-20'>
         <h3 className='text-3xl font-bold text-titleColor'>Nuestros animales</h3>
         <p className='text-titleColor inline w-3/4'>A continuación te mostramos algunos de nuestros animalitos, da clic en ver más y conoce detalles sobre cada uno que hará tu desición y tu guía en el diagnóstico más fácil.</p>
@@ -76,6 +79,8 @@ export default function OurMasc() {
           }
         </section>
       </div>
+      <p>Para conocer la experiencia Tyzy de distintos usuarios con estos animales</p>
+      <Link to='/comunidad'><button>Haz clic aquí</button></Link>
     </div>
   )
 }
