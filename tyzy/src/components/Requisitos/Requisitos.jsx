@@ -14,6 +14,7 @@ export default function Requisitos() {
     correo: ''
   })
 
+  
   const handleSuscripcion = (e) => {
     e.preventDefault()
     Swal.fire({
