@@ -118,7 +118,7 @@ const Diagnostico = () => {
       >
         {({ errors, touched }) => (
           <DiagForm>
-            <DivCalendar>
+            <DivCalendar className='pb-4'>
               <AgendateCalendario>AGENDA TU PRIMERA CITA</AgendateCalendario>
               <AgendateTxt className='mt-3'>Para poder hablar con nuestro equipo Tyzy sobre tu primer diagnóstico que podrás diligenciar en la parte de abajo, debes agendar una cita en el día que más se acomode para tener una charla y la orientación nesaria en el inicio de esta etapa al lado de un compañero de cuatro patas</AgendateTxt>
               <CalendarioANDT name='fecha' value={value} onSelect={onSelect} onPanelChange={onPanelChange} />
