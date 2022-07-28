@@ -10,7 +10,7 @@ const NavBarPublic = () => {
             </NavLink>
             <section className='w-50 my-auto'>
                 <div className='d-flex justify-content-evenly w-75 mx-auto'>
-                    <a href='#home' className='NavLinks'>Home</a>
+                    <a href='#home' className='NavLinks'>Inicio</a>
                     <a href='#comunidad' className='NavLinks'>Comunidad</a>
                     <a href='#blog' className='NavLinks'>Blog</a>
                     <a href='#footer' className='NavLinks'>Contacto</a>

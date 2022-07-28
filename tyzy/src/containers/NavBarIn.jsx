@@ -29,7 +29,7 @@ export default function NavBarIn() {
         fluid={true}
         rounded={true}
       >
-        <NavLink to='/'>
+        <NavLink to='/home'>
           <img src="https://res.cloudinary.com/dg29vcpk7/image/upload/v1657500435/Tyzy/Logo_fvikwq.png"
             className="mr-3 h-6 text-black sm:h-9"
             alt="logo" />
@@ -37,8 +37,7 @@ export default function NavBarIn() {
 
         <section className='w-50 my-auto text-black'>
           <div className='d-flex justify-content-evenly w-75 mx-auto gap-4'>
-            <NavLink to='/' className='NavLinks2'>Home</NavLink>
-            <NavLink to='/requisitos' className='NavLinks2'>Requisitos</NavLink>
+            <NavLink to='/' className='NavLinks2'>Requisitos</NavLink>
             <NavLink to='/diagnostico' className='NavLinks2'>Diagnóstico</NavLink>
             <NavLink to='/NuestrosAnimales' className='NavLinks2 '>Mascotas</NavLink>
             <NavLink to='/comunidad' className='NavLinks2'>Comunidad</NavLink>
