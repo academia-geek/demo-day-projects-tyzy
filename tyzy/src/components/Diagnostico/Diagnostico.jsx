@@ -5,7 +5,7 @@ import NavBarIn from '../../containers/NavBarIn';
 import { useDispatch } from 'react-redux';
 import { actionAggDiagAsync } from '../../redux/actions/DiagnosticoActions';
 import CitaDiagnostico from './CitaDiagnostico';
-import { AgendateCalendario, AgendateTxt, ButtonsDiv, CalendarioANDT, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, DivCalendar, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
+import { AgendateCalendario, AgendateTxt, ButtonsDiv, CalendarioANDT, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, DivCalendar, InputRadius, ParallaxDiag, PrivacyPolicy, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
 import moment from 'moment';
 import Swal from 'sweetalert2';
 import { MascotasURL } from '../../helpers/UrlsAPI';
@@ -189,7 +189,7 @@ const Diagnostico = () => {
               (<div className='ms-3 fs-6 text-red-500'>{errors.descripProblema}</div>) : null}
 
             <div>
-              <p>Recuerda que estos datos que ingresas no eximen del diagnóstico final profesional, es solo un acercamiento y el animalito que salga a continuación podría cambiar al finalizar el proceso en la llamada que estas agendando, gracias!</p>
+              <PrivacyPolicy>Recuerda que estos datos que ingresas no eximen del diagnóstico final profesional, es solo un acercamiento y el animalito que salga a continuación podría cambiar al finalizar el proceso en la llamada que estas agendando, gracias!</PrivacyPolicy>
 
             </div>
 
