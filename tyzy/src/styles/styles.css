@@ -172,15 +172,21 @@ body {
 }
 
 .dogBanner {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748553/Tyzy/pexels-lumn-406014_wzakym.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748566/Tyzy/pit-bull-1872873_xblurx.jpg');
+    height: 80vh;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
 
 }
 
 .textuwu {
-    text-shadow: 3px 3px 4px #171717;
+    font-size: 45px;
+    font-weight: 700;
+    color: white;
+    width: 70%;
+    margin-top: 2%;
 }
 
 .no {
@@ -213,7 +219,9 @@ body {
 }
 
 .dogBanner2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748567/Tyzy/pexels-karolina-grabowska-5902804_xkcx8t.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748567/Tyzy/pexels-karolina-grabowska-5902804_xkcx8t.jpg');
+    height: 80vh;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

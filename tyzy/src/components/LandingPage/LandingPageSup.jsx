@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const LandingPageSup = () => {
     return (
@@ -9,13 +10,10 @@ const LandingPageSup = () => {
                     <p className='PLandingPageSup'>Te invitamos a hacer parte de Tyzy, no estarás sólo, encontrarás un compañero que te ayudará a pesar de las dificultades, navega en esta pagina, registrate y enterate de los servicios que tenemos para ti!</p>
 
                     <section className='d-flex mt-5'>
-                        <button className='BTNLandingPageSup me-4'>
+                 <button className='BTNLandingPageSup me-4'>
                             Saber más
                         </button>
-
-                        <button className='BTNLandingPageSup'>
-                            Compartir
-                        </button>
+                      
                     </section>
                 </div>
             </section>

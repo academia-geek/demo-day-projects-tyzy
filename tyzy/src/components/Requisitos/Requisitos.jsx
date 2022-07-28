@@ -52,9 +52,6 @@ export default function Requisitos() {
       <section className="grid grid-cols-2 gap-20 px-32 my-24 items-center">
         <DivUnoRe>
           <DivServiceAnimal></DivServiceAnimal>
-          <BtnRequisitosUno>
-            <NavLink to='/NuestrosAnimales' className='hover:text-red-500'>Conocer mascotas</NavLink>
-          </BtnRequisitosUno>
         </DivUnoRe>
         <article>
           <h3
@@ -133,7 +130,7 @@ export default function Requisitos() {
             funcionamiento cognitivo.
           </p>
           <BtnRequisitosDos>
-            <NavLink to='/NuestrosAnimales' className='hover:text-red-500'>Conocer mascotas</NavLink>
+            <NavLink to='/diagnostico' className='hover:text-red-500'>Haz tu primer diagnóstico</NavLink>
           </BtnRequisitosDos>
         </Article2Req>
 
