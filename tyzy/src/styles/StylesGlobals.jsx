@@ -807,7 +807,9 @@ export const CancelButton = styled.button`
 
 // modal detalle mascotas
 export const DetalleMascota = styled(Modal)`
+
   .modal-content {
+    height: 90vh;
     border-radius: 50px !important;
     border: transparent;
     img {
@@ -819,6 +821,11 @@ export const DetalleMascota = styled(Modal)`
       border-radius: 50px;
       border: none;
     }
+  }
+
+  .Ndescrip{
+    max-height: 390px !important;
+    min-height: 390px !important;
   }
 `;
 
@@ -941,7 +948,6 @@ export const UserImgPub = styled(Avatar)`
 export const UserNamePub = styled.p`
   font-size: 14px;
   font-weight: 700;
-  /* font-family: 'Yeseva One', cursive; */
   letter-spacing: 2px;
 `;
 export const LocationPub = styled.p`
@@ -988,9 +994,6 @@ export const NewPubTitle = styled.p`
 `;
 
 export const NewPubForm = styled.form`
-  /* border-radius: 20px;
-  box-shadow: -4px 7px 8px -4px rgba(0,0,0,0.15);
-  background-color: white; */
   width: 100%;
   margin-top: 2%;
   margin-bottom: 20%;
@@ -1115,7 +1118,7 @@ export const HrDividir = styled(Divider)`
 // DIV CALENDAR
 
 export const DivCalendar = styled.div`
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
   border-radius: 40px;
   position: relative;

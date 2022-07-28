@@ -54,10 +54,10 @@ const CitaDiagnostico = memo(({ user, setUser }) => {
         citaUser[0]?.nombreComp
           ? <div className='w-75 mx-auto flex flex-column bg-white p-4 rounded-xl drop-shadow-lg my-5'>
             <section className=''>
-              <h2 className='mb-3 fs-2 text-center font-bold'>Datos de la cita</h2>
+              <h2 className='mb-3 fs-2 text-center font-bold'>Datos de la diagnóstico</h2>
             </section>
 
-            <div className='flex'>
+            <div className='flex mx-auto'>
               <section className='flex flex-column justify-center'>
                 <div className='ms-2 flex mb-3 flex-column'>
                   <label htmlFor="">Nombre del paciente:</label>
@@ -77,7 +77,7 @@ const CitaDiagnostico = memo(({ user, setUser }) => {
                 </div>
               </section>
 
-              <HrDividir className='ms-4 mt-2' orientation="vertical" />
+              <HrDividir className='ms-5 me-4 mt-2' orientation="vertical" />
 
               <div className='flex flex-column'>
                 <section className='flex flex-column w-100 ps-4 mt-4'>
