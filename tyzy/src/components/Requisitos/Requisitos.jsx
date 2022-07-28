@@ -14,6 +14,7 @@ export default function Requisitos() {
     correo: ''
   })
 
+
   const handleSuscripcion = (e) => {
     e.preventDefault()
     Swal.fire({
@@ -26,6 +27,7 @@ export default function Requisitos() {
     reset();
   }
   // -----------------------------------------------------
+  
 
   const IntroHomeState = () => {
     const auth = getAuth()
@@ -53,6 +55,7 @@ export default function Requisitos() {
 
 
   return (
+    
     <div style={{ background: "#FDFDFD" }}>
       <NavBarIn />
       <section className="relative w-full">
@@ -67,7 +70,6 @@ export default function Requisitos() {
         <div style={{ 'marginLeft': '12%' }}>
           <h3 className="text-titleOrange py-4">DEBES SABER...</h3>
           <p className="text-pGreen">
-            
             Para nosotros es muy importante que te encuentres informado sobre las diferencias entre nuestros Animales de servicio y de Terapia o Apoyo emocional, pues al tener distintos tipos, están entrenados para necesidades diferentes. Por supuesto con el objetivo de ayudarte con las dificultades que estás enfrentando
           </p>
         </div>
