@@ -33,9 +33,9 @@ const EditarDiagnostico = ({ si, no, citaUser }) => {
     >
       <form onSubmit={handleSubmit} className='px-5'>
 
-        <div className='w-100 mx-auto flex flex-column bg-white p-4 rounded-xl drop-shadow-lg my-5'>
+        <div className='w-100 flex flex-column justify-evenly bg-white p-4 rounded-xl drop-shadow-lg my-5'>
           <section className='flex'>
-            <h2 className='mb-3 fs-2 mx-auto font-bold'>Editar cita</h2>
+            <h2 className='mb-3 fs-2 mx-auto font-bold'>Editar diagnóstico</h2>
           </section>
           <div className='flex mx-auto'>
             <section className='flex flex-column justify-center'>
