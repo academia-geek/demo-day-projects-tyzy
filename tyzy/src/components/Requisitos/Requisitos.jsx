@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBarIn from "../../containers/NavBarIn";
 import { MdOutlinePets } from "react-icons/md";
-import { Article2Req, BtnNewsletter, BtnRequisitosDos, BtnRequisitosUno, Div2Requisitos, DivServiceAnimal, DivUnoRe, FormNewsletter, ImgRequisitos2, InputNewsletter, NewsletterDiv, NewsletterPrg, NewsletterText } from "../../styles/StylesGlobals";
+import { Article2Req, BtnNewsletter, BtnRequisitosDos, Div2Requisitos, DivServiceAnimal, DivUnoRe, FormNewsletter, ImgRequisitos2, InputNewsletter, ModalPrimeraVez, NewsletterDiv, NewsletterPrg, NewsletterText } from "../../styles/StylesGlobals";
 import { useForm } from "../../helpers/UseForm";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
+import IntroHome from "../../containers/IntroHome";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function Requisitos() {
 
@@ -23,6 +25,32 @@ export default function Requisitos() {
     })
     reset();
   }
+  // -----------------------------------------------------
+
+  const IntroHomeState = () => {
+    const auth = getAuth()
+    onAuthStateChanged(auth, user => {
+      const dt = new Date()
+      if (user.metadata.creationTime === user.metadata.lastSignInTime) {
+        if (displey?.display == '') {
+          setShow(true)
+        }
+      }
+    })
+  }
+
+  const [show, setShow] = useState(false);
+  const [displey, setDispley] = useState({ display: '' })
+
+  const handleClose = () => {
+    setDispley({ display: 'Dnone' })
+    setShow(false)
+  };
+
+  useEffect(() => {
+    IntroHomeState()
+  }, [])
+
 
   return (
     <div style={{ background: "#FDFDFD" }}>
@@ -126,7 +154,7 @@ export default function Requisitos() {
             ANIMALES DE APOYO EMOCIONAL O ANIMALES DE CONFORT
           </p>
           <p className=" py-6 text-textGray">
-            
+
             No se consideran animales de servicio bajo la ADA. Estos animales de
             apoyo proporcionan compañía, alivian la soledad y a veces ayudan con
             la depresión, la ansiedad, y ciertas fobias, pero no tienen
@@ -137,7 +165,7 @@ export default function Requisitos() {
             funcionamiento cognitivo.
           </p>
           <BtnRequisitosDos>
-            <NavLink to='/diagnostico' className='hover:text-red-500'>Haz tu primer diagnóstico</NavLink>
+            <NavLink to='/diagnostico' className='text-red-500 hover:text-red-500'>Haz tu primer diagnóstico</NavLink>
           </BtnRequisitosDos>
         </Article2Req>
 
@@ -153,6 +181,18 @@ export default function Requisitos() {
           <BtnNewsletter type="submit">Suscribirse</BtnNewsletter>
         </FormNewsletter>
       </NewsletterDiv>
+
+      <div>
+        <ModalPrimeraVez className={`${displey.display}`}
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+        >
+          <section className='Section d-flex flex-column'>
+            <IntroHome close={handleClose} />
+          </section>
+        </ModalPrimeraVez>
+      </div>
     </div>
   );
 }

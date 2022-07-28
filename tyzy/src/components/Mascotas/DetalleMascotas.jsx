@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { DetalleMascota } from '../../styles/StylesGlobals';
 
 const DetalleMascotas = ({ si, no, data }) => {
@@ -59,12 +58,9 @@ const DetalleMascotas = ({ si, no, data }) => {
                             </div>
                         </div>
                     </div>
-                    <div className='d-flex p-10 py-4 justify-between border-dashed  border-gray-400 border-t-2'>
+                    <div className='d-flex p-10 py-4 justify-center border-dashed  border-gray-400 border-t-2'>
                         <span onClick={() => no(false)} className='bg-red-400 text-white cursor-pointer py-2 px-4 rounded-lg'>
                             volver
-                        </span>
-                        <span className='bg-amber-300 text-white cursor-pointer py-2 px-4 rounded-lg'>
-                            <NavLink to='/diagnostico' className='text-white hover:text-white'>Quiero conocerlo</NavLink>
                         </span>
                     </div>
 

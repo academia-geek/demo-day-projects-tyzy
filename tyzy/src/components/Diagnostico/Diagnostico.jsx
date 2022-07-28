@@ -50,7 +50,6 @@ const Diagnostico = () => {
     const data = await Peticiones(MascotasURL)
     const FmascotaCategory = data[0].listaMascotas.filter((sd) => sd.categoria == categorya?.categoryF);
     setDatos(FmascotaCategory)
-    console.log(FmascotaCategory);
     setModalShow(true)
   }
 

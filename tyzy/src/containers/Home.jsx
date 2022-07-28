@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import NavBarIn from './NavBarIn';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import IntroHome from './IntroHome';
-import { HomeStyle, ModalPrimeraVez } from '../styles/StylesGlobals';
+import { HomeStyle } from '../styles/StylesGlobals';
 import Carousel from 'react-bootstrap/Carousel';
 import { Peticiones } from '../helpers/Peticiones';
 import { HomeURL } from '../helpers/UrlsAPI';
@@ -20,19 +18,10 @@ const Home = () => {
             setDatos(data[0])
         }
     }
-    const IntroHomeState = () => {
-        const auth = getAuth()
-        onAuthStateChanged(auth, user => {
-            if (user.metadata.creationTime === user.metadata.lastSignInTime) {
-                setShow(true)
-            }
-        })
-    }
 
     useEffect(() => {
         dispatch(mostrarDatesUserAsync())
         DataApi()
-        IntroHomeState()
     }, [])
 
     // --------------------------------------------------------------
@@ -72,17 +61,7 @@ const Home = () => {
                 setActiveStepSecond3(0);
             }
         }
-    };
-
-    // -----------------------------------------------------------
-    const [show, setShow] = useState(false);
-    const [displey, setDispley] = useState({})
-
-    const handleClose = () => {
-        setDispley({ display: 'Dnone' })
-        setShow(false)
-    };
-    // -----------------------------------------------------------
+    }
 
     return (
         <HomeStyle className='text-4xl'>
@@ -165,18 +144,6 @@ const Home = () => {
                     </Carousel>
                 </div>
             </section>
-
-            <div>
-                <ModalPrimeraVez className={`${displey.display}`}
-                    show={show}
-                    onHide={handleClose}
-                    backdrop="static"
-                >
-                    <section className='Section d-flex flex-column'>
-                        <IntroHome close={handleClose} />
-                    </section>
-                </ModalPrimeraVez>
-            </div>
         </HomeStyle>
     )
 }
