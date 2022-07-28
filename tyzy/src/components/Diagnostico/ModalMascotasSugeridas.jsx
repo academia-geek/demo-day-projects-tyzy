@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap'
 import { CerrarSeleccionados, ImgSeleccionados, ModalCover, ModalSelecciondado, NameSeleccionado, Seleccionados, TitleSeleccionado } from '../../styles/StylesGlobals';
 import {FaPaw}from 'react-icons/fa'
 
@@ -17,7 +17,7 @@ const ModalMascotasSugeridas = ({ si, no, mascotas }) => {
         </Modal.Header>
             <div className='px-5' style={{'backgroundColor':'#00000000'}}>
                 <section>
-                    <Seleccionados>
+                    <Seleccionados className='flex justify-center'>
                     {
                         mascotas?.map((dt) => (
                             <div key={dt?.id}>
