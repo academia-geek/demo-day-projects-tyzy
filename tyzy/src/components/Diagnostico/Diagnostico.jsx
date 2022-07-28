@@ -159,6 +159,7 @@ const Diagnostico = () => {
               </div>
 
               <div>
+                
                 <RadiusFlex htmlFor='inseg'>
                   <InputRadius value='inseguridad' type="radio" id='inseg' name='inmputRadio' />
                   Inseguridad ante otras personas
