@@ -69,16 +69,16 @@ const IntroHome = ({ close }) => {
                     btnNo: '',
                     btnSi: 'no'
                 })
-                const { value: accept } = await Swal.fire({
-                    title: 'Terms and conditions',
+                const accept = await Swal.fire({
+                    title: 'Terminos y condiciones',
                     input: 'checkbox',
                     allowOutsideClick: false,
                     inputValue: 1,
-                    inputPlaceholder: 'I agree with the terms and conditions',
+                    inputPlaceholder: 'Estoy de acuerdo con los términos y condiciones',
                     confirmButtonText: 'Continue <i class="fa fa-arrow-right"></i>',
                     footer: '<a target="_blank" href="https://pages.flycricket.io/tyzy/privacy.html">Terminos de politica y privacidad.</a>',
                     inputValidator: (result) => {
-                        return !result && 'You need to agree with T&C'
+                        return !result && 'Debe estar de acuerdo con T&C'
                     }
                 })
             }

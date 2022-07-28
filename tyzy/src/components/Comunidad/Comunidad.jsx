@@ -99,7 +99,7 @@ export default function Comunidad() {
                         </NewPubLabel2>
 
                         <NewPubLabel2>
-                            <LabelComunidad htmlFor='descrpc'>Descripción</LabelComunidad>
+                            <LabelComunidad htmlFor='descripc'>Descripción</LabelComunidad>
                             <NewDescription rows="4" cols="50" value={formValue.descripcion} onChange={handleInputChange} id='descripc' type='text' name='descripcion' />
                         </NewPubLabel2>
                     </div>
