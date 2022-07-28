@@ -984,6 +984,9 @@ export const DetalleMascota = styled(Modal)`
     img {
       border-radius: 50px 50px 0px 0px;
       width: 100%;
+      height: 30vh;
+      object-fit: cover;
+      object-position: top;
     }
 
     .BORDERMODAL {
