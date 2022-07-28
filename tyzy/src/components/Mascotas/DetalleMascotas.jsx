@@ -60,7 +60,7 @@ const DetalleMascotas = ({ si, no, data }) => {
                         </div>
                     </div>
                     <div className='d-flex pt-2  justify-center border-dashed  border-gray-400 border-t-2'>
-                        <span onClick={() => no(false)} className='mt-1 text-red-400 cursor-pointer hover:bg-red-400 hover:text-white px-3 rounded-lg'>
+                        <span onClick={() => no(false)} className='mt-1 font-semibold text-gray-300 cursor-pointer hover:text-red-400 px-3 rounded-lg'>
                             volver
                         </span>
                     </div>

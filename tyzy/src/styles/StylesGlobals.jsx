@@ -1342,6 +1342,7 @@ export const ModalSelecciondado = styled(Modal)`
    .modal-content{
     width:1250px;
     background-color: #00000000;
+    border: none;
 }
 `
 
