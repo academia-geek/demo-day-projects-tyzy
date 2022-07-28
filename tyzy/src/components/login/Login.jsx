@@ -45,7 +45,7 @@ export default function Login() {
                             <Form className='d-flex flex-column'>
                                 <div className='mb-2 d-flex flex-column'>
                                     <LabelInicio>Correo electronico</LabelInicio>
-                                    <FieldInput2 className='InputRegister' type="email" placeholder="Email" name="email" />
+                                    <FieldInput2 className='InputRegister' type="email" placeholder="Correo" name="email" />
                                     {errors.email && touched.email ?
                                         (<div className='ms-3 ERRinput fs-6 text-white'>{errors.email}</div>) : null}
                                 </div>
