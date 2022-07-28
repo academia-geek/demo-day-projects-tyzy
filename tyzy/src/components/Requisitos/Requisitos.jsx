@@ -55,6 +55,7 @@ export default function Requisitos() {
 
 
   return (
+    
     <div style={{ background: "#FDFDFD" }}>
       <NavBarIn />
       <section className="relative w-full">
