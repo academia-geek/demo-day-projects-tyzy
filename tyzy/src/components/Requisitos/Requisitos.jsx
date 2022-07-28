@@ -28,7 +28,6 @@ export default function Requisitos() {
   }
   // -----------------------------------------------------
   
-
   const IntroHomeState = () => {
     const auth = getAuth()
     onAuthStateChanged(auth, user => {
