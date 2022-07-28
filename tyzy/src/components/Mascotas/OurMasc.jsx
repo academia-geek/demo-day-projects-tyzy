@@ -4,7 +4,7 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import { MascotasURL } from '../../helpers/UrlsAPI';
 import { Peticiones } from '../../helpers/Peticiones';
 import DetalleMascotas from './DetalleMascotas';
-import { DiagSubText1, DiagText1 } from '../../styles/StylesGlobals';
+import { ButtonDiagnostico, DiagSubText1, DiagText1, ProcesoTxt } from '../../styles/StylesGlobals';
 import { Link } from 'react-router-dom';
 
 export default function OurMasc() {
@@ -79,8 +79,8 @@ export default function OurMasc() {
           }
         </section>
       </div>
-      <p>Para conocer la experiencia Tyzy de distintos usuarios con estos animales</p>
-      <Link to='/comunidad'><button>Haz clic aquí</button></Link>
+      <ProcesoTxt>Para conocer la experiencia Tyzy de distintos usuarios con estos animales:</ProcesoTxt>
+      <Link to='/comunidad'><ButtonDiagnostico>Haz clic aquí</ButtonDiagnostico></Link>
     </div>
   )
 }

@@ -14,9 +14,9 @@ export default function DashboardRoute() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/intro' element={<IntroHome />} />
-        <Route path='/requisitos' element={<Requisitos />} />
+        <Route path='/' element={<Requisitos />} />
         <Route path='/diagnostico' element={<Diagnostico />} />
         <Route path='/perfil' element={<Perfil />} />
         <Route path='/NuestrosAnimales' element={<OurMasc />} />
