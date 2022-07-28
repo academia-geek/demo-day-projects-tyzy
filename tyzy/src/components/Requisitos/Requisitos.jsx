@@ -37,14 +37,9 @@ export default function Requisitos() {
       </section>
       <section className="grid grid-cols-2 gap-10 px-40 my-24 items-center">
         <div style={{ 'marginLeft': '12%' }}>
-          <h3 className="text-titleOrange py-4">LOREM IPSUM</h3>
+          <h3 className="text-titleOrange py-4">DEBES SABER...</h3>
           <p className="text-pGreen">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            Para nosotros es muy importante que te encuentres informado sobre las diferencias entre nuestros Animales de servicio y de Terapia o Apoyo emocional, pues al tener distintos tipos, están entrenados para necesidades diferentes. Por supuesto con el objetivo de ayudarte con las dificultades que estás enfrentando
           </p>
         </div>
         <div className="flex justify-center">
