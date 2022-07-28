@@ -1,36 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Peticiones } from '../../helpers/Peticiones'
+import { LandingPageURL } from '../../helpers/UrlsAPI'
+import { ButtonDiagnostico, ProcesoTxt } from '../../styles/StylesGlobals'
 
 export default function LandingPagePreFooter() {
+
+  const [datos, setDatos] = useState([])
+
+  const DataApi = async () => {
+    const data = await Peticiones(LandingPageURL)
+    setDatos(data[0].beneficiosOfrecidos)
+  }
+  useEffect(() => {
+    DataApi()
+  }, [])
+
   return (
     <div>
-    <section className='py-10'>
-        <h3 className='font-bold text-xl text-center text-titleColor'>Nuestros objetivos</h3>
-        <p className=' font-bold text-sm  text-center text-titleOrange'>LOREM IPSUM</p>
-    </section>
-    <section className='flex justify-center gap-5 py-20 '>
-    
-        <div className='flex flex-col items-center'>
-            <img src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657548631/Tyzy/Images_ktxpb8.png' alt='personas felices'  />
-            <div className='flex flex-row items-center gap-2 px-4 pt-2'>
-           <div className='border-t-2 w-7 border-red-300'></div> <p className='font-bold text-2xl block'>Personas más felices y tranquilas</p>
-           </div>
-        </div>
-
-        <div  className='flex flex-col items-center'>
-            <img src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657548631/Tyzy/Images-1_doemkk.png' alt='personas felices'  />
-            <div className='flex flex-row items-center gap-2  px-4   pt-2'>
-           <div className='border-t-2 w-7 border-red-300'></div> <p className='font-bold text-2xl block'>Tenencia y manutención tranquila</p>
-           </div>
-        </div>
-
-        <div className='flex flex-col items-center'>
-            <img src='https://res.cloudinary.com/dg29vcpk7/image/upload/v1657548631/Tyzy/Images-2_eokshd.png' alt='personas felices'  />
-           <div className='flex flex-row items-center gap-2  px-4  pt-2'>
-           <div className='border-t-2 w-7 border-red-300'></div> <p className='font-bold text-2xl block'>Confianza sin importar la edad</p>
-           </div>
-        </div>
-
-    </section>
+      <section className='py-20 d-flex flex-column'>
+        <h3 className='font-bold text-xl text-center text-titleColor'>Una aplicación para todos</h3>
+        <p className=' font-bold text-sm  text-center text-titleOrange'>ÚNETE Y EMPIEZA AHORA</p>
+      </section>
+      <section className='d-flex mx-auto gap-3 items-center justify-evenly py-10 w-100'>
+      {
+          datos?.map((dt)=>(
+            <div key={dt?.id} className='flex flex-col items-center'>
+              <img className='h-100 IMGBeneficios' src={dt?.imagen} alt={dt?.id} />
+              <div className='d-flex flex-column items-center gap-2 pt-3'>
+                <div className='border-t-2 w-100 border-red-300'></div> <p className='font-bold text-xl block text-center'>{dt?.descripcion}</p>
+              </div>
+            </div>
+          ))
+        }
+      </section>
+      
+      <ProcesoTxt>Conoce los requisitos y empieza tu diagnóstico</ProcesoTxt>
+      <Link to='/login'><ButtonDiagnostico>Realiza tu primer diagnóstico</ButtonDiagnostico></Link>
     </div>
   )
 }

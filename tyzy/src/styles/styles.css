@@ -12,7 +12,9 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    background-color: #FDFDFD;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -61,6 +63,22 @@ body {
     font-weight: 600;
 }
 
+.NavLinks2 {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.NavLinks2:hover {
+    color: #2B2B39;
+    font-weight: 600;
+}
+
+.NavLinks2:focus {
+    color: #2B2B39;
+    font-weight: 600;
+}
+
 .LandingPageSup {
     background-color: #FFE7E4;
     height: 650px;
@@ -93,7 +111,8 @@ body {
 .IMGLandingPageSup {
     border: 10px solid #F2A9A2;
     border-radius: 50% !important;
-    width: 90% !important;
+    width: 70% !important;
+    margin-top: 5% !important;
 }
 
 .H2LandingPageSup {
@@ -145,19 +164,31 @@ body {
 }
 
 .NavbarPublic {
-    position: fixed ;
-    position: relative ;
+    position: fixed;
+    position: relative;
     background-color: #FFFFFF !important;
     width: 100vw !important;
     top: 0px !important;
 }
-.dogBanner{
-    background-image: url('https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748553/Tyzy/pexels-lumn-406014_wzakym.jpg');
+
+.dogBanner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748566/Tyzy/pit-bull-1872873_xblurx.jpg');
+    height: 80vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
 }
-.textuwu{
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+.textuwu {
+    font-size: 45px;
+    font-weight: 700;
+    color: white;
+    width: 70%;
+    margin-top: 2%;
 }
+
 .no {
     display: none !important;
 }
@@ -166,3 +197,119 @@ body {
     background-color: rgba(35, 35, 35, 0.6) !important;
     backdrop-filter: blur(4px) !important;
 }
+
+.carousel-control-next,
+.carousel-control-prev {
+    display: none;
+}
+
+.NavD {
+    background-color: #4BA695 !important;
+    border-radius: 50px 0 0 50px;
+}
+
+.offcanvas-backdrop {
+    background-color: rgba(23, 23, 23, 0.62) !important;
+    backdrop-filter: blur(100px) !important;
+}
+
+.IMGBeneficios {
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.dogBanner2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/dg29vcpk7/image/upload/v1657748567/Tyzy/pexels-karolina-grabowska-5902804_xkcx8t.jpg');
+    height: 80vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.BTNeditar {
+    border: 2px solid #F26052;
+    background-color: #F26052;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.BTNeditar:hover {
+    background-color: #FFFFFF;
+    border: 2px dashed #F26052;
+    color: #F26052;
+    cursor: pointer;
+}
+
+
+/* calendario */
+
+.ant-picker-calendar {
+    border-radius: 20px !important;
+    background-color: white solid transparent !important;
+    width: 100%;
+}
+
+.ant-picker-content {
+    width: 50%;
+    color: purple
+}
+
+.ant-picker-content {
+    width: 80px;
+    border-radius: 20px !important;
+}
+
+.ant-picker-content thead {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 900 !important;
+}
+
+
+.ant-picker-date-panel {
+    border-radius: 20px;
+    background-color: red solid transparent;
+}
+
+.ant-picker-body {
+    border-radius: 30px;
+    background-color: white;
+}
+
+.ant-picker-calendar-header {
+    justify-content: center !important;
+    margin-bottom: 2%;
+}
+
+.ant-picker-cell-inner {
+    border-top: none !important;
+}
+
+.ant-picker-content {
+    width: 40vw !important;
+    margin: 0 auto 0 auto;
+}
+
+.ant-picker-calendar-date-content {
+    height: 10px !important;
+}
+
+.ant-picker-content th {
+    margin-left: 80px !important;
+}
+
+.ant-picker-calendar-date-value {
+    margin: 0 22px 0 0px !important;
+}
+
+.ant-picker-content th {
+    font-weight: 800 !important;
+}
+
+.BTNcitaAgenda {
+    display: none !important;
+}
+
