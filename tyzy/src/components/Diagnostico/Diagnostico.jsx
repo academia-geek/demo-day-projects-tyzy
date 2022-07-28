@@ -8,6 +8,9 @@ import CitaDiagnostico from './CitaDiagnostico';
 import { AgendateCalendario, AgendateTxt, ButtonsDiv, CalendarioANDT, DiagDiv, DiagDivRadius, DiagForm, DiagIconArrow, DiagInput, DiagLabel, DiagSubText1, DiagText1, DiagText2, DivCalendar, InputRadius, ParallaxDiag, RadiusFlex, SaveButton, TextDiag } from '../../styles/StylesGlobals'
 import moment from 'moment';
 import Swal from 'sweetalert2';
+import { MascotasURL } from '../../helpers/UrlsAPI';
+import { Peticiones } from '../../helpers/Peticiones';
+import ModalMascotasSugeridas from './ModalMascotasSugeridas';
 
 const SignupSchema = Yup.object().shape({
   nombreComp: Yup.string().required("Nombre requerido*"),
@@ -39,6 +42,18 @@ const Diagnostico = () => {
     setValue(newValue);
   }
 
+  const [datos, setDatos] = useState([])
+  const [categorya, setcCategorya] = useState({ modal: '' })
+  const [modalShow, setModalShow] = useState(false);
+
+  const handleCategoria = async () => {
+    const data = await Peticiones(MascotasURL)
+    const FmascotaCategory = data[0].listaMascotas.filter((sd) => sd.categoria == categorya?.categoryF);
+    setDatos(FmascotaCategory)
+    console.log(FmascotaCategory);
+    setModalShow(true)
+  }
+
   return (
     <>
       <NavBarIn />
@@ -58,18 +73,26 @@ const Diagnostico = () => {
             fecha: `${selectedValue?.format('YYYY-MM-DD')}`,
             telefono: '',
             correo: '',
-            insomnio: '',
-            inseguridad: '',
-            humor: '',
-            dCabeza: '',
-            fCariño: '',
-            fComprension: '',
+            inmputRadio: '',
             descripProblema: ''
           }
         }
         validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
           if (selectedValue?.format('YYYY') >= `${año}` && selectedValue?.format('MM') >= `0${mes}` && selectedValue?.format('DD') >= `${dia}`) {
+            if (values?.inmputRadio == 'insomnio') {
+              setcCategorya({ categoryF: 'estres', modal: 'activo' });
+            } else if (values?.inmputRadio == 'inseguridad') {
+              setcCategorya({ categoryF: 'ansiedad', modal: 'activo' });
+            } else if (values?.inmputRadio == 'humor') {
+              setcCategorya({ categoryF: 'depresion', modal: 'activo' });
+            } else if (values?.inmputRadio == 'dCabeza') {
+              setcCategorya({ categoryF: 'audicion', modal: 'activo' });
+            } else if (values?.inmputRadio == 'dvisual') {
+              setcCategorya({ categoryF: 'visual', modal: 'activo' });
+            } else if (values?.inmputRadio == 'dfisica') {
+              setcCategorya({ categoryF: 'movilidad', modal: 'activo' });
+            }
             dispatch(actionAggDiagAsync(values))
             setUserAgendado({ ...userAgendado, id: values.id, BTNcita: '' })
             actions.resetForm({
@@ -79,12 +102,7 @@ const Diagnostico = () => {
                 fecha: `${selectedValue?.format('YYYY-MM-DD')}`,
                 telefono: '',
                 correo: '',
-                insomnio: '',
-                inseguridad: '',
-                humor: '',
-                dCabeza: '',
-                fCariño: '',
-                fComprension: '',
+                inmputRadio: '',
                 descripProblema: ''
               }
             })
@@ -127,26 +145,40 @@ const Diagnostico = () => {
             {errors.correo && touched.correo ?
               (<div className='ms-3 fs-6 text-red-500'>{errors.correo}</div>) : null}
 
-            <DiagLabel className='font-bold fs-6' style={{ 'marginTop': '3%' }}>Selecciona 1 o más incomodidades:</DiagLabel>
+            <DiagLabel className='font-bold fs-6' style={{ 'marginTop': '3%' }}>Selecciona 1 incomodidad:</DiagLabel>
             <DiagDivRadius>
               <div>
-                <RadiusFlex><InputRadius type="checkbox" name='insomnio' />Problemas de insomnio</RadiusFlex>
-                <RadiusFlex style={{ 'marginTop': '10px' }}><InputRadius type="checkbox" name='dCabeza' />Dolor frecuente de cabeza</RadiusFlex>
+                <RadiusFlex htmlFor='insom'>
+                  <InputRadius value='insomnio' type="radio" id='insom' name='inmputRadio' />
+                  Problemas de insomnio
+                </RadiusFlex>
+
+                <RadiusFlex htmlFor='dolorC' style={{ 'marginTop': '10px' }}>
+                  <InputRadius value='dCabeza' type="radio" id='dolorC' name='inmputRadio' />
+                  Dolor frecuente de cabeza
+                </RadiusFlex>
               </div>
 
               <div>
-                <RadiusFlex><InputRadius type="checkbox" name='inseguridad' />Inseguridad ante otras personas</RadiusFlex>
-                <RadiusFlex style={{ 'marginTop': '10px' }}><InputRadius type="checkbox" name='fCariño' />Discapacidad Visual</RadiusFlex>
+                <RadiusFlex htmlFor='inseg'>
+                  <InputRadius value='inseguridad' type="radio" id='inseg' name='inmputRadio' />
+                  Inseguridad ante otras personas
+                </RadiusFlex>
+
+                <RadiusFlex htmlFor='dvishual' style={{ 'marginTop': '10px' }}>
+                  <InputRadius value='dvisual' type="radio" id='dvishual' name='inmputRadio' />
+                  Discapacidad Visual
+                </RadiusFlex>
               </div>
 
               <div>
-                <RadiusFlex>
-                  <InputRadius type="checkbox" name='humor' />
+                <RadiusFlex htmlFor='hmr'>
+                  <InputRadius value='humor' type="radio" id='hmr' name='inmputRadio' />
                   Cambio de humor repentino
                 </RadiusFlex>
 
-                <RadiusFlex style={{ 'marginTop': '10px' }}>
-                  <InputRadius type="checkbox" name='fComprension' />
+                <RadiusFlex htmlFor='dfishica' style={{ 'marginTop': '10px' }}>
+                  <InputRadius value='dfisica' type="radio" id='dfishica' name='inmputRadio' />
                   Discapacidad física
                 </RadiusFlex>
               </div>
@@ -163,12 +195,18 @@ const Diagnostico = () => {
             </div>
 
             <ButtonsDiv className='flex'>
+              {
+                categorya?.modal != '' ? <SaveButton type='button' onClick={() => { handleCategoria() }} className={`me-auto ${userAgendado?.BTNcita}`}>MASCOTAS SUGERIDAS</SaveButton> : ''
+              }
               <SaveButton type='submit' className='ms-auto'>GUARDAR</SaveButton>
             </ButtonsDiv>
           </DiagForm>
         )}
       </Formik>
-      <CitaDiagnostico user={userAgendado} setUser={setUserAgendado}/>
+      {
+        modalShow == true ? < ModalMascotasSugeridas si={modalShow} no={setModalShow} mascotas={datos}/> : ''
+      }
+      <CitaDiagnostico user={userAgendado} setUser={setUserAgendado} />
     </>
   )
 }
