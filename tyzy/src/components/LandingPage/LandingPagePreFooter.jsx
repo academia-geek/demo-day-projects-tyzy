@@ -35,8 +35,8 @@ export default function LandingPagePreFooter() {
         }
       </section>
       
-      <ProcesoTxt>Empieza tu proceso con nosotros</ProcesoTxt>
-      <Link to='/login'><ButtonDiagnostico>¡Haz tu diagnóstico ahora!</ButtonDiagnostico></Link>
+      <ProcesoTxt>Conoce los requisitos y empieza tu diagnóstico</ProcesoTxt>
+      <Link to='/login'><ButtonDiagnostico>Realiza tu primer diagnóstico</ButtonDiagnostico></Link>
     </div>
   )
 }
