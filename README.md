@@ -2,7 +2,6 @@
  <img src="https://res.cloudinary.com/dg29vcpk7/image/upload/v1657500435/Tyzy/Logo_fvikwq.png" />
 </p>
 
-¡Bienvenidos a wiki de tyzy!
 
 1. [¿Qué es Tyzy?](#que-es-tyzy)
 2. [¿Qué Problema resuelve Tyzy?]()
