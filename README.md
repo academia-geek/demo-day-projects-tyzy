@@ -3,10 +3,6 @@
 </p>
 
 
-1. [¿Qué es Tyzy?](#que-es-tyzy)
-2. [¿Qué Problema resuelve Tyzy?]()
-3. [¿Cómo Tyzy cumple su objetivo?](#como-tyzy-cumple-su-objetivo)
-
 
  ## ¿Qué es Tyzy?
 
